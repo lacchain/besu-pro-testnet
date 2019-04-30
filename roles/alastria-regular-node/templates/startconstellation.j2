@@ -1,0 +1,3 @@
+#!/bin/bash
+
+constellation-node /root/lacchain/data/constellation/constellation.conf 2>> /root/lacchain/logs/constellation_$(date +%Y%m%d%H%M%S).log | /root/lacchain/health-check.sh

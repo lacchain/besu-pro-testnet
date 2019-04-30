@@ -1,0 +1,8 @@
+---
+- name: create backup
+  import_tasks: "create-backup.yaml"
+  when: backup == 'yes'
+
+- name: restore backup
+  import_tasks: "restore-backup.yaml"
+  when: restore == 'yes'

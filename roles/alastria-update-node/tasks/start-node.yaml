@@ -1,0 +1,9 @@
+---
+- name: Start Quorum Node
+  debug:
+    msg: Starting Quorum Node
+
+- name: Execute Quorum service
+  service:
+    name: geth
+    state: restarted

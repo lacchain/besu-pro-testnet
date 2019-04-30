@@ -1,0 +1,6 @@
+---
+- name: update permissioned nodes json
+  import_tasks: "update-node.yaml"
+
+- name: start node
+  import_tasks: "start-node.yaml"

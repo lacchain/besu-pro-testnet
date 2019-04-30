@@ -1,0 +1,30 @@
+---
+- name: Install pantheon
+  debug:
+    msg: "Installing Pantheon"
+
+- name: Download pantheon source code
+  git:
+    repo: "https://github.com/PegaSysEng/pantheon.git"
+    dest: "/tmp/pantheon"
+    version: 52b3456b7f7616b1c9cce9c3e7e9c4cef8325979
+
+- name: Building Pantheon
+  shell: "./gradlew build -x test"
+  args:
+    chdir: /tmp/pantheon/
+
+- name: Extract the Pantheon tarball
+  unarchive:
+    src: "/tmp/pantheon/build/distributions/pantheon-1.0.3.tar.gz"
+    dest: /usr/local
+    copy: no
+
+- name: Symbolic link for pantheon
+  file:
+    src: "/usr/local/pantheon-1.0.3/bin/{{ item.src }}"
+    dest: "/usr/local/bin/{{ item.dest }}"
+    state: link
+  with_items:
+    - { src: "pantheon", dest: "pantheon" }
+    - { src: "pantheon.bat", dest: "pantheon.bat" }

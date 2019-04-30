@@ -1,0 +1,43 @@
+---
+- name: download leveldb
+  get_url:
+    url: "{{leveldburi}}/{{leveldb_version}}/{{ leveldbtempnumber }}/{{leveldb_version}}"
+    dest: "/tmp/{{leveldb_version}}"
+
+- name: Extract leveldb
+  unarchive:
+    src: "/tmp/{{leveldb_version}}"
+    dest: "/tmp"
+    copy: no
+
+- name: make leveldb
+  shell: make
+  args:
+    chdir: "/tmp/leveldb-1.9.0"
+
+- name: move ibleveldb.*
+  copy:
+    src: "/tmp/leveldb-1.9.0/{{ item }}"
+    dest: "/usr/local/lib"
+    remote_src: yes
+  with_items:
+    - libleveldb.a
+    - libleveldb.so.1.9
+
+- name: symbolic link for liblevel
+  file:
+    src: "/usr/local/lib/libleveldb.so.1.9"
+    dest: "/usr/local/lib/{{ item }}"
+    state: link
+  with_items:
+    - "libleveldb.so"
+    - "libleveldb.so.1"
+
+
+- name: move leveldb folder
+  command: "cp -R leveldb /usr/local/lib"
+  args:
+    chdir: "/tmp/leveldb-1.9.0/include"
+  notify: run ldconfig
+
+- meta: flush_handlers

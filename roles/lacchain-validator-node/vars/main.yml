@@ -1,0 +1,27 @@
+---
+# initdb
+leveldburi: "https://src.fedoraproject.org/lookaside/pkgs/leveldb/"
+leveldbtempnumber: "12f11385cb58ae0de66d4bc2cc7f8194"
+leveldb_version: "leveldb-1.9.0.tar.gz"
+
+# vars node
+node_type: "validator"
+net_id: 648529
+time: '{{lookup(''pipe'',''date "+%Y-%m-%d %H:%M:%S"'')}}'
+
+# vars file for java
+java_rel: "java11.02"
+javahome: "/usr/local/java"
+file_owner: pantheon
+
+oracle_java_apt_repository: "ppa:linuxuprising/java"
+oracle_java_cache_valid_time: 3600
+oracle_java_deb_package: "oracle-java11-installer"
+oracle_java_debconf_package_default: "oracle-java11-set-default"
+oracle_java_home: "/usr/lib/jvm/java-11-oracle"
+oracle_java_license_version: "shared/accepted-oracle-license-v1-2"
+oracle_java_state: latest
+
+#init quorum properties
+mode: "auto"
+global_args: --network-id {{net_id}} --permissions-nodes-config-file-enabled --permissions-accounts-config-file-enabled --rpc-http-enabled --rpc-ws-enabled --rpc-http-api=ADMIN,ETH,NET,PERM,IBFT --host-whitelist=* --rpc-http-cors-origins=* --discovery-enabled=false --logging=INFO

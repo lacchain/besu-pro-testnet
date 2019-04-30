@@ -1,0 +1,47 @@
+---
+- name: install golang
+  debug:
+    msg:
+    - "play_hosts = {{play_hosts}}"
+    - "home = {{gohome}} "
+    - "Installing GO"
+
+- name: Remove old installation for golang
+  file:
+    path: "{{gohome}}"
+    state: absent
+
+- name: Creates directory
+  file:
+    path: "$HOME/workspace"
+    state: directory
+
+- name: download golang tar
+  get_url:
+    url: "https://storage.googleapis.com/golang/{{go_rel}}"
+    dest: "/tmp/{{go_rel}}"
+    mode: 0440
+
+- name: Extract the Go tarball
+  unarchive:
+    src: "/tmp/{{go_rel}}"
+    dest: /usr/local
+    copy: no
+
+- name: golang global vars
+  template:
+    src: "golang.j2"
+    dest: "/etc/profile.d/golang-vars.sh"
+    force: yes
+
+- meta: reset_connection
+
+- name: Source vars
+  shell: "source /etc/profile.d/golang-vars.sh"
+  become: no
+  args:
+     executable: /bin/bash
+
+- name: clean downloaded files
+  file:
+    path: "/tmp/{{go_rel}}"

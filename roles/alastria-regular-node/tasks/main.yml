@@ -1,0 +1,32 @@
+---
+- name: install dependencies for  {{ ansible_distribution }}
+  import_tasks: "ubuntu-dependencies.yml"
+  when: ansible_distribution |lower == 'ubuntu'
+
+- name: install dependencies for  {{ ansible_distribution }}
+  import_tasks: "rhel-dependencies.yml"
+  when: (ansible_distribution |lower == 'redhat') or (ansible_distribution |lower == 'centos')
+
+- name: install golang
+  import_tasks: "install-go.yaml"
+
+- name: install constellation
+  import_tasks: "install-constellation.yaml"
+
+- name: install leveldb
+  import_tasks: "install-leveldb.yaml"
+
+- name: install quorum
+  import_tasks: "install-quorum.yaml"
+
+- name: init quorum
+  import_tasks: "init-quorum.yaml"
+
+- name: init constellation
+  import_tasks: "init-constellation.yaml"
+
+#- name: start node
+#  import_tasks: "start-node.yaml"
+
+- name: clean files
+  import_tasks: "clean-files.yaml"

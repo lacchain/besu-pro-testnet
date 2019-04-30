@@ -1,0 +1,32 @@
+---
+- name: install constellation
+  debug:
+    msg: "Installing Constellation"
+
+- name: download constellation tar
+  get_url:
+    url: "{{constellation_base_url}}/{{constellation_version}}/{{constellation_release}}"
+    dest: "/tmp/{{constellation_release}}"
+    mode: 0440
+
+- name: Extract the Constellation tarball
+  unarchive:
+    src: "/tmp/{{constellation_release}}"
+    dest: /usr/local
+    copy: no
+
+- name: Copy constellation node to /usr/local/bin
+  copy:
+    src: "/usr/local/{{constellation_release | replace('.tar.xz','') | trim }}/constellation-node"
+    dest: /usr/bin
+    remote_src: yes
+    mode: 0755
+
+- name: Include installation and fix libsodium for  {{ ansible_distribution }}
+  import_tasks: "ubuntu-install-fix-libsodium.yaml"
+  when: ansible_distribution |lower == 'ubuntu'
+
+- name: Fix Libsodium for {{ ansible_distribution }}
+  import_tasks: "rhel-install-fix-libsodium.yaml"
+  when: (ansible_distribution |lower == 'redhat') or (ansible_distribution |lower == 'centos')   
+

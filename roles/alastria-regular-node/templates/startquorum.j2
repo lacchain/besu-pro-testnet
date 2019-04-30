@@ -1,0 +1,3 @@
+#!/bin/bash
+
+env PRIVATE_CONFIG=/root/lacchain/data/constellation/constellation.conf geth --datadir /root/lacchain/data {{global_args}} 2>> /root/lacchain/logs/quorum_$(date +%Y%m%d%H%M%S).log

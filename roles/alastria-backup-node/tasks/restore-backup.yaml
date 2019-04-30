@@ -1,0 +1,33 @@
+---
+- name: Recovering node keys
+  debug:
+      msg: "Recovering node keys"
+
+- name: delete files keys
+  file:
+      path: "{{ item }}"
+      state: absent
+  with_items:
+      - { dest: "~/lacchain/data/keystore/" }
+      - { dest: "~/lacchain/data/geth/nodekey" }
+      - { dest: "~/lacchain/data/constellation/keystore/" }
+
+- name: Recovery constellation keys
+  copy:
+      src: ~/lacchain-keysBackup/data/constellation/keystore
+      dest: ~/lacchain/data/constellation/
+
+- name: Recovery node keys
+  copy:
+      src: ~/lacchain-keysBackup/data/keystore
+      dest: ~/lacchain/data/
+
+- name: Recovery enode ID
+  copy:
+      src: ~/lacchain-keysBackup/data/geth/nodekey
+      dest: ~/lacchain/data/geth/nodekey
+
+- name: Clean backup files
+  file:
+      path: ~/lacchain-keysBackup
+      state: absent

@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Externally accessible URL for this node (this is what's advertised)
+url = "https://{{ node_ip.stdout }}:9000/"
+
+# Port to listen on for the public API "constellation_port"
+port = 9000
+
+workdir = "/root/lacchain/data/constellation/"
+
+# Socket file to use for the private API / IPC
+socket = "constellation.ipc"
+
+# Initial (not necessarily complete) list of other nodes in the network.
+# Constellation will automatically connect to other nodes not in this list
+# that are advertised by the nodes below, thus these can be considered the
+# "boot nodes."
+
+othernodes = {% include "/files/constellation-nodes.json" %}
+
+# The set of public keys this node will host
+publickeys = ["keystore/node.pub"]
+
+# The corresponding set of private keys
+privatekeys = ["keystore/node.key"]
+
+# Optional file containing the passwords to unlock the given privatekeys
+# (one password per line -- add an empty line if one key isn't locked.)
+passwords = "/root/lacchain/tmp/.account_pass"
+
+# Where to store payloads and related information
+storage = "data"
+
+# Verbosity level (each level includes all prior levels)
+#   - 0: Only fatal errors
+#   - 1: Warnings
+#   - 2: Informational messages
+#   - 3: Debug messages
+verbosity = 2

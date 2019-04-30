@@ -1,0 +1,18 @@
+---
+- name: Stop Constellation Node
+  debug:
+    msg: Stopping Constellation Node  
+
+- name: Execute constellation service
+  service:
+    name: constellation
+    state: stopped
+
+- name: Stop Quorum Node
+  debug:
+    msg: Stopping Quorum Node
+
+- name: Execute Quorum service
+  service:
+    name: geth
+    state: stopped

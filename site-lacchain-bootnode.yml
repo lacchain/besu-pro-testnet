@@ -1,0 +1,9 @@
+- hosts: all
+  gather_facts: yes
+  become: yes
+  vars_prompt:
+    - name: "node_ip"
+      prompt: "Enter your public IP"
+      private: no
+  roles:
+    - lacchain-bootnode

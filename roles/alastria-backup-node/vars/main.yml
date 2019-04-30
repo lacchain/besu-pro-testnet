@@ -1,0 +1,25 @@
+---
+# initdb
+leveldburi: "https://src.fedoraproject.org/lookaside/pkgs/leveldb/"
+leveldbtempnumber: "12f11385cb58ae0de66d4bc2cc7f8194"
+leveldb_version: "leveldb-1.9.0.tar.gz"
+
+# vars file for lacchain-regular-node
+go_rel: "go1.9.5.linux-amd64.tar.gz"
+gohome: "/usr/local/go"
+file_owner: quorum
+new_go_version: "1.9.5"
+
+#constellation properties
+constellation_base_url: "https://github.com/jpmorganchase/constellation/releases/download"
+constellation_version: "v0.3.2"
+constellation_release: "constellation-0.3.2-ubuntu1604.tar.xz"
+constellation_port: 9000
+
+#init quorum properties
+mode: "auto"
+node_type: "general"
+node_name: "lacchain"
+net_id: 82584648528
+time: '{{lookup(''pipe'',''date "+%Y-%m-%d %H:%M:%S"'')}}'
+global_args: "--networkid {{net_id}} --identity {{node_name}} --permissioned --rpc --rpcaddr 0.0.0.0 --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,istanbul --rpcport 22000 --port 21000 --istanbul.requesttimeout 10000 --ethstats {{node_name}}:bb98a0b6442386d0cdf8a31b267892c1@netstats.testnet.lacchain.io.builders:80 --verbosity 3 --vmdebug --emitcheckpoints --targetgaslimit 18446744073709551615 --syncmode full --vmodule consensus/istanbul/core/core.go=5 "

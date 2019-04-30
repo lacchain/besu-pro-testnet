@@ -1,0 +1,10 @@
+---
+- name: set symbolic links to libsodium - RHEL
+  file:
+    src: "/lib64/libsodium.so"
+    dest: "/lib64/libsodium.so.18"
+    state: link
+  when: (ansible_distribution |lower == 'redhat') or (ansible_distribution |lower == 'centos')
+
+- name: Run ldconfig
+  command: ldconfig
