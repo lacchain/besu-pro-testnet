@@ -24,4 +24,4 @@ oracle_java_state: latest
 
 #init quorum properties
 mode: "auto"
-global_args: --network-id {{net_id}} --permissions-nodes-config-file-enabled --permissions-accounts-config-file-enabled --rpc-http-enabled --rpc-ws-enabled --rpc-http-api=ADMIN,ETH,NET,PERM,IBFT --host-whitelist=* --rpc-http-cors-origins=* --discovery-enabled=false --logging=INFO
+global_args: --network-id {{net_id}} --permissions-nodes-config-file-enabled --permissions-accounts-config-file-enabled --rpc-http-enabled --rpc-ws-enabled --rpc-http-api=ADMIN,ETH,NET,PERM,IBFT --host-whitelist=* --rpc-http-cors-origins=* --logging=INFO --bootnodes=enode://8b417b77f371836458da853d7e33241ee0f1e379e28045ac7adaeca2697b64bfa7b4cadcd5c8da6f5b39c1b503f4253a0c7f35643cef08b1aaf301b50995971c@34.73.199.100:30303

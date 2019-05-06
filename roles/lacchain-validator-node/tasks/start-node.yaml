@@ -1,9 +1,9 @@
 ---
-- name: Start Quorum Node
+- name: Start Pantheon Node
   debug:
-    msg: Starting Quorum Node
+      msg: Starting Pantheon Node
 
-- name: Execute Quorum service
+- name: Execute Pantheon service
   service:
-    name: geth
-    state: started
+      name: pantheon
+      state: started
