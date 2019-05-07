@@ -5,5 +5,11 @@
     - name: "node_ip"
       prompt: "Enter your public IP"
       private: no
+    - name: "node_email"
+      prompt: "Enter your email"
+      private: no
+    - name: "node_name"
+      prompt: "Enter your node name"
+      private: no
   roles:
     - lacchain-bootnode

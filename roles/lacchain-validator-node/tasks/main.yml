@@ -10,6 +10,14 @@
 - name: install java
   import_tasks: "install-java.yaml"
 
+- name: install docker for {{ ansible_distribution }}
+  import_tasks: "install-docker-ubuntu.yaml"
+  when: ansible_distribution |lower == 'ubuntu'
+
+- name: install docker for {{ ansible_distribution }}
+  import_tasks: "install-docker-redhat.yaml"
+  when: (ansible_distribution |lower == 'redhat') or (ansible_distribution |lower == 'centos')
+
 - name: install pantheon
   import_tasks: "install-pantheon.yaml"
 
@@ -19,6 +27,9 @@
 - name: start node
   import_tasks: "start-node.yaml"
   when: first_node
+
+- name: start ethstats client
+  import_tasks: "start-ethstats-client.yaml"
 
 - name: clean files
   import_tasks: "clean-files.yaml"
