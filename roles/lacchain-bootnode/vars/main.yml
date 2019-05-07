@@ -24,4 +24,4 @@ oracle_java_state: latest
 
 #init quorum properties
 mode: "auto"
-global_args: --network-id {{net_id}} --permissions-nodes-config-file-enabled --logging=INFO --bootnodes
+global_args: --network-id {{net_id}} --permissions-nodes-config-file-enabled --p2p-host=0.0.0.0 --rpc-ws-enabled --logging=INFO --bootnodes

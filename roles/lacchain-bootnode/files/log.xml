@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+  <Properties>
+    <Property name="root.log.level">INFO</Property>
+  </Properties>
+  <Appenders>
+    <RollingFile name="LogToRollingFile" fileName="/root/lacchain/logs/pantheon.log"
+                    filePattern="/root/lacchain/logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+        <PatternLayout>
+            <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+        </PatternLayout>
+        <Policies>
+            <TimeBasedTriggeringPolicy />
+            <SizeBasedTriggeringPolicy size="10 MB"/>
+        </Policies>
+    </RollingFile>
+  </Appenders>
+  <Loggers>
+    <Root level="${sys:root.log.level}">
+      <AppenderRef ref="LogToRollingFile" />
+    </Root>
+  </Loggers>
+</Configuration>

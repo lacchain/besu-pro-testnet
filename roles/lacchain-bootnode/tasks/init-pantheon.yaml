@@ -1,7 +1,7 @@
 ---
 - name: Init pantheon
   debug:
-      msg: "Init Pantheon"
+        msg: "Init Pantheon"
 
 - name: Get public ip
   shell: dig +short myip.opendns.com @resolver1.opendns.com 2>/dev/null || curl -s --retry 2 icanhazip.com
@@ -9,43 +9,57 @@
 
 - name: create lacchain directories
   file:
-      path: "{{ item.dest }}"
-      mode: "{{ item.mode }}"
-      state: directory
+        path: "{{ item.dest }}"
+        mode: "{{ item.mode }}"
+        state: directory
   with_items:
-      - { dest: "~/lacchain/data", mode: "0440" }
-      - { dest: "~/lacchain/logs", mode: "0440" }
-      - { dest: "~/lacchain/tmp", mode: "0440" }
+        - { dest: "~/lacchain/data", mode: "0440" }
+        - { dest: "~/lacchain/logs", mode: "0440" }
+        - { dest: "~/lacchain/tmp", mode: "0440" }
 
 - name: Copy permissioned nodes file
   copy:
-      src: "{{ role_path }}/files/permissions_config.toml"
-      dest: ~/lacchain/tmp/permissions_config.toml
-      mode: 0755
+        src: "{{ role_path }}/files/permissions_config.toml"
+        dest: ~/lacchain/tmp/permissions_config.toml
+        mode: 0755
   when: bootnode
 
-- name: Copy static nodes file
-  copy:
-      src: "{{ role_path }}/files/static-nodes.json"
-      dest: ~/lacchain/tmp/static-nodes.json
-      mode: 0755
-  when: bootnode
+#- name: Copy static nodes file
+#  copy:
+#        src: "{{ role_path }}/files/static-nodes.json"
+#        dest: ~/lacchain/tmp/static-nodes.json
+#        mode: 0755
+#  when: bootnode
 
 - name: initializing pantheon from genesis.json
   debug:
-      msg: Initializing Pantheon
+        msg: Initializing Pantheon
 
 - name: Copy genesis ibft2.0 file
   copy:
-      src: "{{ role_path }}/files/genesis.json"
-      dest: ~/lacchain/data/genesis.json
-      mode: 0755
+        src: "{{ role_path }}/files/genesis.json"
+        dest: ~/lacchain/data/genesis.json
+        mode: 0755
 
-- name: Copy node key to first validator node
+- name: Copy node key to first bootnode node
   copy:
-      src: "{{ role_path }}/files/key"
-      dest: ~/lacchain/data/key
-      mode: 0700
+        src: "{{ role_path }}/files/key"
+        dest: ~/lacchain/data/key
+        mode: 0700
+  when: first_node
+
+- name: Copy bootnode key to first bootnode node
+  copy:
+        src: "{{ role_path }}/files/bootnode"
+        dest: ~/lacchain/data/bootnode
+        mode: 0700
+  when: first_node
+
+- name: Copy permissioned nodes file
+  copy:
+        src: "{{ role_path }}/files/permissions_config.toml"
+        dest: ~/lacchain/data/permissions_config.toml
+        mode: 0755
   when: first_node
 
 - name: Generate node key
@@ -55,100 +69,106 @@
 
 - name: print enode key
   debug:
-      msg: enode://{{enode_key.stdout}}@{{node_ip.stdout}}:21000
+        msg: enode://{{enode_key.stdout}}@{{node_ip.stdout}}:21000
   when: bootnode
 
-- name: update static nodes file
-  replace:
-      dest: ~/lacchain/tmp/static-nodes.json
-      regexp: '3"$'
-      replace: '3",'
-  when: bootnode
+#- name: update static nodes file
+#  replace:
+#        dest: ~/lacchain/tmp/static-nodes.json
+#        regexp: '3"$'
+#        replace: '3",'
+#  when: bootnode
 
-- name: add new static bootnode validator
-  lineinfile:
-      path: ~/lacchain/tmp/static-nodes.json
-      regexp: "$]$"
-      insertbefore: "^]$"
-      line: '    "enode://{{enode_key.stdout}}@{{node_ip.stdout}}:30303"'
-  when: bootnode
+#- name: add new static bootnode validator
+#  lineinfile:
+#        path: ~/lacchain/tmp/static-nodes.json
+#        regexp: "$]$"
+#        insertbefore: "^]$"
+#        line: '    "enode://{{enode_key.stdout}}@{{node_ip.stdout}}:30303"'
+#  when: bootnode
 
-- name: Fetch static nodes file
-  fetch:
-      src: ~/lacchain/tmp/static-nodes.json
-      dest: "{{ role_path }}/files/"
-      flat: yes
-  when: bootnode
+#- name: Fetch static nodes file
+#  fetch:
+#        src: ~/lacchain/tmp/static-nodes.json
+#        dest: "{{ role_path }}/files/"
+#        flat: yes
+#  when: bootnode
 
 - name: update permissioned nodes validator file
   replace:
-      dest: ~/lacchain/tmp/permissions_config.toml
-      regexp: '0"]$'
-      replace: "0,]"
+        dest: ~/lacchain/tmp/permissions_config.toml
+        regexp: '0"]$'
+        replace: "0,]"
   when: bootnode
 
 - name: add new permissioned nodes validator
   replace:
-      dest: ~/lacchain/tmp/permissions_config.toml
-      regexp: "0,]$"
-      replace: ',"enode://{{enode_key.stdout}}@{{node_ip.stdout}}:21000"]'
+        dest: ~/lacchain/tmp/permissions_config.toml
+        regexp: "0,]$"
+        replace: ',"enode://{{enode_key.stdout}}@{{node_ip.stdout}}:21000"]'
   when: bootnode
 
 - name: Fetch permissioned node validator
   fetch:
-      src: ~/lacchain/tmp/permissions_config.toml
-      dest: "{{ role_path }}/files/"
-      flat: yes
+        src: ~/lacchain/tmp/permissions_config.toml
+        dest: "{{ role_path }}/files/"
+        flat: yes
   when: bootnode
 
 - name: Copy bootnodes variable from validators
   copy:
-      src: "{{ playbook_dir }}/roles/lacchain-validator-node/vars/main.yml"
-      dest: ~/lacchain/tmp/main.yml
-      mode: 0700
+        src: "{{ playbook_dir }}/roles/lacchain-validator-node/vars/main.yml"
+        dest: ~/lacchain/tmp/main.yml
+        mode: 0700
   when: bootnode
 
 - name: update bootnodes connection
   replace:
-      dest: ~/lacchain/tmp/main.yml
-      regexp: '30303"$'
-      replace: "30303,"
+        dest: ~/lacchain/tmp/main.yml
+        regexp: '30303"$'
+        replace: "30303,"
   when: bootnode
 
 - name: add new bootnode to running validator or regular
   replace:
-      dest: ~/lacchain/tmp/main.yml
-      regexp: "30303,$"
-      replace: ',"enode://{{enode_key.stdout}}@{{node_ip.stdout}}:30303"]'
+        dest: ~/lacchain/tmp/main.yml
+        regexp: "30303,$"
+        replace: ',"enode://{{enode_key.stdout}}@{{node_ip.stdout}}:30303"]'
   when: bootnode
 
 - name: Fetch main.yml to repository
   fetch:
-      src: ~/lacchain/tmp/permissions_config.toml
-      dest: "{{ playbook_dir }}/roles/lacchain-validator-node/vars/"
-      flat: yes
+        src: ~/lacchain/tmp/permissions_config.toml
+        dest: "{{ playbook_dir }}/roles/lacchain-validator-node/vars/"
+        flat: yes
   when: bootnode
 
-- name: copy static nodes to bootnode
-  copy:
-      src: "{{ role_path }}/files/static-nodes.json"
-      dest: ~/lacchain/data/static-nodes.json
-      mode: 0755
+#- name: copy static nodes to bootnode
+#  copy:
+#        src: "{{ role_path }}/files/static-nodes.json"
+#        dest: ~/lacchain/data/static-nodes.json
+#        mode: 0755
 
 - name: Generate shell script to execute geth service
   template:
-      src: "startpantheon.j2"
-      dest: "~/lacchain/start-pantheon.sh"
-      mode: 0775
-      force: yes
+        src: "startpantheon.j2"
+        dest: "~/lacchain/start-pantheon.sh"
+        mode: 0775
+        force: yes
 
 - name: Copy service file to systemd
   copy:
-      src: "{{ role_path }}/files/pantheon.service"
-      dest: /lib/systemd/system/pantheon.service
-      mode: 0775
+        src: "{{ role_path }}/files/pantheon.service"
+        dest: /lib/systemd/system/pantheon.service
+        mode: 0775
+
+- name: Copy Log configuration file to lacchain
+  copy:
+        src: "{{ role_path }}/files/log.xml"
+        dest: "~/lacchain/log.xml"
+        mode: 0775
 
 - name: Enable service pantheon
   service:
-      name: pantheon
-      enabled: yes
+        name: pantheon
+        enabled: yes
