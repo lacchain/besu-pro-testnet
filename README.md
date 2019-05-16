@@ -69,7 +69,7 @@ $ sudo apt-get install python2.7
 $ sudo apt-get install python-pip
 ```
 
-## Pantheon + Constellation Installation ##
+## Pantheon + Orion Installation ##
 
 ### Creation of a new Node ###
 
@@ -122,19 +122,7 @@ Working...
 
 ### Configuring the Pantheon node file ###
 
-If the node was created from scratch, then the step _Creating a new node_ modified several files in the local repository, namely:
-
-* If the node was a validator, the following files were modified:
-	* [`roles/lacchain-regular-node/files/permissioned-nodes_general.json`](roles/lacchain-regular-node/files/permissioned-nodes_general.json)
-	* [`roles/lacchain-validator-node/files/permissioned-nodes_validator.json`](roles/lacchain-validator-node/files/permissioned-nodes_validator.json)
-	* [`roles/lacchain-validator-node/files/static-nodes.json`](roles/lacchain-validator-node/files/static-nodes.json)
-* If the node was regular, these files were modified instead:
-	* [`roles/lacchain-regular-node/files/constellation-nodes.json`](roles/lacchain-regular-node/files/constellation-nodes.json)
-	* [`roles/lacchain-validator-node/files/permissioned-nodes_validator.json`](roles/lacchain-validator-node/files/permissioned-nodes_validator.json)
-
-Note that the names of the files refer to the nodes that use them, **not** the nodes that have modified them during their creation.
-
-In addition to these changes, which occur automatically when executing the node creation, there are two other files that must be modified manually, depending on the type of node created, to indicate the contact data of the Administrator of the nodes (name, email, etc): [DIRECTORY_VALIDATOR.md] (DIRECTORY_VALIDATOR.md) or [DIRECTORY_REGULAR.md] (DIRECTORY_REGULAR.md)
+Working...
 
 ### Start up Regular Node ###
 
@@ -147,59 +135,12 @@ Once we have modified these files, you can start up the node with this command i
 
 ### Start up Validator Node ####
 
-On the other hand, if the node is a validator, the rest of the nodes in the network must execute to update permissioned-nodes.json file:
-
-```
-$ ansible-playbook -i inventory -e validator=yes -e regular=no --private-key=~/.ssh/id_rsa -u adrian site-lacchain-update.yml
-```
-
-after the validator nodes add to the new validator node in their *permissioned-nodes.json* file of nodes allowed, execute in **remote machine** the next command:
-
-```
-<remote_machine>$ systemctl start pantheon
-```
-
-Then, the file `~/lacchain/logs/quorum-XXX.log` of the new validator node will have the following error message:
-```
-ERROR[12-19|12:25:05] Failed to decode message from payload    address=0x59d9F63451811C2c3C287BE40a2206d201DC3BfF err="unauthorized address"
-```
-This is because the rest of the validators in the network have not yet accepted the node as a validator. To request such acceptance we must take note of the node's address(0x59d9F63451811C2c3C287BE40a2206d201DC3BfF).
+Working ...
 
 ### Proposing a new validator node ###
 
-* Once the files have been modified, you must do a **pull request** against **this** repository
+Working ...
 
-* If it's validator node and it has an **unauthorized address**, then you must indicate this **address** in the pull request.
-
-* To include this node as a validator node, the administrators of the **other validator nodes** must use the RPC API to vote if they **agree** with your node becoming a validator node.
-
-```
-> istanbul.propose("0x59d9F63451811C2c3C287BE40a2206d201DC3BfF", true);
-```
-or
-```
-$ cd /lacchain/data
-$ geth --exec 'istanbul.propose("0x59d9F63451811C2c3C287BE40a2206d201DC3BfF",true)' attach geth.ipc
-```
-
-Thus, the new node will be raised and synchronized with the network **if and only if** over **60%** of the validator nodes vote in your nodes favor.
-
-> **NEVER MAKE A PROPOSAL WITHOUT FIRST UPDATING THE FILES MENTIONED IN: "Configuring the Pantheon node file"**,after updating the files, you **need** to run the command:
-
-```
-ansible-playbook -i inventory -e validator=yes -e regular=no --private-key=~/.ssh/id_rsa -u adrian site-lacchain-update.yml
-```
-
-> **A VALIDATOR NODE MUST NEVER BE ELIMINATED WITHOUT PROPOSING THE REMOVAL THROUGH A PULL REQUEST SO THAT THE REST OF THE VALIDATING MEMBERS WILL REMOVE THEM FROM THEIR FILES (PERMISSIONED-NODES.JSON, STATIC-NODES.JSON) FIRST AND THEN PROCEEED TO A VOTING ROUND:**
-
-```
-> istanbul.propose("0x59d9F63451811C2c3C287BE40a2206d201DC3BfF", false);
-```
-or
-```
-$ cd /lacchain/data
-$ geth --exec 'istanbul.propose("0x59d9F63451811C2c3C287BE40a2206d201DC3BfF",true)' attach geth.ipc
-```
 ### Node Operation ###
 
  * Faced with errors in the node, we can choose to perform a restart of the node, for this we must execute the following commands:
