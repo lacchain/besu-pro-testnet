@@ -1,16 +1,21 @@
 ---
 # initdb
 leveldburi: "https://src.fedoraproject.org/lookaside/pkgs/leveldb/"
-leveldbtempnumber: "12f11385cb58ae0de66d4bc2cc7f8194"
-leveldb_version: "leveldb-1.9.0.tar.gz"
+leveldbtempnumber: "c59258f2f58ce2d5680e9ab3da4ab0923d91cd4648dcf63cdaa26cdde92bf45e094544539ad11d8e09a4a4813435286143ed0e86c21c6c31a0596903ed4744d2"
+leveldb_version: "leveldb-1.20.tar.gz"
+leveldb_release: "leveldb-1.20"
 
 # vars node
 node_type: "validator"
 net_id: 648529
 time: '{{lookup(''pipe'',''date "+%Y-%m-%d %H:%M:%S"'')}}'
 
+# vars for libsodium
+libsodium_base_url: https://download.libsodium.org/libsodium/releases
+libsodium_version: libsodium-1.0.17-stable.tar.gz
+
 # vars file for java
-java_rel: "java11.02"
+java_rel: "java9.02"
 javahome: "/usr/local/java"
 file_owner: pantheon
 
@@ -24,4 +29,4 @@ oracle_java_state: latest
 
 #init quorum properties
 mode: "auto"
-global_args: --network-id {{net_id}} --permissions-nodes-config-file-enabled --rpc-http-enabled --rpc-ws-enabled --rpc-http-api=ADMIN,ETH,NET,PERM,IBFT --logging=INFO --p2p-host=0.0.0.0 --min-gas-price=0 --bootnodes=enode://8b417b77f371836458da853d7e33241ee0f1e379e28045ac7adaeca2697b64bfa7b4cadcd5c8da6f5b39c1b503f4253a0c7f35643cef08b1aaf301b50995971c@34.73.199.100:30303
+global_args: --network-id {{net_id}} --permissions-nodes-config-file-enabled --rpc-http-enabled --rpc-ws-enabled --rpc-http-api=ADMIN,ETH,NET,PERM,IBFT,EEA --privacy-enabled --privacy-url=http://127.0.0.1:8888 --privacy-public-key-file=/root/lacchain/orion/keystore/nodeKey.pub --p2p-host=0.0.0.0 --min-gas-price=0 --bootnodes=enode://8b417b77f371836458da853d7e33241ee0f1e379e28045ac7adaeca2697b64bfa7b4cadcd5c8da6f5b39c1b503f4253a0c7f35643cef08b1aaf301b50995971c@34.73.199.100:30303

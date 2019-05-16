@@ -8,6 +8,9 @@
     - name: "password"
       prompt: "Enter your wallet password"
       private: yes
+    - name: "node_email"
+      prompt: "Enter your email"
+      private: no
     - name: "node_name"
       prompt: "Enter your node name"
       private: no

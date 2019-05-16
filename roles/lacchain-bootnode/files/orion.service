@@ -1,0 +1,10 @@
+[Unit]
+Description=Orion client
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/root/lacchain/start-orion.sh
+
+[Install]
+WantedBy=default.target

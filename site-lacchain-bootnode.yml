@@ -5,6 +5,9 @@
     - name: "node_ip"
       prompt: "Enter your public IP"
       private: no
+    - name: "password"
+      prompt: "Enter your keystore password"
+      private: yes
     - name: "node_email"
       prompt: "Enter your email"
       private: no
