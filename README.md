@@ -2,7 +2,7 @@
 
 ## NOTES
 
-This work was done by EVERIS and is completely donated to LACCHAIN Consortium.
+This work was done by EVERIS and was completely donated to LACCHAIN Consortium.
 
 ## References
 
@@ -40,7 +40,7 @@ For this installation we will use Ansible. It is necessary to install Ansible on
 
 Following the instructions to [install ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) in your local machine.
 
-```
+```shell
 $ sudo apt-get update
 $ sudo apt-get install software-properties-common
 $ sudo apt-add-repository ppa:ansible/ansible
@@ -52,9 +52,9 @@ $ sudo apt-get install ansible
 
 To configure and install Pantheon and Orion, you must clone this git repository in your **local machine**.
 
-```
-$ git clone https://github.com/lacchain/Lacchain
-$ cd lacchain/
+```shell
+$ git clone https://github.com/lacchain/PantheonNetwork
+$ cd PantheonNetwork/
 ```
 
 ### Install Python ###
@@ -63,7 +63,7 @@ $ cd lacchain/
 
 * If you need to install python-pip in Redhat use [https://access.redhat.com/solutions/1519803](https://access.redhat.com/solutions/1519803)
 
-```
+```shell
 $ sudo apt-get update
 $ sudo apt-get install python2.7
 $ sudo apt-get install python-pip
@@ -77,13 +77,13 @@ $ sudo apt-get install python-pip
 
 * After cloning the repository, enter this.
 
-    ```
-	$ cd lacchain/
-	``` 
+    ```shell
+    $ cd lacchain/
+    ``` 
 
 * First change the IP located within the **inventory file** by the **public IP** of the remote server where you are creating the new node.
 
-	```
+	```shell
 	$ vi inventory
 	[test]
 	192.168.10.72
@@ -91,21 +91,22 @@ $ sudo apt-get install python-pip
 
 * To deploy a **boot node** execute the following command in your **local machine**, without forgetting to set the private key in the option --private-key and the ssh connection user in the -u option:
 
-	```
+	```shell
 	$ ansible-playbook -i inventory -e bootnode=true -e first_node=false --private-key=~/.ssh/id_rsa -u vagrant site-lacchain-bootnode.yml
 	```
 
 * To deploy a **validator node** execute the following command in your **local machine**, without forgetting to set the private key in the option --private-key and the ssh connection user in the -u option:
 
-	```
+	```shell
 	$ ansible-playbook -i inventory -e validator=true -e first_node=false --private-key=~/.ssh/id_rsa -u vagrant site-lacchain-validator.yml
 	```
 
 * To deploy a **regular node** execute the following command in your **local machine**, without forgetting to set the private key in the option --private-key and the ssh connection user in the -u option:
 
-	```
+	```shell
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u vagrant site-lacchain-regular.yml
 	```
+
 * When starting the installation, it will request that some data be entered, such as the public IP, keystore password, email and node name. The name of the node will be the one that will finally appear in the network monitoring tool.
 
 * At the end of the installation, if everything is correct, a PANTHEON service will be created in the case of a **validator node** managed by Systemctl with **stop** status.
@@ -128,7 +129,7 @@ Working...
 
 Once we have modified these files, you can start up the node with this command in **remote machine**:
 
-```
+```shell
 <remote_machine>$ systemctl start orion
 <remote_machine>$ systemctl start pantheon
 ```
@@ -144,14 +145,15 @@ Working ...
 ### Node Operation ###
 
  * Faced with errors in the node, we can choose to perform a restart of the node, for this we must execute the following commands:
-```
+
+```shell
 <remote_machine>$ systemctl restart orion
 <remote_machine>$ systemctl restart pantheon
 ```
 
  * The next statement allows you to back up the node's state. It also makes a backup copy of the keys and the enode of your node. All backup copies are stored in the home directory as `~/lacchain-keysBackup`.
  
-```
+```shell
 $ ansible-playbook -i inventory -e validator=true -e first_node=false --private-key=~/.ssh/id_rsa -u vagrant site-lacchain-backup.yml 
 ```
 
@@ -159,7 +161,7 @@ $ ansible-playbook -i inventory -e validator=true -e first_node=false --private-
 If we want to generate the node using an enode and the keys of an existing node we must make a backup of the keys
 of the old node:
 
-```
+```shell
 $ ansible-playbook -i inventory -e validator=true -e first_node=false --private-key=~/.ssh/id_rsa -u vagrant site-lacchain-backup.yml 
 
 ```
