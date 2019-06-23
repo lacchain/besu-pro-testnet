@@ -1,4 +1,0 @@
----
-# handlers file for lacchain-backup-node
-- name: run ldconfig
-  shell: ldconfig
