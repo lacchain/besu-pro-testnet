@@ -29,4 +29,4 @@ oracle_java_state: latest
 
 #init quorum properties
 mode: "auto"
-global_args: --network-id {{net_id}} --rpc-http-enabled --rpc-ws-enabled --rpc-http-api=ETH,NET,IBFT,EEA,PRIV --privacy-enabled --privacy-url=http://127.0.0.1:8888 --privacy-public-key-file=/root/lacchain/orion/keystore/nodeKey.pub --p2p-host=0.0.0.0 --min-gas-price=0 --bootnodes=enode://8b417b77f371836458da853d7e33241ee0f1e379e28045ac7adaeca2697b64bfa7b4cadcd5c8da6f5b39c1b503f4253a0c7f35643cef08b1aaf301b50995971c@34.73.199.100:30303
+global_args: --network-id {{net_id}} --rpc-http-enabled --rpc-ws-enabled --rpc-http-api=ETH,NET,IBFT,EEA,PRIV --privacy-enabled --privacy-url=http://127.0.0.1:8888 --privacy-public-key-file=/root/lacchain/orion/keystore/nodeKey.pub --p2p-host=0.0.0.0 --min-gas-price=0 --bootnodes=enode://9636ad55b62cd519bcc9c738516e6c51906565c43e1aa14d779f027f78171f245750ce524dbdec0d7945d8b49d6e550f0c9bae91b39f13fbfb668ddfb370ea85@23.251.144.110:30303
