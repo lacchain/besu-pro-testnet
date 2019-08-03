@@ -7,7 +7,7 @@
   git:
         repo: "https://github.com/PegaSysEng/pantheon.git"
         dest: "/tmp/pantheon"
-        version: 139eed22c54068052c5686ea8421fac2a5795789
+        version: a8ea12a8379a7951b2e940bc8a9f1568c805ef4e
 
 - name: Building Pantheon
   shell: "./gradlew build -x test"
@@ -16,13 +16,13 @@
 
 - name: Extract the Pantheon tarball
   unarchive:
-        src: "/tmp/pantheon/build/distributions/pantheon-1.1.0.tar.gz"
+        src: "/tmp/pantheon/build/distributions/pantheon-1.2.0.tar.gz"
         dest: /usr/local
         copy: no
 
 - name: Symbolic link for pantheon
   file:
-        src: "/usr/local/pantheon-1.1.0/bin/{{ item.src }}"
+        src: "/usr/local/pantheon-1.2.0/bin/{{ item.src }}"
         dest: "/usr/local/bin/{{ item.dest }}"
         state: link
   with_items:
