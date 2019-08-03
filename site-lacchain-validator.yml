@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: validators
   gather_facts: yes
   become: yes
   vars_prompt:
