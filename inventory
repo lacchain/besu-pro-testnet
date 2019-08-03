@@ -1,2 +1,10 @@
-[test]
-35.243.157.207
+[bootnodes]
+23.251.144.110  # bootnode1
+35.229.76.38    # bootnode2
+35.247.241.166  # bootnode3
+35.197.76.152   # bootnode4
+
+[regular]
+
+[validators]
+35.194.50.229   # validator1
