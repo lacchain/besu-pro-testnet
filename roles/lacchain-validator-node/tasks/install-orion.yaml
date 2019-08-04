@@ -27,18 +27,18 @@
 #      chdir: /tmp/orion/
 - name: Download Orion Binaries
   get_url:
-      url: "https://bintray.com/consensys/binaries/download_file?file_path=orion-1.0.0.tar.gz"
+      url: "https://bintray.com/consensys/binaries/download_file?file_path=orion-1.3.2.tar.gz"
       dest: "/tmp"
 
 - name: Extract the Orion tarball
   unarchive:
-      src: "/tmp/orion-1.0.0.tar.gz"
+      src: "/tmp/orion-1.3.2.tar.gz"
       dest: /usr/local
       copy: no
 
 - name: Symbolic link for pantheon
   file:
-      src: "/usr/local/orion-1.0.0/bin/{{ item.src }}"
+      src: "/usr/local/orion-1.3.2/bin/{{ item.src }}"
       dest: "/usr/local/bin/{{ item.dest }}"
       state: link
   with_items:
