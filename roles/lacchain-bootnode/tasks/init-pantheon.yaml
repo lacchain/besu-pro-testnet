@@ -84,7 +84,7 @@
 #        path: ~/lacchain/tmp/static-nodes.json
 #        regexp: "$]$"
 #        insertbefore: "^]$"
-#        line: '    "enode://{{enode_key.stdout}}@{{node_ip.stdout}}:30303"'
+#        line: '    "enode://{{enode_key.stdout}}@{{node_ip.stdout}}:60606"'
 #  when: bootnode
 
 #- name: Fetch static nodes file
@@ -125,15 +125,15 @@
 - name: update bootnodes connection
   replace:
         dest: ~/lacchain/tmp/main.yml
-        regexp: '30303"$'
-        replace: "30303,"
+        regexp: '60606"$'
+        replace: "60606,"
   when: bootnode
 
 - name: add new bootnode to running validator or regular
   replace:
         dest: ~/lacchain/tmp/main.yml
-        regexp: "30303,$"
-        replace: ',"enode://{{enode_key.stdout}}@{{node_ip.stdout}}:30303"]'
+        regexp: "60606,$"
+        replace: ',"enode://{{enode_key.stdout}}@{{node_ip.stdout}}:60606"]'
   when: bootnode
 
 - name: Fetch main.yml to repository

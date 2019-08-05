@@ -54,20 +54,20 @@
 
 - name: print enode key
   debug:
-    msg: enode://{{enode_key.stdout}}@{{node_ip.stdout}}:30303
+    msg: enode://{{enode_key.stdout}}@{{node_ip.stdout}}:60606
 
 - name: update permissioned nodes validator file
   replace:
     dest: ~/lacchain/tmp/permissions_config.toml
-    regexp: ':30303"]$'
-    replace: ':30303",]'
+    regexp: ':60606"]$'
+    replace: ':60606",]'
   when: validator
 
 - name: add new permissioned nodes validator
   replace:
     dest: ~/lacchain/tmp/permissions_config.toml
     regexp: ",]$"
-    replace: ',"enode://{{enode_key.stdout}}@{{node_ip.stdout}}:30303"]'
+    replace: ',"enode://{{enode_key.stdout}}@{{node_ip.stdout}}:60606"]'
   when: validator
 
 - name: Fetch permissioned node validator
