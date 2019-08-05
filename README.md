@@ -69,6 +69,32 @@ $ sudo apt-get install python2.7
 $ sudo apt-get install python-pip
 ```
 
+### Install Oracle-Java-11 ###
+
+* It is a requisite to install Java-11. Since java cannot be downloaded directly you can follow the next steps in order to install it:
+	1.  Download the java tar.gz file from https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html; it will require you to create an account before downloading the package.
+	2.  It is necessary that you had set a public key, also a user on your remote server machine, so that you can interact with that by using your ECDSA private key.
+	3.  Once downloaded the file, send the Oracle  java11 package by using SCP linux command:
+		```shell
+		$ scp -i ~/.ssh/id_ecdsa /your/local/path/to/downloaded/jdk-11.0.4_linux-x64_bin.tar.gz yourRemoteUser:~
+		```
+	4.  log into your remote machine by using something like this:
+		```shell
+		$ ssh yourRemoteUser@your_remote_server_ip
+		```
+	5.  Once into the remote machine run an update:
+		```shell
+		$ sudo apt update
+		```
+	6.  Create the following folder on the remote machine:
+		```shell
+		$ sudo mkdir -p /var/cache/oracle-jdk11-installer-local
+		```
+	7.  move the transfered package to the previous created folder:
+		```shell
+		$ sudo cp jdk-11.0.4_linux-x64_bin.tar.gz /var/cache/oracle-jdk11-installer-local/
+		```
+
 ## Pantheon + Orion Installation ##
 
 ### Creation of a new Node ###
