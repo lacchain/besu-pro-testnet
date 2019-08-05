@@ -26,11 +26,11 @@ Characteristics of the machine for the nodes of the testnet:
 
 It is necessary to enable the following network ports in the machine in which we are going to deploy the node:
 
-* **8080**: TCP - Port for communication for Orion.
+* **4040**: TCP - Port for communication for Orion.
 
-* **30303**: TCP/UDP - Port to establish communication p2p between nodes.
+* **60606**: TCP/UDP - Port to establish communication p2p between nodes.
 
-* **8545**: TCP - Port to establish RPC communication. (this port is used for applications that communicate with Lacchain and may be leaked to the Internet)
+* **4545**: TCP - Port to establish RPC communication. (this port is used for applications that communicate with Lacchain and may be leaked to the Internet)
 
 ## Prerequisites
 
@@ -53,8 +53,8 @@ $ sudo apt-get install ansible
 To configure and install Pantheon and Orion, you must clone this git repository in your **local machine**.
 
 ```shell
-$ git clone https://github.com/lacchain/PantheonNetwork
-$ cd PantheonNetwork/
+$ git clone https://github.com/lacchain/pantheon-network
+$ cd pantheon-network/
 ```
 
 ### Install Python ###
