@@ -1,3 +1,3 @@
 ---
 - name: start docker ethstats client
-  shell: docker run -d --rm --net host alethio/ethstats-cli --register --account-email {{node_email}} --node-name {{node_name}} --server-url http://34.74.53.149:3000 --client-url ws://127.0.0.1:8546
+  shell: docker run -d --rm --net host alethio/ethstats-cli --register --account-email {{node_email}} --node-name {{node_name}} --server-url http://34.74.53.149:3000 --client-url ws://127.0.0.1:4546
