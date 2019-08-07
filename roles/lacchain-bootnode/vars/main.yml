@@ -27,6 +27,4 @@ oracle_java_home: "/usr/lib/jvm/java-11-oracle"
 oracle_java_license_version: "shared/accepted-oracle-license-v1-2"
 oracle_java_state: latest
 
-#init quorum properties
 mode: "auto"
-global_args: --network-id {{net_id}} --privacy-enabled --privacy-url=http://127.0.0.1:4444 --privacy-public-key-file=/root/lacchain/orion/keystore/nodeKey.pub --p2p-host=0.0.0.0 --p2p-port=60606 --min-gas-price=0 --bootnodes

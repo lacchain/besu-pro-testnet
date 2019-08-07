@@ -1,0 +1,11 @@
+# Orion
+privacy-enabled=true
+privacy-url="http://127.0.0.1:4444"
+privacy-public-key-file="/root/lacchain/orion/keystore/nodeKey.pub"
+
+# Networking
+p2p-host=0.0.0.0
+p2p-port=60606
+
+# Gas
+min-gas-price=0

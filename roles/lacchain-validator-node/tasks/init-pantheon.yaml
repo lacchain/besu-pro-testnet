@@ -103,6 +103,12 @@
     mode: 0775
     force: yes
 
+- name: Generate Pantheon configuration file
+  copy:
+    src: "{{ role_path }}/files/pantheon-config.toml"
+    dest: "~/lacchain/config.toml"
+    mode: 0775
+
 - name: Copy service file to systemd
   copy:
     src: "{{ role_path }}/files/pantheon.service"
