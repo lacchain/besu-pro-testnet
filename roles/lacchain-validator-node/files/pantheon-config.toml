@@ -3,7 +3,7 @@ rpc-http-enabled=true
 rpc-http-port=4545
 rpc-ws-enabled=true
 rpc-ws-port=4546
-rpc-http-api="ETH,NET,IBFT,EEA,PRIV"
+rpc-http-api=["ETH","NET","IBFT","EEA","PRIV"]
 
 # Orion
 privacy-enabled=true
