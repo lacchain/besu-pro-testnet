@@ -1,19 +1,30 @@
 [bootnodes]
-#23.251.144.110 node_ip=23.251.144.110  node_name=bootnode1
-35.229.76.38    node_ip=35.229.76.38    node_name=bootnode2
-35.247.241.166  node_ip=35.247.241.166  node_name=bootnode3
-35.197.76.152   node_ip=35.197.76.152   node_name=bootnode4
+# 23.251.144.110  node_ip=23.251.144.110  node_name=bootnode1
+# 35.229.76.38    node_ip=35.229.76.38    node_name=bootnode2
+# 35.247.241.166  node_ip=35.247.241.166  node_name=bootnode3
+# 35.197.76.152   node_ip=35.197.76.152   node_name=bootnode4
 
 [regular]
-# 34.67.31.124  node_ip=34.67.31.124  node_name=sat-everis-pe
-# 35.198.58.193 node_ip=35.198.58.193 node_name=sat-everis-ar
+# 35.198.58.193       node_ip=35.198.58.193 node_name=sat-everis-ar
+## Add your node by changing the line below
+# <your node address> node_ip=<node public IP> password=<orion password> node_name=<node name> node_email=<your@email>
 
 [validators]
-35.194.50.229 node_ip=35.194.50.229 node_name=validator1
+# 35.194.50.229   node_ip=35.194.50.229   node_name=validator1
+# 35.222.76.196   node_ip=35.222.76.196   node_name=validator2
+# 35.199.81.31    node_ip=35.199.81.31    node_name=validator3
+# 35.230.184.146  node_ip=35.230.184.146  node_name=validator4
+# 35.230.37.255   node_ip=35.230.37.255   node_name=validator5
+# 35.236.23.216   node_ip=35.236.23.216   node_name=validator6
+# 35.198.6.207    node_ip=35.198.6.207    node_name=validator7
+
+######
+## You don't need to touch anything below this point
+######
 
 [all:vars]
-password=OrionSecret
-node_email=youremail@example.com
+password=default_password
+node_email=default@email
 bootnode=false
 validator=false
 first_node=false
