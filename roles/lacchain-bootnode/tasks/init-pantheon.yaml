@@ -157,8 +157,8 @@
         force: yes
 
 - name: Generate Pantheon configuration file
-  copy:
-    src: "{{ role_path }}/files/pantheon-config.toml"
+  template:
+    src: "pantheon-config.j2"
     dest: "~/lacchain/config.toml"
     mode: 0775
 
