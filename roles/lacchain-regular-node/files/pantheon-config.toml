@@ -1,11 +1,12 @@
 # RPC
 rpc-http-enabled=true
-rpc-http-host=["0.0.0.0"]
 rpc-http-port=4545
-host-whitelist=["*"]
 rpc-ws-enabled=true
 rpc-ws-port=4546
 rpc-http-api=["ETH","NET","IBFT","EEA","PRIV"]
+## Uncomment the following lines to allow RPC from remote locations (risky)
+# host-whitelist=["*"]
+# rpc-http-host=["0.0.0.0"]
 
 # Orion
 privacy-enabled=true
