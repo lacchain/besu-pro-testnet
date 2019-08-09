@@ -105,10 +105,10 @@ $ sudo apt-get install python-pip
 
     ```shell
     $ cd lacchain/
-  	$ vi inventory
-	  [regular] # or [validators] or [bootnodes] depending on its role
-	  192.168.10.72 node_ip=xxx.xxx.xxx.xxx password=abc node_name=my_node_name node_email=your@email
-	  ```
+    $ vi inventory
+    [regular] # or [validators] or [bootnodes] depending on its role
+    192.168.10.72 node_ip=xxx.xxx.xxx.xxx password=abc node_name=my_node_name node_email=your@email
+    ```
 
 Consider the following points:
 - Place the new line in the section corresponding to your node's role: `[regular]`, `[validators]` or `[bootnodes]`
