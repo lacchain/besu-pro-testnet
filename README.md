@@ -2,7 +2,7 @@
 
 ## NOTES
 
-This work was done by EVERIS and was completely donated to LACCHAIN Consortium.
+This work was done by [everis](https://www.everis.com/) and was completely donated to LACCHAIN Consortium.
 
 ## References
 
@@ -57,6 +57,10 @@ $ git clone https://github.com/lacchain/pantheon-network
 $ cd pantheon-network/
 ```
 
+### Obtain SSH access to your remote machine ###
+
+Make sure you have SSH access to the node you're setting up. This step will vary depending on your context (physical machine, cloud provider, etc.). This document assumes that you are able to log into your remote machine using the following command: `ssh remote_user@remote_host`.
+
 ### Install Python ###
 
 * In order for ansible to work, it is necessary to install Python on the **remote machine** where the node will be installed, for this reason it is necessary to install python 2.7 and python-pip.
@@ -69,112 +73,109 @@ $ sudo apt-get install python2.7
 $ sudo apt-get install python-pip
 ```
 
-### Install Oracle-Java-11 ###
+### Prepare installation of Oracle Java 11 ###
 
-* It is a requisite to install Java-11. Since java cannot be downloaded directly you can follow the next steps in order to install it:
-	1.  Download the java tar.gz file from https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html; it will require you to create an account before downloading the package.
-	2.  It is necessary that you had set a public key, also a user on your remote server machine, so that you can interact with that by using your ECDSA private key.
-	3.  Once downloaded the file, send the Oracle  java11 package by using SCP linux command:
+* It is a requisite for Pantheon to install Java 11. Since Java cannot be downloaded directly, you must follow the next steps to install it:
+	1.  Download the java tar.gz file from https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html; Oracle will request that you create an account before downloading the package.
+	2.  Once the file is downloaded, send the Oracle java11 package to your remote machine by using SCP Linux command:
 		```shell
-		$ scp -i ~/.ssh/id_ecdsa /your/local/path/to/downloaded/jdk-11.0.4_linux-x64_bin.tar.gz yourRemoteUser:~
+		$ scp /your/local/path/to/downloaded/jdk-11.0.4_linux-x64_bin.tar.gz remote_user@remote_host:
 		```
-	4.  log into your remote machine by using something like this:
+	3.  Log into your remote machine by using something like this:
 		```shell
-		$ ssh yourRemoteUser@your_remote_server_ip
+		$ ssh remote_user@remote_host
 		```
-	5.  Once into the remote machine run an update:
-		```shell
-		$ sudo apt update
-		```
-	6.  Create the following folder on the remote machine:
+	4.  On the remote machine, create the JDK folder and move the JDK to it:
 		```shell
 		$ sudo mkdir -p /var/cache/oracle-jdk11-installer-local
-		```
-	7.  move the transfered package to the previous created folder:
-		```shell
 		$ sudo cp jdk-11.0.4_linux-x64_bin.tar.gz /var/cache/oracle-jdk11-installer-local/
+		```
+	5.  Before leaving, it's a good idea to run an APT update:
+		```shell
+		$ sudo apt update
 		```
 
 ## Pantheon + Orion Installation ##
 
-### Creation of a new Node ###
+### Preparing installation of a new node ###
 
 * There are three types of nodes (Bootnode/ Validator / Regular) that can be created in the Pantheon network.
 
-* After cloning the repository, enter this.
+* After cloning the repository, enter it and add a line in the **inventory file** for the remote server where you are creating the new node. You can do it with a graphical tool or inside the shell:
 
     ```shell
     $ cd lacchain/
-    ``` 
+  	$ vi inventory
+	  [regular] # or [validators] or [bootnodes] depending on its role
+	  192.168.10.72 node_ip=xxx.xxx.xxx.xxx password=abc node_name=my_node_name node_email=your@email
+	  ```
 
-* First change the IP located within the **inventory file** by the **public IP** of the remote server where you are creating the new node.
+Consider the following points:
+- Place the new line in the section corresponding to your node's role: `[regular]`, `[validators]` or `[bootnodes]`
+- The first element on the new line is the IP or hostname where you can reach your remote machine from your local machine
+- The value of `node_ip` is the **public IP address** of your node. Don't use a symbolic (i.e. DNS) name, only an IP address.
+- The value of `password` is the password that will be used to set up Orion, for private transactions
+- The value of `node_name` is the name you want for your node in the network monitoring tool.
+- The value of `node_email` is the email address you want to register for your node in the network monitoring tool.
 
-	```shell
-	$ vi inventory
-	[test]
-	192.168.10.72
-	```
+### Deploying the new node ###
 
-* To deploy a **boot node** execute the following command in your **local machine**, without forgetting to set the private key in the option --private-key and the ssh connection user in the -u option:
-
-	```shell
-	$ ansible-playbook -i inventory -e first_node=false --private-key=~/.ssh/id_rsa -u vagrant site-lacchain-bootnode.yml
-	```
-
-* To deploy a **validator node** execute the following command in your **local machine**, without forgetting to set the private key in the option --private-key and the ssh connection user in the -u option:
-
-	```shell
-	$ ansible-playbook -i inventory -e first_node=false --private-key=~/.ssh/id_rsa -u vagrant site-lacchain-validator.yml
-	```
-
-* To deploy a **regular node** execute the following command in your **local machine**, without forgetting to set the private key in the option --private-key and the ssh connection user in the -u option:
+* To deploy a **boot node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
 
 	```shell
-	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u vagrant site-lacchain-regular.yml
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-bootnode.yml
 	```
 
-* When starting the installation, it will request that some data be entered, such as the public IP, keystore password, email and node name. The name of the node will be the one that will finally appear in the network monitoring tool.
+* To deploy a **validator node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
 
-* At the end of the installation, if everything is correct, a PANTHEON service will be created in the case of a **validator node** managed by Systemctl with **stop** status.
+	```shell
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-validator.yml
+	```
 
-* In the case of a **regular node** if everything is correct, a ORION service and a PANTHEON service managed by Systemctl will be created with **stop** status.
+* To deploy a **regular node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
 
-* Now, it is necessary to configure some files before starting up the node. Please, follow the next steps:
+	```shell
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-regular.yml
+	```
 
-## Docker ##
+* At the end of the installation, if everything is correct, a PANTHEON service will be created in the case of a **validator node** managed by Systemctl with **stopped** status.
 
-Working...
+Don't forget to write down your node's "enode" from the log by locating the line that looks like this:
+```
+TASK [lacchain-validator-node : print enode key] ***********************************************
+ok: [x.x.x.x] => {
+    "msg": "enode://cb24877f329e0e3fff6c7d7b88d601b698a9df6efbe1d91ce77130f065342b523418b38cb3c92ea3bcca15344e68c7d85a696eb9f8c0152c51b9b7b74729064e@a.b.c.d:60606"
+}
+```
+
+* If everything is correct, a ORION service and a PANTHEON service managed by Systemctl will be created with **stopped** status.
 
 ## Node Configuration
 
 ### Configuring the Pantheon node file ###
 
-Working...
+The default configuration should work for everyone. However, depending on your needs and technical knowledge you can modify your local node's settings in `/root/lacchain/config.toml`, e.g. for RPC access or authentication. Please refer to the [reference documentation](https://docs.pantheon.pegasys.tech/en/1.2.0/Configuring-Pantheon/Using-Configuration-File/).
 
-### Start up Regular Node ###
+### Start up your node ###
 
-Once we have modified these files, you can start up the node with this command in **remote machine**:
+Once your node is ready, you can start it up with this command in **remote machine**:
 
 ```shell
-<remote_machine>$ systemctl start orion
-<remote_machine>$ systemctl start pantheon
+<remote_machine>$ service orion start
+<remote_machine>$ service pantheon start
 ```
 
-### Start up Validator Node ####
+### Contact LACChain organization to authorize your node on the network ###
 
-Working ...
-
-### Proposing a new validator node ###
-
-Working ...
+LACChain is a private network. To have your node authorized on the network, please get in touch with LACChain organization and include your node's "enode". This documentation will be updated later to detail how to reach us.
 
 ### Node Operation ###
 
- * Faced with errors in the node, we can choose to perform a restart of the node, for this we must execute the following commands:
+ * If you need to restart the services, you can execute the following commands:
 
 ```shell
-<remote_machine>$ systemctl restart orion
-<remote_machine>$ systemctl restart pantheon
+<remote_machine>$ service orion restart
+<remote_machine>$ service pantheon restart
 ```
 
  * The next statement allows you to back up the node's state. It also makes a backup copy of the keys and the enode of your node. All backup copies are stored in the home directory as `~/lacchain-keysBackup`.
