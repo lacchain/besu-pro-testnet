@@ -178,25 +178,6 @@ LACChain is a private network. To have your node authorized on the network, plea
 <remote_machine>$ service pantheon restart
 ```
 
- * The next statement allows you to back up the node's state. It also makes a backup copy of the keys and the enode of your node. All backup copies are stored in the home directory as `~/lacchain-keysBackup`.
- 
-```shell
-$ ansible-playbook -i inventory -e validator=true -e first_node=false --private-key=~/.ssh/id_rsa -u vagrant site-lacchain-backup.yml 
-```
-
-**NOTE**
-If we want to generate the node using an enode and the keys of an existing node we must make a backup of the keys
-of the old node:
-
-```shell
-$ ansible-playbook -i inventory -e validator=true -e first_node=false --private-key=~/.ssh/id_rsa -u vagrant site-lacchain-backup.yml 
-
-```
-
-This will generate the folder ~/lacchain-keysBackup whose contents should be moved to ~/lacchain/data/keys.
-The keys of this directory (which has to keep the folder structure of the generated backup) will be the ones used
-in the image of the node that we are going to generate.
-
 
 &nbsp;
 &nbsp;
