@@ -1,9 +1,16 @@
 # RPC
 rpc-http-enabled=true
-rpc-http-port=4545
+graphql-http-enabled=true
 rpc-ws-enabled=true
+rpc-http-port=4545
+graphql-http-port=4547
 rpc-ws-port=4546
 rpc-http-api=["ETH","NET","IBFT","EEA","PRIV"]
+## Uncomment the following lines to allow RPC from remote locations (risky)
+# host-whitelist=["*"]
+# rpc-http-host="0.0.0.0"
+# graphql-http-host="0.0.0.0"
+
 
 # Orion
 privacy-enabled=true
