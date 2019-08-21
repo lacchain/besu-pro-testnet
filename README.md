@@ -41,7 +41,7 @@ Satellite nodes do not play a direct role in the correct functioning of the netw
 
 ## References ###
 
-* This Pantheon network uses [IBFT2.0](https://docs.pantheon.pegasys.tech/en/latest/Consensus-Protocols/IBFT/) consensus with validator and regular nodes located around Latin America and the Caribbean. 
+* This Pantheon network uses [IBFT2.0](https://docs.pantheon.pegasys.tech/en/latest/Consensus-Protocols/IBFT/) consensus with core and satellite nodes located around Latin America and the Caribbean. 
 
 * In this installation we will use **Ubuntu 18.04** as the operating system and all the commands related to this operating system. In addition, links of the prerequisites will be placed in case it is required to install in another operating system.
 
@@ -134,31 +134,31 @@ $ sudo apt-get install python-pip
 
 ### Preparing installation of a new node ###
 
-* There are three types of nodes (Bootnode/ Validator / Regular) that can be created in the Pantheon network.
+* As described in the first section, there are four types of nodes that can be created in the Pantheon network. At present, only three out of the four types are available: Validator, Gear and Writer.
 
 * After cloning the repository, enter it and add a line in the **inventory file** for the remote server where you are creating the new node. You can do it with a graphical tool or inside the shell:
 
     ```shell
     $ cd lacchain/
     $ vi inventory
-    [regular] # or [validators] or [bootnodes] depending on its role
+    [validator] # or [gear] or [writer] depending on its role
     192.168.10.72 node_ip=xxx.xxx.xxx.xxx password=abc node_name=my_node_name node_email=your@email
     ```
 
 Consider the following points:
-- Place the new line in the section corresponding to your node's role: `[regular]`, `[validators]` or `[bootnodes]`
+- Place the new line in the section corresponding to your node's role: `[validator]`, `[gear]` or `[writer]`
 - The first element on the new line is the IP or hostname where you can reach your remote machine from your local machine
 - The value of `node_ip` is the **public IP address** of your node. Don't use a symbolic (i.e. DNS) name, only an IP address.
 - The value of `password` is the password that will be used to set up Orion, for private transactions
 - The value of `node_name` is the name you want for your node in the network monitoring tool.
 - The value of `node_email` is the email address you want to register for your node in the network monitoring tool.
 
-### Deploying the new node ###
+### Deploying a new node ###
 
-* To deploy a **boot node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
+* To deploy a **gear node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
 
 	```shell
-	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-bootnode.yml
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-gear.yml
 	```
 
 * To deploy a **validator node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
@@ -167,10 +167,10 @@ Consider the following points:
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-validator.yml
 	```
 
-* To deploy a **regular node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
+* To deploy a **writer node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
 
 	```shell
-	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-regular.yml
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-writer.yml
 	```
 
 * At the end of the installation, if everything is correct, a PANTHEON service will be created in the case of a **validator node** managed by Systemctl with **stopped** status.
@@ -220,7 +220,7 @@ The public-permissioned LACChain network offered by LACChain is currently at a t
 
 Any natural or legal person that uses or operates The Network becomes a User. The User agrees to these terms and acknowledges that The Network is at an early stage of development. The User acknowledges and accepts that the use of The Network is entirely at the User’s sole risk and discretion.
 
-To use The Network, The User must be authenticated, guaranteeing that every regular/access node operating The Network is associated to a physical or legal person. Every regular node must indicate the contact information of the natural person that is responsible and accountable for the operation of the regular node, including name and e-mail.
+To use The Network, The User must be authenticated, guaranteeing that every writer node operating The Network is associated to a physical or legal person. Every writer node must indicate the contact information of the natural person that is responsible and accountable for the operation of the writer node, including name and e-mail.
 
 The User acknowledges and agrees that has an adequate understanding of the blockchain technology and the programming languages. The User also understands the risks associated with the use of The Network, which could present interruptions or malfunctions as it is at a est-net stage.
 
@@ -232,13 +232,13 @@ The User acknowledges and agrees that all the Parties Involved are not responsib
 
 To the fullest extent permitted by law, in no event shall The Parties Involved have any liability whatsoever to any person for any direct or indirect loss, liability, cost, claim, expense or damage of any kind, whether in contract or in tort, including negligence, or otherwise, arising out of or related to the use of all or part of The Network.
 
-The User understands and accepts that none of the physical and/or legal persons operating a core (validator or boot) node in The Network and, therefore, being part of the consensus protocol, is legally committed to maintain those nodes. When a percentage of these nodes are suddenly turned off, the network may cause iinterruptions of service. The User operating a regular/access node and any third party using the network through The User´s regular/access nodes understands that LACChain will not be either responsible nor accountable for any malfunction or damage caused by the disconnections of the core nodes.
+The User understands and accepts that none of the physical and/or legal persons operating a core (validator or boot) node in The Network and, therefore, being part of the consensus protocol, is legally committed to maintain those nodes. When a percentage of these nodes are suddenly turned off, the network may cause iinterruptions of service. The User operating a writer node and any third party using the network through The User´s writer nodes understands that LACChain will not be either responsible nor accountable for any malfunction or damage caused by the disconnections of the core nodes.
 
 The User will not run any application or solution in The Network when The Network is a necessary component for the either application or the solution.
 
 The User will not run any application or solution nor register any information or data in The Network that incurs illegal activities or practices that can be considered against the Law.
 
-The User must preserve the data privacy of all the physical and legal persons whose information is directly or indirectly registered in The Network through The User´s regular node.
+The User must preserve the data privacy of all the physical and legal persons whose information is directly or indirectly registered in The Network through The User´s writer node.
 
 The User is not allowed to promote the use of The Network for commercial or institutional purposes without including the following disclaimer:
 
