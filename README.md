@@ -101,7 +101,7 @@ $ sudo apt-get install python-pip
 
 * There are three types of nodes (Bootnode/ Validator / Regular) that can be created in the Pantheon network.
 
-* After cloning the repository, enter it and create a copy of the `inventory.example` file as `inventory`. Edit that file to add a line for the remote server where you are creating the new node. You can do it with a graphical tool or inside the shell:
+* After cloning the repository on the **local machine**, enter it and create a copy of the `inventory.example` file as `inventory`. Edit that file to add a line for the remote server where you are creating the new node. You can do it with a graphical tool or inside the shell:
 
     ```shell
     $ cd lacchain/
