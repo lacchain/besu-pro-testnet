@@ -181,14 +181,32 @@ LACChain is a private network. To have your node authorized on the network, plea
 ### Updates ###
   * You can update **pantheon**, by preparing your inventory with:
 ```shell
-$ 34.66.119.152 pantheon_release_commit='9b14345b8bf62d1d00d2604993bc05c105e11fdf' pantheon_current_release_number='1.2.2'
+[node]
+34.66.119.152 pantheon_release_commit='9b14345b8bf62d1d00d2604993bc05c105e11fdf' pantheon_current_release_number='1.2.2'
 ```
+Replace the ip address with your node ip address.
 You can find the version and release number from: https://github.com/PegaSysEng/pantheon/releases
 
 After that you can run a the following command (instead of remote_user use your current custom user):
 
 ```shell
 $ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-pantheon.yml
+```
+
+
+  * You can update **orion** nodes, by preparing your inventory with:
+```shell
+[orion-node]
+34.66.119.152 orion_current_release_number='1.2.0'
+```
+
+Replace the ip address with your node ip address.
+update the orion version obtained from: https://github.com/PegaSysEng/orion/releases
+
+After that you can run a the following command (instead of remote_user use your current custom user):
+
+```shell
+$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u eum602 site-lacchain-update-orion.yml 
 ```
 
 

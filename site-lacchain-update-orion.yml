@@ -1,0 +1,5 @@
+- hosts: orion-node
+  gather_facts: yes
+  become: yes
+  roles:
+    - lacchain-update-orion
