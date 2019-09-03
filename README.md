@@ -197,7 +197,7 @@ $ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user sit
   * You can update **orion** nodes, by preparing your inventory with:
 ```shell
 [orion-node]
-34.66.119.152 orion_current_release_number='1.2.0'
+34.66.119.152 orion_current_release_number='1.3.2'
 ```
 
 Replace the ip address with your node ip address.
