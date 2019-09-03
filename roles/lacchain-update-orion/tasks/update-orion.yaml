@@ -1,0 +1,32 @@
+---
+- name: Update orion
+  debug:
+      msg: "Updating Orion"
+
+- name: Download Orion Binaries
+  get_url:
+      url: "https://bintray.com/consensys/binaries/download_file?file_path=orion-{{ orion_current_release_number }}.tar.gz"
+      dest: "/tmp"
+
+- name: Extract the Orion tarball
+  unarchive:
+      src: "/tmp/orion-{{ orion_current_release_number }}.tar.gz"
+      dest: /usr/local
+      copy: no
+
+- name: Deleting old installed version of orion
+  file:
+       path: /usr/local/bin/{{ item.dest }}
+       state: absent
+  with_items:
+        - { src: "orion", dest: "orion" }
+        - { src: "orion.bat", dest: "orion.bat" }         
+
+- name: Symbolic link for pantheon
+  file:
+      src: "/usr/local/orion-{{ orion_current_release_number }}/bin/{{ item.src }}"
+      dest: "/usr/local/bin/{{ item.dest }}"
+      state: link
+  with_items:
+      - { src: "orion", dest: "orion" }
+      - { src: "orion.bat", dest: "orion.bat" }
