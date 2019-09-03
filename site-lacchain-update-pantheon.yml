@@ -1,0 +1,5 @@
+- hosts: node
+  gather_facts: yes
+  become: yes
+  roles:
+    - lacchain-update-pantheon

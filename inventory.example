@@ -18,6 +18,11 @@
 # 35.236.23.216   node_ip=35.236.23.216   node_name=validator6
 # 35.198.6.207    node_ip=35.198.6.207    node_name=validator7
 
+#for updates:
+[node]
+34.66.119.158 pantheon_release_commit="9b14345b8bf62d1d00d2604993bc05c105e11fdf" pantheon_current_release_number="1.2.2"
+#update this with the current commit sha and version obtained from: https://github.com/PegaSysEng/pantheon/releases
+
 ######
 ## You don't need to touch anything below this point
 ######
