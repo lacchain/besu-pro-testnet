@@ -178,6 +178,19 @@ LACChain is a private network. To have your node authorized on the network, plea
 <remote_machine>$ service pantheon restart
 ```
 
+### Updates ###
+  * You can update **pantheon**, by preparing your inventory with:
+```shell
+$ 34.66.119.152 pantheon_release_commit='9b14345b8bf62d1d00d2604993bc05c105e11fdf' pantheon_current_release_number='1.2.2'
+```
+You can find the version and release number from: https://github.com/PegaSysEng/pantheon/releases
+
+After that you can run a the following command (instead of remote_user use your current custom user):
+
+```shell
+$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-pantheon.yml
+```
+
 
 &nbsp;
 &nbsp;

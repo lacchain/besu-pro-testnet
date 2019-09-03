@@ -1,0 +1,9 @@
+---
+- name: Init pantheon
+  debug:
+    msg: "Init Pantheon"
+
+- name: Enable service pantheon
+  service:
+    name: pantheon
+    enabled: yes
