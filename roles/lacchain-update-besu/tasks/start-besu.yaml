@@ -1,7 +1,7 @@
 ---
-- name: Start Pantheon Node
+- name: Start Besu Node
   debug:
-      msg: Starting Pantheon Node
+      msg: Starting Besu Node
 
 - name: Execute Pantheon service
   service:

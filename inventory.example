@@ -19,10 +19,11 @@
 # 35.198.6.207   node_name=validator7
 
 #***for updates:***
-#pantheon updates:
-[node]
-<your node address> pantheon_release_commit='9b14345b8bf62d1d00d2604993bc05c105e11fdf' pantheon_current_release_number='1.2.2'
-#update this with the current commit sha and version obtained from: https://github.com/PegaSysEng/pantheon/releases
+#besu updates:
+[besu_node]
+#<your node address> besu_release_commit=sha_commit
+#eg. 35.193.123.227 besu_release_commit='94314d2c5654a238f2bf3129ca63fbe22de3d135'
+#update this with the current commit sha and version obtained from: https://github.com/hyperledger/besu/releases
 
 #Enclaves (orion) updates
 [orion-node]
