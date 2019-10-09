@@ -2,4 +2,4 @@
   gather_facts: yes
   become: yes
   roles:
-    - lacchain-update-pantheon
+    - lacchain-update-besu

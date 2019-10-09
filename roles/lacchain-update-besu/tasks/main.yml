@@ -1,0 +1,13 @@
+---
+- name: stop besu #stopping node before starting the update process
+  import_tasks: "stop-besu.yaml"
+  when: first_node
+
+- name: update besu
+  import_tasks: "update-besu.yaml"
+
+- name: init besu
+  import_tasks: "init-besu.yaml"
+
+- name: start node
+  import_tasks: "start-besu.yaml"
