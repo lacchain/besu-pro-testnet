@@ -1,4 +1,7 @@
 ---
+- name: Acceptance Verification
+  import_tasks: "agreements-acceptance.yml"
+  
 - name: install dependencies for  {{ ansible_distribution }}
   import_tasks: "ubuntu-dependencies.yml"
   when: ansible_distribution |lower == 'ubuntu'

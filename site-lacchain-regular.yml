@@ -1,5 +1,16 @@
-- hosts: regular
+- hosts: all
   gather_facts: yes
-  become: yes
+  become: yes  
+  vars_prompt:
+    - name: "Please read the terms and conditions before installing this software: https://github.com/lacchain/pantheon-network.  Press ENTER  "
+
+    - name: "haveRead"
+      prompt: "Have you read the Terms and Conditions of use of LACChain Test Network? [Y/N]"
+      private: no
+
+    - name: "isAgree"
+      prompt: "Do you agree with the Terms and Conditions of use of LACChain Test Network? [Y/N]"
+      private: no
+      
   roles:
     - lacchain-regular-node
