@@ -3,7 +3,7 @@
   import_tasks: "stop-orion.yaml"
 
 - name: stop pantheon #stopping node before starting the update process
-  import_tasks: "stop-pantheon.yaml" 
+  import_tasks: "stop-besu.yaml" 
 
 - name: update orion
   import_tasks: "update-orion.yaml"
@@ -14,5 +14,8 @@
 - name: start orion
   import_tasks: "start-orion.yaml"
 
-- name: start pantheon
-  import_tasks: "start-pantheon.yaml"
+- name: init besu
+  import_tasks: "init-besu.yaml"
+
+- name: start besu
+  import_tasks: "start-besu.yaml"

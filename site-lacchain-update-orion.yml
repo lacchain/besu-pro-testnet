@@ -1,4 +1,4 @@
-- hosts: orion-node
+- hosts: orion_node
   gather_facts: yes
   become: yes
   roles:

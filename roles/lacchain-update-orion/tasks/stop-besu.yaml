@@ -1,7 +1,7 @@
 ---
-- name: Stop Pantheon Node
+- name: Stop Besu Node
   debug:
-      msg: Stopping Pantheon Node
+      msg: Stopping Besu Node
 
 - name: Stop Pantheon service
   service:
