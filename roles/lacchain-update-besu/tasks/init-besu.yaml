@@ -3,7 +3,7 @@
   debug:
     msg: "Init Besu"
 
-- name: Enable service pantheon(starting Hyperledger besu {{besu_current_release_number}} )
+- name: Enable service pantheon(starting Hyperledger besu)
   service:
     name: pantheon
     enabled: yes
