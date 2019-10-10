@@ -28,9 +28,13 @@
 # 1.2.4 => 94314d2c5654a238f2bf3129ca63fbe22de3d135
 
 #Enclaves (orion) updates
-[orion-node]
-<your node address> orion_current_release_number='1.3.2'
+[orion_node]
+#<your node address> orion_release_commit='5f0d97f583f82a004efa7142ecf72270eb0d004a'
+#35.193.123.227 orion_release_commit='5f0d97f583f82a004efa7142ecf72270eb0d004a'
 #update this with the current orion version obtained from: https://github.com/PegaSysEng/orion/releases
+#Tested orion versions: 
+# 1.3.2 => 68c0bd29383963281f3525dc622699e731623881
+# 1.4.0 => 5f0d97f583f82a004efa7142ecf72270eb0d004a
 
 
 ######
