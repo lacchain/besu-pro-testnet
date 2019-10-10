@@ -21,6 +21,8 @@
 
 - name: Preparing temporal folder
   shell: rm -rf /tmp/transit/ && mkdir /tmp/transit #deleting and creating a new
+  args:
+    warn: false
 
 - name: Extract the Besu tarball  
   unarchive:
@@ -35,12 +37,16 @@
 
 - name: Deleting old folders
   shell: rm -rf /usr/local/besu
+  args:
+    warn: false
 
 - name: moving files to /usr
   shell: mv /tmp/transit/besu /usr/local
 
 - name: clearing unnecessary folders
   shell: rm -rf /tmp/transit
+  args:
+    warn: false
         
  #removing old link
 - name: Deleting old installed versions of besu or pantheon
