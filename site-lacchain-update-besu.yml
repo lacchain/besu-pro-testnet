@@ -1,4 +1,4 @@
-- hosts: node
+- hosts: besu_node
   gather_facts: yes
   become: yes
   roles:

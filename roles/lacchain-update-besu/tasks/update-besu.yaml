@@ -14,18 +14,33 @@
   args:
         chdir: /tmp/besu/
 
-- name: Getting current besu_release number
-  shell: ls /tmp/besu/build/distributions/*.gz | sed 's@/tmp/besu/build/distributions/besu-@@' | sed 's/-SNAPSHOT.tar.gz//'
-  register: besu_release
+- name: Standarizing name
+  shell:  mv *.tar.gz besu.tar.gz
+  args:
+        chdir: /tmp/besu/build/distributions
 
-- debug:
-    msg: "{{besu_release.stdout}}"
+- name: Preparing temporal folder
+  shell: rm -rf /tmp/transit/ && mkdir /tmp/transit #deleting and creating a new
 
 - name: Extract the Besu tarball  
   unarchive:
-        src: "/tmp/besu/build/distributions/besu-{{besu_release.stdout}}-SNAPSHOT.tar.gz"
-        dest: /usr/local
+        src: "/tmp/besu/build/distributions/besu.tar.gz"
+        dest: /tmp/transit #/usr/local
         copy: no
+
+- name: Renaming extracted file
+  shell: mv * besu
+  args:
+        chdir: /tmp/transit
+
+- name: Deleting old folders
+  shell: rm -rf /usr/local/besu
+
+- name: moving files to /usr
+  shell: mv /tmp/transit/besu /usr/local
+
+- name: clearing unnecessary folders
+  shell: rm -rf /tmp/transit
         
  #removing old link
 - name: Deleting old installed versions of besu or pantheon
@@ -40,7 +55,7 @@
 
 - name: Symbolic link for besu (pantheon and besu are linked to BESU)
   file:
-        src: "/usr/local/besu-{{besu_release.stdout}}-SNAPSHOT/bin/{{ item.src }}"
+        src: "/usr/local/besu/bin/{{ item.src }}"
         dest: "/usr/local/bin/{{ item.dest }}"
         state: link
   with_items:
