@@ -185,7 +185,7 @@ LACChain is a private network. To have your node authorized on the network, plea
 	35.193.123.227 besu_release_commit='94314d2c5654a238f2bf3129ca63fbe22de3d135'
 	```
 	Replace the ip address with your node ip address.
-	You can find the version and release number from: https://github.com/hyperledger/besu/releases
+	You can find the current release commit on: https://github.com/hyperledger/besu/releases
 
 
 	After that you can run a the following command (instead of remote_user use your current custom user):
@@ -194,19 +194,19 @@ LACChain is a private network. To have your node authorized on the network, plea
 	```
 
   * You can update **orion** nodes, by preparing your inventory with:
-```shell
-[orion-node]
-34.66.119.152 orion_current_release_number='1.3.2'
-```
+	```shell
+	[orion_node]
+	34.66.119.152 orion_release_commit='5f0d97f583f82a004efa7142ecf72270eb0d004a'
+	```
+	Replace the ip address with your node ip address.
+	You can find the current release commit on: https://github.com/PegaSysEng/orion/releases
 
-Replace the ip address with your node ip address.
-update the orion version obtained from: https://github.com/PegaSysEng/orion/releases
 
-After that you can run a the following command (instead of remote_user use your current custom user):
+	After that you can run a the following command (instead of remote_user use your current custom user):
 
-```shell
-$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u eum602 site-lacchain-update-orion.yml 
-```
+	```shell
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-orion.yml 
+	```
 
 
 &nbsp;
