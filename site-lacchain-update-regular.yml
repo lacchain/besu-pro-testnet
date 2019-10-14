@@ -1,0 +1,5 @@
+- hosts: regular
+  gather_facts: yes
+  become: yes
+  roles:
+    - lacchain-regular-node

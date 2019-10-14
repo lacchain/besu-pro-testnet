@@ -1,0 +1,7 @@
+---
+- name: Update Besu Node
+  import_tasks: "update-besu.yaml"
+  when: "(install == true)"
+
+- name: Update Orion Node
+  import_tasks: "update-orion.yaml"

@@ -1,5 +1,0 @@
-- hosts: besu_node
-  gather_facts: yes
-  become: yes
-  roles:
-    - lacchain-update-besu

@@ -1,6 +1,8 @@
-- hosts: all
+- hosts: regular
   gather_facts: yes
-  become: yes  
+  become: yes
+  vars:
+    install: true
   vars_prompt:
     - name: "Please read the terms and conditions before installing this software: https://github.com/lacchain/pantheon-network/blob/master/TERMS_AND_COND_WRITER_NODE.md .Press ENTER  "
 
