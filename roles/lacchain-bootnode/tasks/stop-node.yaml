@@ -1,0 +1,9 @@
+---
+- name: Stop Besu Node
+  debug:
+      msg: Stopping Besu Node
+
+- name: Stop Pantheon service
+  service:
+      name: pantheon
+      state: stopped

@@ -33,7 +33,7 @@
 
 #you can customize the version to update by typing the sha commit of the orion and Besu release
 #eg:
-[regular]
+[regular] ##it can also be [bootnodes] or [validators]
 #35.222.239.124 besu_release_commit='94314d2c5654a238f2bf3129ca63fbe22de3d135' orion_release_commit='68c0bd29383963281f3525dc622699e731623881'
 
 #Current Besu commit sha obtained from: https://github.com/hyperledger/besu/releases
