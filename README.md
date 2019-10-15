@@ -179,33 +179,39 @@ LACChain is a private network. To have your node authorized on the network, plea
 ```
 
 ### Updates ###
-  * You can update **pantheon**, by preparing your inventory with:
+  * You can update **Besu**, by preparing your inventory with:
 	```shell
-	[besu_node]
-	35.193.123.227 besu_release_commit='94314d2c5654a238f2bf3129ca63fbe22de3d135'
+	[regular] #here put the role you are gong to update
+	35.193.123.227 
 	```
+
+	Optionally you can choose the sha_commit of the version you want to update refered to Orion and Besu:
+	```shell
+	[regular] #here put the role you are gong to update
+	35.193.123.227 besu_release_commit='94314d2c5654a238f2bf3129ca63fbe22de3d135' orion_release_commit='68c0bd29383963281f3525dc622699e731623881'
+	```
+	Current Besu commit sha obtained from: https://github.com/hyperledger/besu/releases
+	Tested BESU versions: 
+	1.2.4 => 94314d2c5654a238f2bf3129ca63fbe22de3d135
+
+	Current orion commit sha versions obtained from: https://github.com/PegaSysEng/orion/releases
+	Tested orion versions: 
+	1.3.2 => 68c0bd29383963281f3525dc622699e731623881
+	1.4.0 => 5f0d97f583f82a004efa7142ecf72270eb0d004a
+
 	Replace the ip address with your node ip address.
-	You can find the current release commit on: https://github.com/hyperledger/besu/releases
 
-
-	After that you can run a the following command (instead of remote_user use your current custom user):
+	Now according to the role your node has, type one of the following commands on your terminal:
 	```shell
-	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-besu.yml
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-regular.yml 
 	```
 
-  * You can update **orion** nodes, by preparing your inventory with:
 	```shell
-	[orion_node]
-	34.66.119.152 orion_release_commit='5f0d97f583f82a004efa7142ecf72270eb0d004a'
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-bootnode.yml 
 	```
-	Replace the ip address with your node ip address.
-	You can find the current release commit on: https://github.com/PegaSysEng/orion/releases
-
-
-	After that you can run a the following command (instead of remote_user use your current custom user):
 
 	```shell
-	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-orion.yml 
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-validator.yml 
 	```
 
 
