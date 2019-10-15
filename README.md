@@ -108,13 +108,12 @@ $ sudo apt-get install python-pip
     $ cp inventory.example inventory
     $ vi inventory
     [regular] # or [validators] or [bootnodes] depending on its role
-    192.168.10.72 node_ip=xxx.xxx.xxx.xxx password=abc node_name=my_node_name node_email=your@email
+    192.168.10.72 password=abc node_name=my_node_name node_email=your@email
     ```
 
 Consider the following points:
 - Place the new line in the section corresponding to your node's role: `[regular]`, `[validators]` or `[bootnodes]`
 - The first element on the new line is the IP or hostname where you can reach your remote machine from your local machine
-- The value of `node_ip` is the **public IP address** of your node. Don't use a symbolic (i.e. DNS) name, only an IP address.
 - The value of `password` is the password that will be used to set up Orion, for private transactions
 - The value of `node_name` is the name you want for your node in the network monitoring tool.
 - The value of `node_email` is the email address you want to register for your node in the network monitoring tool.
