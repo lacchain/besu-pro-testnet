@@ -1,10 +1,4 @@
 ---
-- name: stop enclave #stopping node before starting the update process
-  import_tasks: "stop-orion.yaml"
-
-- name: stop pantheon #stopping node before starting the update process
-  import_tasks: "stop-node.yaml" 
-
 - name: Update orion
   debug:
       msg: "Updating Orion"
@@ -41,6 +35,12 @@
   args:
         chdir: /tmp/transit
 
+- name: stop enclave #stopping node before starting the update process
+  import_tasks: "stop-orion.yaml"
+
+- name: stop pantheon #stopping node before starting the update process
+  import_tasks: "stop-node.yaml"         
+
 - name: Deleting old folders
   shell: rm -rf /usr/local/orion
   args:
@@ -48,11 +48,6 @@
 
 - name: moving files to /usr
   shell: mv /tmp/transit/orion /usr/local
-
-- name: clearing unnecessary folders
-  shell: rm -rf /tmp/transit
-  args:
-    warn: false
 
 - name: Deleting old installed versions of orion
   file:
@@ -76,3 +71,8 @@
 
 - name: start besu
   import_tasks: "start-node.yaml"
+
+- name: clearing unnecessary folders
+  shell: rm -rf /tmp/transit
+  args:
+    warn: false
