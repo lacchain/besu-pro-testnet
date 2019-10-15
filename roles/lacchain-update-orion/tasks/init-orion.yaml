@@ -1,9 +1,0 @@
----
-- name: initializing constellation
-  debug:
-    msg: initializing constellation
-
-- name: Enable service orion
-  service:
-    name: orion
-    enabled: yes
