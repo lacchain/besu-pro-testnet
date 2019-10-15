@@ -1,9 +1,0 @@
----
-- name: Init besu
-  debug:
-    msg: "Init Besu"
-
-- name: Enable service pantheon(starting Hyperledger besu)
-  service:
-    name: pantheon
-    enabled: yes
