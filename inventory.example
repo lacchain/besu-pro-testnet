@@ -19,18 +19,6 @@
 # 35.236.23.216  node_name=validator6
 # 35.198.6.207   node_name=validator7
 
-#***Choose one of these roles for updates:***
-#besu updates:
-[role]
-#<your node address> besu_release_commit=sha_commit
-#eg.
-#[bootnodes]
-#35.193.123.227
-#[regular]
-#35.238.93.95
-#[validators]
-#35.193.123.227
-
 #you can customize the version to update by typing the sha commit of the orion and Besu release
 #eg:
 [regular] ##it can also be [bootnodes] or [validators]
