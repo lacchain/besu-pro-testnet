@@ -1,4 +1,4 @@
-# ***Choose one of these roles for installing a new node ***
+# ***Choose one of these roles for installing a new node or updating an existing one ***
 [bootnodes]
 # 23.251.144.110 node_name=bootnode1
 # 35.229.76.38   node_name=bootnode2
@@ -19,7 +19,7 @@
 # 35.236.23.216  node_name=validator6
 # 35.198.6.207   node_name=validator7
 
-#you can customize the version to update by typing the sha commit of the orion and Besu release
+#When you want to update, you can customize the version to update by typing the sha commit of the orion and Besu release
 #eg:
 [regular] ##it can also be [bootnodes] or [validators]
 #35.222.239.124 besu_release_commit='94314d2c5654a238f2bf3129ca63fbe22de3d135' orion_release_commit='68c0bd29383963281f3525dc622699e731623881'
