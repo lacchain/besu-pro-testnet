@@ -8,7 +8,7 @@ This work was led by [everis](https://www.everis.com/) and was completely donate
 
 * LACChain Test Networks are DLT infrastructure developed, maintained and provided by the [LACChain Alliance](https://www.iadb.org/en/news/global-alliance-promote-use-blockchain-latin-america-and-caribbean). These networks are classified as public-permissioned blockchain infrastructure, according to the standard [ISO/TC 307](https://www.iso.org/committee/6266604.html). 
 
-* As public blockchain networks, LACChain Test Networks are open to any entity in Latin America and the Caribbean. As permissioned networks, entities must be authenticated and commit to comply with the law in order to be permissioned. The [on-boarding process]() involves filling a Registration Agreement that varies slightly depending on the type of node you want to run.
+* As public blockchain networks, LACChain Test Networks are open to any entity in Latin America and the Caribbean. As permissioned networks, entities must be authenticated and commit to comply with the law in order to be permissioned. The [permissioning process](https://github.com/lacchain/pantheon-network/blob/master/PERMISSIONING_PROCESS.md) involves filling a Registration Agreement that varies slightly depending on the type of node you want to run.
 
 ## References
 
