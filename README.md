@@ -41,6 +41,8 @@ It is necessary to enable the following network ports in the machine in which we
 * **4545**: TCP - Port to establish RPC communication. (this port is used for applications that communicate with Lacchain and may be leaked to the Internet)
 
 ## Prerequisites
+Ansible scripts asume you are going to install a node on ubuntu 18.x OS; If you run an operative system other than Ubuntu 18.x
+please visit: https://github.com/lacchain/pantheon-network/blob/master/GENERIC-ONBOARDING.md
 
 ### Install Ansible ###
 
@@ -228,5 +230,3 @@ Once your node is ready, you can start it up with this command in **remote machi
 <center><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></center>
 
 This work is licensed under a [license](http://creativecommons.org/licenses/by-nc/4.0/)
-
-
