@@ -10,8 +10,13 @@
   import_tasks: "rhel-dependencies.yml"
   when: (ansible_distribution |lower == 'redhat') or (ansible_distribution |lower == 'centos')
 
-- name: install java
-  import_tasks: "install-java.yaml"
+- name: install java for {{ ansible_distribution }}
+  import_tasks: "install-java-ubuntu.yaml"
+  when: ansible_distribution |lower == 'ubuntu'
+
+- name: install java for {{ ansible_distribution }}
+  import_tasks: "install-java-centos.yaml"
+  when: (ansible_distribution |lower == 'redhat') or (ansible_distribution |lower == 'centos')  
 
 - name: install docker for {{ ansible_distribution }}
   import_tasks: "install-docker-ubuntu.yaml"
