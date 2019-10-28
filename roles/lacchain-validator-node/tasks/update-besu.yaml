@@ -52,7 +52,7 @@
  #removing old link
 - name: Deleting old installed versions of besu or pantheon
   file:
-       path: /usr/local/bin/{{ item.dest }}
+       path: /usr/bin/{{ item.dest }}
        state: absent
   with_items:
         - { dest: "pantheon" }
@@ -60,10 +60,20 @@
         - { dest: "besu"}
         - { dest: "besu.bat"}
 
+- name: Support for deployments prior to centos support
+  file:
+       path: /usr/local/bin/{{ item.dest }}
+       state: absent
+  with_items:
+        - { dest: "pantheon" }
+        - { dest: "pantheon.bat" }
+        - { dest: "besu"}
+        - { dest: "besu.bat"}        
+
 - name: Symbolic link for besu (pantheon and besu are linked to BESU)
   file:
         src: "/usr/local/besu/bin/{{ item.src }}"
-        dest: "/usr/local/bin/{{ item.dest }}"
+        dest: "/usr/bin/{{ item.dest }}"
         state: link
   with_items:
         - { src: "besu", dest: "pantheon" }
