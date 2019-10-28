@@ -32,7 +32,7 @@ Characteristics of the machine for the nodes of the testnet:
 
 * **Hard Disk**: 30 GB SSD
 
-* **Operating System**: Ubuntu 16.04, Ubuntu 18.04, always 64 bits
+* **Operating System**: Ubuntu 16.04, Ubuntu 18.04, Centos7, always 64 bits
 
 It is necessary to enable the following network ports in the machine in which we are going to deploy the node:
 
@@ -43,8 +43,7 @@ It is necessary to enable the following network ports in the machine in which we
 * **4545**: TCP - Port to establish RPC communication. (this port is used for applications that communicate with Lacchain and may be leaked to the Internet)
 
 ## Prerequisites
-Ansible scripts asume you are going to install a node on ubuntu 18.x OS; If you run an operative system other than Ubuntu 18.x
-please visit: https://github.com/lacchain/pantheon-network/blob/master/GENERIC-ONBOARDING.md
+Ansible scripts asume you are going to install a node on ubuntu 18.x OS or Centos7; If you run an operative system other than the mentioned OS's please visit: https://github.com/lacchain/pantheon-network/blob/master/GENERIC-ONBOARDING.md
 
 ### Install Ansible ###
 
@@ -73,38 +72,39 @@ $ cd pantheon-network/
 
 Make sure you have SSH access to the node you're setting up. This step will vary depending on your context (physical machine, cloud provider, etc.). This document assumes that you are able to log into your remote machine using the following command: `ssh remote_user@remote_host`.
 
-### Install Python ###
-
-* In order for ansible to work, it is necessary to install Python on the **remote machine** where the node will be installed, for this reason it is necessary to install python 2.7 and python-pip.
-
-* If you need to install python-pip in Redhat use [https://access.redhat.com/solutions/1519803](https://access.redhat.com/solutions/1519803)
-
-```shell
-$ sudo apt-get update
-$ sudo apt-get install python2.7
-$ sudo apt-get install python-pip
-```
-
 ### Prepare installation of Oracle Java 11 ###
 
-* It is a requisite for Pantheon to install Java 11. Since Java cannot be downloaded directly, you must follow the next steps to install it:
+* It is a requisite for Pantheon to install Java 11 in its LATEST version. Since Java cannot be downloaded directly, you must follow the next steps to install it:
 	1.  Download the java tar.gz file from https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html; Oracle will request that you create an account before downloading the package.
 	2.  Once the file is downloaded, send the Oracle java11 package to your remote machine by using SCP Linux command:
 		```shell
-		$ scp /your/local/path/to/downloaded/jdk-11.0.4_linux-x64_bin.tar.gz remote_user@remote_host:
+		$ scp /your/local/path/to/downloaded/jdk-11.0.x_linux-x64_bin.tar.gz remote_user@remote_host:
+		```
+		If your VM is Centos7 then use:
+		```shell
+		$ scp /your/local/path/to/downloaded/jdk-11.0.x_linux-x64_bin.rpm remote_user@remote_host: 
 		```
 	3.  Log into your remote machine by using something like this:
 		```shell
 		$ ssh remote_user@remote_host
 		```
-	4.  On the remote machine, create the JDK folder and move the JDK to it:
+	4.  On the remote machine, for Ubuntu VMs: Create the JDK folder and move the JDK to it:
 		```shell
 		$ sudo mkdir -p /var/cache/oracle-jdk11-installer-local
-		$ sudo cp jdk-11.0.4_linux-x64_bin.tar.gz /var/cache/oracle-jdk11-installer-local/
+		$ sudo cp jdk-11.0.x_linux-x64_bin.tar.gz /var/cache/oracle-jdk11-installer-local/
+		```
+		If the VM is Centos7 then execute:
+		```shell
+		$ sudo rm -rf /usr/local/src/jdk*linux-x64_bin.rpm
+		$ sudo cp jdk-11.0.x_linux-x64_bin.rpm  /usr/local/src
 		```
 	5.  Before leaving, it's a good idea to run an APT update:
 		```shell
 		$ sudo apt update
+		```
+		Or in Centos7 OS:
+		```shell
+		$ sudo yum update
 		```
 
 ## Pantheon + Orion Installation ##
