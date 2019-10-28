@@ -36,10 +36,10 @@
       dest: /usr/local
       copy: no
 
-- name: Symbolic link for pantheon
+- name: Symbolic link for orion
   file:
       src: "/usr/local/orion-1.3.2/bin/{{ item.src }}"
-      dest: "/usr/local/bin/{{ item.dest }}"
+      dest: "/usr/bin/{{ item.dest }}"
       state: link
   with_items:
       - { src: "orion", dest: "orion" }

@@ -51,16 +51,24 @@
 
 - name: Deleting old installed versions of orion
   file:
-       path: /usr/local/bin/{{ item.dest }}
+       path: /usr/bin/{{ item.dest }}
        state: absent
   with_items:
         - { dest: "orion" }
         - { dest: "orion.bat" }
 
+- name: Support for deployments prior to centos support
+  file:
+       path: /usr/local/bin/{{ item.dest }}
+       state: absent
+  with_items:
+        - { dest: "orion" }
+        - { dest: "orion.bat" }        
+
 - name: Symbolic link for orion
   file:
         src: "/usr/local/orion/bin/{{ item.src }}"
-        dest: "/usr/local/bin/{{ item.dest }}"
+        dest: "/usr/bin/{{ item.dest }}"
         state: link
   with_items:
         - { src: "orion", dest: "orion" }
