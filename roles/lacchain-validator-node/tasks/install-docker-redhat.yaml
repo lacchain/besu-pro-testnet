@@ -42,3 +42,11 @@
     name: docker-ce
     state: present
     update_cache: yes
+
+- name: Enable docker
+  shell: systemctl enable docker.service
+  become: yes
+
+- name: Start docker
+  shell: systemctl start docker.service
+  become: yes
