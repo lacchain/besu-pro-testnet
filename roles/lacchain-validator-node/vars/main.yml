@@ -27,4 +27,8 @@ oracle_java_home: "/usr/lib/jvm/java-11-oracle"
 oracle_java_license_version: "shared/accepted-oracle-license-v1-2"
 oracle_java_state: latest
 
+#CENTOS -REDHAT
+oracle_java_dir_source: '/usr/local/src'
+
+####
 mode: "auto"
