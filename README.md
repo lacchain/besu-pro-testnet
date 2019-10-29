@@ -75,7 +75,7 @@ Make sure you have SSH access to the node you're setting up. This step will vary
 ### Prepare installation of Oracle Java 11 ###
 
 * It is a requisite for Pantheon to install Java 11 in its LATEST version. Since Java cannot be downloaded directly, you must follow the next steps to install it:
-	1.  Download the java tar.gz file from https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html; Oracle will request that you create an account before downloading the package.
+	1.  Download the correspondent java tar.gz(for ubuntu) or java .rpm(for centos) file from https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html; Oracle will request that you create an account before downloading the package.
 	2.  Once the file is downloaded, send the Oracle java11 package to your remote machine by using SCP Linux command:
 		```shell
 		$ scp /your/local/path/to/downloaded/jdk-11.0.x_linux-x64_bin.tar.gz remote_user@remote_host:
