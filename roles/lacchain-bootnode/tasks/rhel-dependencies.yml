@@ -22,7 +22,7 @@
     - "ncurses-devel"
     - "wget"
     - "nmap-ncat"
-    #  - "libsodium-devel"
+    - "libsodium-devel"
     - "libdb-devel"
     - "leveldb-devel"
     - "git"
