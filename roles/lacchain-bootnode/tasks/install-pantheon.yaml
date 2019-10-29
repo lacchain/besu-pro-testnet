@@ -23,7 +23,7 @@
 - name: Symbolic link for pantheon
   file:
         src: "/usr/local/pantheon-1.2.0/bin/{{ item.src }}"
-        dest: "/usr/local/bin/{{ item.dest }}"
+        dest: "/usr/bin/{{ item.dest }}"
         state: link
   with_items:
         - { src: "pantheon", dest: "pantheon" }
