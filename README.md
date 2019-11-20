@@ -221,7 +221,10 @@ Once your node is ready, you can start it up with this command in **remote machi
 	```shell
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-validator.yml 
 	```
+	
+## Deploying Smart Contracts to LACCHAIN
 
+If you want to deploy Dapps to LACCHAIN Network to can follow this guide [deploy contracts](https://github.com/lacchain/pantheon-network/blob/master/DEPLOY_CONTRACTS.md "deploying Smart Contracts")
 
 &nbsp;
 &nbsp;
