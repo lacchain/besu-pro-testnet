@@ -18,7 +18,7 @@ This work was led by [everis](https://www.everis.com/) and was completely donate
 
 * This LACChain Besu network uses [IBFT2.0](https://docs.pantheon.pegasys.tech/en/latest/Consensus-Protocols/IBFT/) consensus with core and regular nodes located around Latin America and the Caribbean. 
 
-* In this installation we will use **Ubuntu 18.04** as the operating system and all the commands related to this operating system. In addition, links of the prerequisites will be placed in case it is required to install in another operating system.
+* In this installation we will use **Ubuntu 18.04** or **Centos7** as the operating system and all the commands related to this operating system. In addition, links of the prerequisites will be placed in case it is required to install in another operating system.
 
 * An important consideration to note is that we will use Ansible, for which the installation is done from a local machine on a remote server. That means that the local machine and the remote server will communicate via ssh.
 
