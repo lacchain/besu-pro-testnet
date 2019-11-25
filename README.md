@@ -196,10 +196,11 @@ Once your node is ready, you can start it up with this command in **remote machi
 	Optionally you can choose the sha_commit of the version you want to update refered to Orion and Besu:
 	```shell
 	[regular] #here put the role you are gong to update
-	35.193.123.227 besu_release_commit='94314d2c5654a238f2bf3129ca63fbe22de3d135' orion_release_commit='68c0bd29383963281f3525dc622699e731623881'
+	35.193.123.227 besu_release_commit='7a2209bb8cfbbd731f6611f6c75b774c6d94af0f' orion_release_commit='5f0d97f583f82a004efa7142ecf72270eb0d004a'
 	```
 	Current Besu commit sha obtained from: https://github.com/hyperledger/besu/releases
 	Tested BESU versions: 
+	1.3.5 => 7a2209bb8cfbbd731f6611f6c75b774c6d94af0f
 	1.2.4 => 94314d2c5654a238f2bf3129ca63fbe22de3d135
 
 	Current orion commit sha versions obtained from: https://github.com/PegaSysEng/orion/releases
