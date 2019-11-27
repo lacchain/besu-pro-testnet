@@ -8,7 +8,7 @@ This work was led by [everis](https://www.everis.com/) and was completely donate
 
 * LACChain Test Networks are DLT infrastructure developed, maintained and provided by the [LACChain Alliance](https://www.iadb.org/en/news/global-alliance-promote-use-blockchain-latin-america-and-caribbean). These networks are classified as public-permissioned blockchain infrastructure, according to the standard [ISO/TC 307](https://www.iso.org/committee/6266604.html). 
 
-* As public blockchain networks, LACChain Test Networks are open to any entity in Latin America and the Caribbean. As permissioned networks, entities must be authenticated and commit to comply with the law in order to be permissioned. The [permissioning process](https://github.com/lacchain/pantheon-network/blob/master/PERMISSIONING_PROCESS.md) involves filling a Registration Agreement that varies slightly depending on the type of node you want to run.
+* As public blockchain networks, LACChain Test Networks are open to any entity in Latin America and the Caribbean. As permissioned networks, entities must be authenticated and commit to comply with the law in order to be permissioned. The [permissioning process](https://github.com/lacchain/pantheon-network/blob/master/PERMISSIONING_PROCESS.md) involves filling a Registration Agreement that varies slightly depending on the type of node you want to run. By using the network, you implicity accept that you have read and understood the terms of reference, and you agree with them.
 
 * The nodes of LACChain DLT public-permissioned networks can be classified into two groups, according to their relevance for the functioning of the network. The two groups are core and satellite nodes. In each of these two groups there are also two different types of nodes, according to the specific taks they can perform. Core nodes are classified into validator and boot nodes, and satellite nodes are classified into writer and observer nodes. For more information you can go to [Topology](https://github.com/lacchain/pantheon-network/blob/master/TOPOLOGY.md).
 
@@ -22,7 +22,7 @@ This work was led by [everis](https://www.everis.com/) and was completely donate
 
 * An important consideration to note is that we will use Ansible, for which the installation is done from a local machine on a remote server. That means that the local machine and the remote server will communicate via ssh.
 
-## System Requirements
+## Minimum system Requirements
 
 Characteristics of the machine for the nodes of the testnet:
 
@@ -111,7 +111,7 @@ Make sure you have SSH access to the node you're setting up. This step will vary
 
 ### Preparing installation of a new node ###
 
-* There are three types of nodes (Bootnode/ Validator / Regular) that can be created in the Pantheon network.
+* There are three types of nodes (Bootnode / Validator / Regular) that can be created in the Pantheon network.
 
 * After cloning the repository on the **local machine**, enter it and create a copy of the `inventory.example` file as `inventory`. Edit that file to add a line for the remote server where you are creating the new node. You can do it with a graphical tool or inside the shell:
 
@@ -161,6 +161,8 @@ ok: [x.x.x.x] => {
 ```
 
 * If everything is correct, a ORION service and a PANTHEON service managed by Systemctl will be created with **stopped** status.
+* In order to be permissioned, now you need to follow the [administrative steps of the permissioning process](https://github.com/lacchain/besu-network/blob/master/PERMISSIONING_PROCESS.md).
+* Once you are permissioned, you can verify that you are connected to other nodes in the network by following the steps detailed in [#issue33](https://github.com/lacchain/besu-network/issues/33).
 
 ## Node Configuration
 
