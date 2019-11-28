@@ -8,7 +8,7 @@ The nodes of LACChain DLT public-permissioned networks can be classified into tw
 
 In the following image we can see the topology and the different connections
 
-![LACCHAIN Topology](https://github.com/lacchain/besu-network/tree/doc/topology/docs/images/topology.png)
+![LACCHAIN Topology](/docs/images/topology.png)
 
 ### Core nodes
 
@@ -56,7 +56,7 @@ In addition to being a peer to peer network, Lacchain is deployed using [Hyperle
 
 As Lacchain is based on Ethereum, it network architecture has two stacks. A Discovery Stack to discover existing nodes in the network and Connection Stack to send messages or communicate with other nodes in the network. 
 
-![LACCHAIN Stacks](https://github.com/lacchain/besu-network/tree/doc/topology/docs/images/stacks.png)
+![LACCHAIN Stacks](/docs/images/stacks.png)
 
 ### Node Discovery
 
@@ -77,7 +77,7 @@ Next, Lacchain uses **UDP** protocol to exchange information about the P2P netwo
 
 * FIND_NEIGHBOURS: A findnode message is sent by the new node that solicits a neighbors message that contains a list of 16 nodes that have been seen by the responding node.
 
-![P2P Network](https://github.com/lacchain/besu-network/tree/doc/topology/docs/images/discovery.png)
+![P2P Network](/docs/images/discovery.png)
 
 In Lacchain when a new node tries to join the network, it needs to establish a list of some known peers that it can communicate with. To do so, address of gears nodes are hard-coded in Lacchain network. Upon joining the network for the first time, the new node will ask one of these bootstrap peers for a list of active nodes. So whenever a peer tries to contact a node besides one of these bootnodes, it will work.
 
@@ -117,7 +117,7 @@ Next, the signed transaction is broadcast by your writer node to it’s peers wh
 
 After, validator nodes maintain a transaction pool where your transaction gets added to before they start evaluating it.
 
-![Tx Pool](https://github.com/lacchain/besu-network/tree/doc/topology/docs/images/tx_pool.png)
+![Tx Pool](/docs/images/tx_pool.png)
 
 The validator picks our transaction to include in the block along with other transactions. The validator can only pick so many transactions to include in the block because Lacchain has set a block gas limit.
 
