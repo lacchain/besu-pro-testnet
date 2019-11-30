@@ -228,12 +228,13 @@ Once your node is ready, you can start it up with this command in **remote machi
 
 For a quick overview of some mainstream tools that you can use to deploy Smart Contracts, connect external applications and broadcast transactions to the LACChain Besu Network, you can check our [Guide](https://github.com/lacchain/besu-network/blob/master/DEPLOY_APPLICATIONS.md).
 
-&nbsp;
-&nbsp;
-
 ## Contact
 
 For any issues, you can either go to [issues](https://github.com/lacchain/besu-network/issues) or e-mail us at info@lacchain.net. Any feedback is more than welcome!
+
+&nbsp;
+&nbsp;
+
 
 
 **LICENSE**
