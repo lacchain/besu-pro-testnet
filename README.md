@@ -8,23 +8,23 @@ This work was led by [everis](https://www.everis.com/) and was completely donate
 
 * LACChain Test Networks are DLT infrastructure developed, maintained and provided by the [LACChain Alliance](https://www.iadb.org/en/news/global-alliance-promote-use-blockchain-latin-america-and-caribbean). These networks are classified as public-permissioned blockchain infrastructure, according to the standard [ISO/TC 307](https://www.iso.org/committee/6266604.html). 
 
-* As public blockchain networks, LACChain Test Networks are open to any entity in Latin America and the Caribbean. As permissioned networks, entities must be authenticated and commit to comply with the law in order to be permissioned. The [permissioning process](https://github.com/lacchain/pantheon-network/blob/master/PERMISSIONING_PROCESS.md) involves filling a Registration Agreement that varies slightly depending on the type of node you want to run. By using the network, you implicity accept that you have read and understood the terms of reference, and you agree with them.
+* As public blockchain networks, LACChain Networks are open to any entity in Latin America and the Caribbean. As permissioned networks, entities must be authenticated and commit to comply with the law in order to be permissioned. The [permissioning process](https://github.com/lacchain/pantheon-network/blob/master/PERMISSIONING_PROCESS.md) involves filling a Registration Agreement that varies slightly depending on the [type of node](https://github.com/lacchain/pantheon-network/blob/master/TOPOLOGY_AND_ARCHITECTURE.md) you want to run. By using the network, you implicity accept that you have read and understood the terms of reference, and you agree with them.
 
 * The nodes of LACChain DLT public-permissioned networks can be classified into two groups, according to their relevance for the functioning of the network. The two groups are core and satellite nodes. In each of these two groups there are also two different types of nodes, according to the specific taks they can perform. Core nodes are classified into validator and boot nodes, and satellite nodes are classified into writer and observer nodes. For more information you can go to [Topology and Architecture](https://github.com/lacchain/pantheon-network/blob/master/TOPOLOGY_AND_ARCHITECTURE.md).
 
 * This LACChain Test Network uses [Hyperledger Besu](https://www.hyperledger.org/projects/besu), an open-source, mainnet compatible, Java based, and Apache 2.0 licensed Ethereum client. For more information you can read the [code](https://github.com/hyperledger/besu) and the [documentation](https://github.com/hyperledger/besu-docs).
 
+* This LACChain Besu network uses [IBFT2.0](https://docs.pantheon.pegasys.tech/en/latest/Consensus-Protocols/IBFT/) consensus protocol for the validation of transactions and generation of new blocks.
+
 ## Considerations
 
-* This LACChain Besu network uses [IBFT2.0](https://docs.pantheon.pegasys.tech/en/latest/Consensus-Protocols/IBFT/) consensus with core and regular nodes located around Latin America and the Caribbean. 
+* Below you will find instructions for the deployment of nodes using Ansible. This implies that it will be executed from a local machine on a remote server. The local machine and the remote server will communicate via ssh.
 
-* In this installation we will use **Ubuntu 18.04** or **Centos7** as the operating system and all the commands related to this operating system. In addition, links of the prerequisites will be placed in case it is required to install in another operating system.
+* The installation with ansible provided is compatible with **Ubuntu 18.04** and **Centos7**. If you want to deploy your node in a different operative system, you can go to the (documentation for Generic Onboarding)[https://github.com/lacchain/besu-network/blob/master/GENERIC_ONBOARDING.md].
 
-* An important consideration to note is that we will use Ansible, for which the installation is done from a local machine on a remote server. That means that the local machine and the remote server will communicate via ssh.
+## Minimum System Requirements
 
-## Minimum system Requirements
-
-Characteristics of the machine for the nodes of the testnet:
+Recommended hardware features for the nodes in the test-net:
 
 * **CPU**: 2 cores
 
@@ -42,12 +42,11 @@ It is necessary to enable the following network ports in the machine in which we
 
 * **4545**: TCP - Port to establish RPC communication. (this port is used for applications that communicate with Lacchain and may be leaked to the Internet)
 
-## Prerequisites
-Ansible scripts asume you are going to install a node on ubuntu 18.x OS or Centos7; If you run an operative system other than the mentioned OS's please visit: https://github.com/lacchain/pantheon-network/blob/master/GENERIC-ONBOARDING.md
+## Pre-requisites
 
 ### Install Ansible ###
 
-For this installation we will use Ansible. It is necessary to install Ansible on your **local machine** that will perform the installation of the node on the **remote machine**.
+For this installation we will use Ansible. It is necessary to install Ansible on a **local machine** that will perform the installation of the node on a **remote machine**.
 
 Following the instructions to [install ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) in your local machine.
 
@@ -75,7 +74,7 @@ Make sure you have SSH access to the node you're setting up. This step will vary
 ### Prepare installation of Oracle Java 11 ###
 
 * It is a requisite for Pantheon to install Java 11 in its LATEST version. Since Java cannot be downloaded directly, you must follow the next steps to install it:
-	1.  Download the correspondent java tar.gz(for ubuntu) or java .rpm(for centos) file from https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html; Oracle will request that you create an account before downloading the package.
+	1.  Download the correspondent java tar.gz(for ubuntu) or java .rpm(for centos) file from https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html. Oracle will request that you create an account before downloading the package.
 	2.  Once the file is downloaded, send the Oracle java11 package to your remote machine by using SCP Linux command:
 		```shell
 		$ scp /your/local/path/to/downloaded/jdk-11.0.x_linux-x64_bin.tar.gz remote_user@remote_host:
@@ -111,7 +110,7 @@ Make sure you have SSH access to the node you're setting up. This step will vary
 
 ### Preparing installation of a new node ###
 
-* There are three types of nodes (Bootnode / Validator / Regular) that can be created in the Pantheon network.
+* There are three types of nodes (Bootnode / Validator / Regular) that can be created in the Pantheon network at this moment.
 
 * After cloning the repository on the **local machine**, enter it and create a copy of the `inventory.example` file as `inventory`. Edit that file to add a line for the remote server where you are creating the new node. You can do it with a graphical tool or inside the shell:
 
@@ -124,11 +123,11 @@ Make sure you have SSH access to the node you're setting up. This step will vary
     ```
 
 Consider the following points:
-- Place the new line in the section corresponding to your node's role: `[regular]`, `[validators]` or `[bootnodes]`
-- The first element on the new line is the IP or hostname where you can reach your remote machine from your local machine
-- The value of `password` is the password that will be used to set up Orion, for private transactions
+- Place the new line in the section corresponding to your node's role: `[regular]`, `[validators]` or `[bootnodes]`.
+- The first element on the new line is the IP or hostname where you can reach your remote machine from your local machine.
+- The value of `password` is the password that will be used to set up Orion, for private transactions.
 - The value of `node_name` is the name you want for your node in the network monitoring tool.
-- The value of `node_email` is the email address you want to register for your node in the network monitoring tool.
+- The value of `node_email` is the email address you want to register for your node in the network monitoring tool. It's a good idea to provide the e-mail of the technical contact identified or to be identified in the registration form as part of the on-boarding process.
 
 ### Deploying the new node ###
 
@@ -150,7 +149,7 @@ Consider the following points:
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-regular.yml
 	```
 
-* At the end of the installation, if everything is correct, a PANTHEON service will be created in the case of a **validator node** managed by Systemctl with **stopped** status.
+* At the end of the installation, if everything worked a PANTHEON service will be created in the case of a **validator node** managed by Systemctl with **stopped** status.
 
 Don't forget to write down your node's "enode" from the log by locating the line that looks like this:
 ```
@@ -160,7 +159,7 @@ ok: [x.x.x.x] => {
 }
 ```
 
-* If everything is correct, a ORION service and a PANTHEON service managed by Systemctl will be created with **stopped** status.
+* If everything worked, a ORION service and a PANTHEON service managed by Systemctl will be created with **stopped** status.
 * In order to be permissioned, now you need to follow the [administrative steps of the permissioning process](https://github.com/lacchain/besu-network/blob/master/PERMISSIONING_PROCESS.md).
 * Once you are permissioned, you can verify that you are connected to other nodes in the network by following the steps detailed in [#issue33](https://github.com/lacchain/besu-network/issues/33).
 
@@ -228,6 +227,10 @@ Once your node is ready, you can start it up with this command in **remote machi
 
 &nbsp;
 &nbsp;
+
+## Contact
+
+For any issues, you can either go to [issues](https://github.com/lacchain/besu-network/issues) or e-mail us at info@lacchain.net.
 
 
 **LICENSE**
