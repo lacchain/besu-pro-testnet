@@ -224,16 +224,16 @@ Once your node is ready, you can start it up with this command in **remote machi
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-validator.yml 
 	```
 	
-## Deploying Smart Contracts to LACCHAIN
+## Deploying Dapps on LACCHAIN
 
-If you want to deploy Dapps to LACCHAIN Network to can follow this guide [deploy contracts](https://github.com/lacchain/pantheon-network/blob/master/DEPLOY_CONTRACTS.md "deploying Smart Contracts")
+For a quick overview of some mainstream tools that you can use to deploy Smart Contracts, connect external applications and broadcast transactions to the LACChain Besu Network, you can check our [Guide](https://github.com/lacchain/besu-network/blob/master/DEPLOY_APPLICATIONS.md).
 
 &nbsp;
 &nbsp;
 
 ## Contact
 
-For any issues, you can either go to [issues](https://github.com/lacchain/besu-network/issues) or e-mail us at info@lacchain.net.
+For any issues, you can either go to [issues](https://github.com/lacchain/besu-network/issues) or e-mail us at info@lacchain.net. Any feedback is more than welcome!
 
 
 **LICENSE**
