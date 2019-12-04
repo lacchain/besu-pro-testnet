@@ -133,18 +133,188 @@ Finally you get the deployment report where you can see the address contract sim
     total cost:          0 ETH
 ```
 
-### Web3
+## Web3 and Metamask
 
->TODO
+### Prerequisite
 
-### Metamask
+* Node.js v8.10.0
+* Node package manager v5.6.0
 
->TODO
+Make sure **Node** and **NPM** is installed on your system.
 
-### Remix
+>`node -v`<br>`npm -v` 
 
->TODO
+Create a directory as MyFirstContract
 
-#### Additional
+>`mkdir MyFirstContract`<br>`cd MiFirstContract`
+
+Create a directory to save smartContracts under MiFirstContract directory
+
+>`mkdir SmartContracts`<br>`cd SmartContracts`
+
+Create a package json to manage the dependencies
+
+>`npm init`
+
+This command prompts you for things such as the name and version of your application. You can simply hit RETURN to accept the defaults for most of them.
+
+Install web3.js.
+
+>`npm install --save web3`
+
+Install the [truffle hdwallet-provider](https://github.com/trufflesuite/truffle/tree/develop/packages/hdwallet-provider)
+
+>`npm install --save @truffle/hdwallet-provider`
+
+Install solc to compile the smart contracts
+
+>`npm install --save solc@0.4.25`
+
+### Contract Compilation
+
+Create another directory namely Contracts and Build, and change the current directory to Contracts.
+
+>`mkdir Contracts`<br>`mkdir Build`<br>`cd Contracts`
+
+Create MyContract.sol file under Contracts directory and paste the below code:
+
+```js
+    // We will be using Solidity version 0.5.12 
+    pragma solidity 0.4.25;
+
+    contract MyContract {
+        string private message = "My First Smart Contract";
+
+        function getMessage() public view returns(string memory) {
+            return message;
+        }
+
+        function setMessage(string memory newMessage) public {
+            message = newMessage;
+        }
+    }
+```
+
+Now, create a compile.js file under SmartContracts folder and paste this code.
+
+```js
+console.log("Compiling...");
+const path = require("path");
+const fs = require("fs-extra");
+const solc = require("solc");
+const buildPath = path.resolve(__dirname, "Build");
+fs.removeSync(buildPath);
+
+const contractPath = path.resolve(__dirname, "Contracts", "MyContract.sol");
+
+const myContractSource = fs.readFileSync(contractPath, "utf8");
+
+const output = solc.compile(myContractSource, 1).contracts;
+
+fs.ensureDirSync(buildPath);
+
+fs.outputJsonSync(
+  path.resolve(buildPath, "MyContract.json"),
+  output[":MyContract"]
+);
+
+module.exports = output[":MyContract"];
+```
+The above code read the contract file MyContract.sol, compile it using solc compiler, and save the the output of contracts in the json file.
+
+### Contract Deployment
+
+Create a deploy.js file under SmartContracts directory and paste the below code inside the file.
+
+```js
+console.log("Deploying...");
+const HDWalletProvider = require("@truffle/hdwallet-provider");
+const Web3 = require("web3");
+const { interface, bytecode } = require("./compile");
+
+// list of 12 words key to connect account. You can get this key when you setup a MetaMask
+var privateKey = "<PUT_YOUR_PRIVATE_KEY_HERE>";
+
+// Specify lacchain network node to connect to
+var node = "http://<PUT_YOUR_IP_NODE>:4545";
+
+const provider = new HDWalletProvider(mnemonic, node, 1);
+const web3 = new Web3(provider);
+
+const deploy = async () => {
+  const accounts = await web3.eth.getAccounts();
+  const ABI = interface;
+
+  const result = await new web3.eth.Contract(JSON.parse(ABI))
+    .deploy({
+      data: '0x'+bytecode
+    })
+    .send({ from: accounts[0], gas: "3000000", gasPrice: "0" });
+  
+  console.log("contract deployed to", result.options.address);
+};
+
+deploy();
+```
+
+Run the below command from SmartContract directory to deploy myFirstContract.
+
+>`node deploy.js`
+
+It takes some time for deployment. Once deployed, the address (where contract is deployed) is displayed on the terminal as below.
+
+`Deploying...`<br> 
+`Compiling...`<br>
+`Initializing provider...`<br>
+`['0xCC9a2ae1162D5de44E11363556c829D6c08f7dc9']`<br>
+`contract deployed to 0xA4AdEcfACB87C3d7F6a8571c2f6Fe5AC5bB7a7cC`
+
+## Remix and Metamask
+
+You can use Remix as IDE and Metamask to deploy smart contracts to the network of LACChain.
+
+### Prerequisite
+
+Metamask is a browser extension that connects the browser to an LACChain node, allowing you to send transactions.
+
+You can install Metamask from [here](https://metamask.io/ "Metamask").  
+
+Remix is an IDE online, you can go to [Remix](https://remix.ethereum.org) and start writing smart contracts.  
+
+### Contract Compile
+
+In Remix, create a new smart contract clicking on plus button. Then, put "MyContract.sol" as name and paste this code.
+
+```js
+// We will be using Solidity version 0.5.12
+    pragma solidity 0.5.12;
+
+    contract MyContract {
+        string private message = "My First Smart Contract";
+
+        function getMessage() public view returns(string memory) {
+            return message;
+        }
+
+        function setMessage(string memory newMessage) public {
+            message = newMessage;
+        }
+    }
+```
+Click on "Solidity Compiler" option in left section. Change the compiler version to 0.5.12 and click on "Compile MyContract.sol" button.
+
+If the compilation is ok, you will see a green check on "Solidity Compiler" option.
+
+### Contract Deployment
+
+Connect Metamask to one of your LACChain address. In Metamask, the dropdown menu for Networks lists several options; select custom RPC. In the settings menu, for ‘New RPC URL’, add the RPC server from your LACChain node, usually HTTP://<YOUR_IP_NODE>:4545
+
+Go back to Remix and click on "Deploy and run transactions" option. On Environment option choose "Injected Web3". This option will connect to Metamask and your LACChain node too.
+
+Click on "Deploy" button. A window of Metamask will appear to ask your confirmation and sign the transaction. Click on the "Edit" link and then on the "Advanced" tab. Set the gas price to "0" and click on "Save" button.
+
+Finally click on "Confirm" button. The transaction will be send to the network of LACChain. If the contract is deploy, you will see a green check in log section of Metamask. In addition, contract deployed will appear in left section into "Deploy and transactions" section.
+
+## Additional
 
 If you want to interact with your deployed contract you could follow the follow tutorial [Send Transactions To LACCHAIN]()
