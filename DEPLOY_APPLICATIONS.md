@@ -133,7 +133,7 @@ Finally you get the deployment report where you can see the address contract sim
     total cost:          0 ETH
 ```
 
-## Web3 and Metamask
+## Web3
 
 ### Prerequisite
 
