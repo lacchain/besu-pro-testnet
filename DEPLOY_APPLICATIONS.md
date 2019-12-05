@@ -140,23 +140,23 @@ Finally you get the deployment report where you can see the address contract sim
 * Node.js v8.10.0
 * Node package manager v5.6.0
 
-Make sure **Node** and **NPM** is installed on your system.
+Make sure **Node** and **NPM** are installed on your system.
 
 >`node -v`<br>`npm -v` 
 
-Create a directory as MyFirstContract
+Create a directory as MyFirstContract.
 
->`mkdir MyFirstContract`<br>`cd MiFirstContract`
+>`mkdir MyFirstContract`<br>`cd MyFirstContract`
 
-Create a directory to save smartContracts under MiFirstContract directory
+Create a directory to save smartContracts under MyFirstContract directory.
 
 >`mkdir SmartContracts`<br>`cd SmartContracts`
 
-Create a package json to manage the dependencies
+Create a package json to manage the dependencies.
 
 >`npm init`
 
-This command prompts you for things such as the name and version of your application. You can simply hit RETURN to accept the defaults for most of them.
+This command prompts you things such as the name and version of your application. You can simply hit RETURN to accept the defaults for most of them.
 
 Install web3.js.
 
@@ -166,17 +166,17 @@ Install the [truffle hdwallet-provider](https://github.com/trufflesuite/truffle/
 
 >`npm install --save @truffle/hdwallet-provider`
 
-Install solc to compile the smart contracts
+Install solc to compile the smart contracts.
 
 >`npm install --save solc@0.4.25`
 
 ### Contract Compilation
 
-Create another directory namely Contracts and Build, and change the current directory to Contracts.
+Create two more directories named Contracts and Build, and switch from the current directory to Contracts.
 
 >`mkdir Contracts`<br>`mkdir Build`<br>`cd Contracts`
 
-Create MyContract.sol file under Contracts directory and paste the below code:
+Create MyContract.sol file under Contracts directory and paste the code below:
 
 ```js
     // We will be using Solidity version 0.5.12 
@@ -220,7 +220,7 @@ fs.outputJsonSync(
 
 module.exports = output[":MyContract"];
 ```
-The above code read the contract file MyContract.sol, compile it using solc compiler, and save the the output of contracts in the json file.
+The above code reads the contract file MyContract.sol, compiles it using solc compiler, and saves the output of contracts in the json file.
 
 ### Contract Deployment
 
@@ -257,7 +257,7 @@ const deploy = async () => {
 deploy();
 ```
 
-Run the below command from SmartContract directory to deploy myFirstContract.
+Run the command below at SmartContract directory to deploy MyFirstContract.
 
 >`node deploy.js`
 
@@ -283,7 +283,7 @@ Remix is an IDE online, you can go to [Remix](https://remix.ethereum.org) and st
 
 ### Contract Compile
 
-In Remix, create a new smart contract clicking on plus button. Then, put "MyContract.sol" as name and paste this code.
+In Remix, create a new smart contract by clicking the plus button. Then, put "MyContract.sol" as name and paste this code.
 
 ```js
 // We will be using Solidity version 0.5.12
@@ -301,19 +301,19 @@ In Remix, create a new smart contract clicking on plus button. Then, put "MyCont
         }
     }
 ```
-Click on "Solidity Compiler" option in left section. Change the compiler version to 0.5.12 and click on "Compile MyContract.sol" button.
+Click on "Solidity Compiler" option in the left section. Change the compiler version to 0.5.12 and click on "Compile MyContract.sol" button.
 
-If the compilation is ok, you will see a green check on "Solidity Compiler" option.
+If the compilation works, you will see a green check on the "Solidity Compiler" option.
 
 ### Contract Deployment
 
-Connect Metamask to one of your LACChain address. In Metamask, the dropdown menu for Networks lists several options; select custom RPC. In the settings menu, for ‘New RPC URL’, add the RPC server from your LACChain node, usually HTTP://<YOUR_IP_NODE>:4545
+Connect Metamask to one of your LACChain addresses. In Metamask, the dropdown menu for Networks lists several options; select custom RPC. In the settings menu, for ‘New RPC URL’, add the RPC server from your LACChain node, usually HTTP://<YOUR_IP_NODE>:4545
 
-Go back to Remix and click on "Deploy and run transactions" option. On Environment option choose "Injected Web3". This option will connect to Metamask and your LACChain node too.
+Go back to Remix and click on "Deploy and run transactions" option. On the Environment option choose "Injected Web3". This option will connect to Metamask and your LACChain node too.
 
 Click on "Deploy" button. A window of Metamask will appear to ask your confirmation and sign the transaction. Click on the "Edit" link and then on the "Advanced" tab. Set the gas price to "0" and click on "Save" button.
 
-Finally click on "Confirm" button. The transaction will be send to the network of LACChain. If the contract is deploy, you will see a green check in log section of Metamask. In addition, contract deployed will appear in left section into "Deploy and transactions" section.
+Finally click on "Confirm" button. The transaction will be send to the LACChain Network. If the contract is deployed, you will see a green check in log section of Metamask. In addition, contract deployed will appear in left section into "Deploy and transactions" section.
 
 ## Additional
 
