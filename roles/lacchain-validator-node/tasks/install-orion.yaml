@@ -22,7 +22,7 @@
 #      version: 65749f00ada641c4dfd5982b293a4e59962be695
 
 #- name: Building Orion
-#  shell: "./gradlew build -x test"
+#  shell: "gradle build -x test"
 #  args:
 #      chdir: /tmp/orion/
 - name: Download Orion Binaries

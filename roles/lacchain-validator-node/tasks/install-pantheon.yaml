@@ -10,7 +10,7 @@
         version: a8ea12a8379a7951b2e940bc8a9f1568c805ef4e
 
 - name: Building Pantheon
-  shell: "./gradlew build -x test"
+  shell: "gradle build -x test"
   args:
         chdir: /tmp/pantheon/
 
