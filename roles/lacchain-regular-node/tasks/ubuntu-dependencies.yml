@@ -17,3 +17,26 @@
     - sysvbanner
     - psmisc
     - libdb5.3-dev
+
+- name: install Gradle
+  get_url:
+    url: https://services.gradle.org/distributions/gradle-5.2.1-bin.zip
+    dest: /tmp/
+    force: yes
+    owner: root
+    group: root
+    mode: 0644
+
+- name: unzip Gradle
+  unarchive:
+        src: "/tmp/gradle-5.2.1-bin.zip"
+        dest: /usr/local
+        copy: no
+
+- name: Symbolic link for pantheon
+  file:
+        src: "/usr/local/gradle-5.2.1/bin/{{ item.src }}"
+        dest: "/usr/bin/{{ item.dest }}"
+        state: link
+  with_items:
+        - { src: "gradle", dest: "gradle" }
