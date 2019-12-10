@@ -10,7 +10,7 @@
         version: "{{ besu_release_commit }}"
 
 - name: Building Besu
-  shell: "gradle build -x test"
+  shell: "sh ./gradlew build -x test"
   args:
         chdir: /tmp/besu/
 
