@@ -10,7 +10,7 @@
         version: "{{ orion_release_commit }}"
 
 - name: Building Orion
-  shell: "gradle build -x test"
+  shell: "sh ./gradlew build -x test"
   args:
         chdir: /tmp/orion/
 

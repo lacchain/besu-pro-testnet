@@ -10,6 +10,13 @@
     dest: "/tmp"
     copy: no
 
+- name: Set command Shell
+  lineinfile:
+    path: /tmp/{{leveldb_release}}/Makefile
+    regexp: '^(.*)./build_detect_platform(.*)$'
+    line: '    sh ./build_detect_platform build_config.mk ./)'
+    backrefs: yes
+
 - name: make leveldb
   shell: make
   args:

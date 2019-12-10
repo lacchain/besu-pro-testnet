@@ -13,6 +13,6 @@
         copy: no
 
 - name: "Installing libsodium"
-  shell: ./configure && make && make check && make install
+  shell: sh ./configure && make && make check && make install
   args:
         chdir: "/usr/local/libsodium-stable"
