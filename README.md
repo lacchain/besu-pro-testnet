@@ -252,7 +252,7 @@ You should get something like this:
 If any of these two checks doesn't work, try to restart the pantheon service:
 
 ```shell
-service pantheon restart
+$ service pantheon restart
 ```
 
 If that doesn't solve the problem, contact us at info@lacchain.net.
