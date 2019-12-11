@@ -228,7 +228,7 @@ Once your node is ready, you can start it up with this command in **remote machi
 
 Once you have been permissioned, you can check if your node is connected to the network properly.
 
-* Check that the node has stablished the connections with the peers:
+Check that the node has stablished the connections with the peers:
 
 ```shell
 $ sudo -i
@@ -248,6 +248,14 @@ $ tail -100 /root/lacchain/logs/pantheon_info.log
 You should get something like:
 
 ![Log of latest blocks](/docs/images/log_blocks.PNG)
+
+If any of these two checks doesn't work, try the to restart the pantheon service:
+
+```shell
+service pantheon restart
+```
+
+If that doesn't solve the problem, contact us at info@lacchain.net.
 	
 ## Deploying Dapps on LACCHAIN
 
