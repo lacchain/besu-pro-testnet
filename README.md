@@ -245,11 +245,11 @@ Now you can check if the node is syncing blocks by getting the log of the last 1
 $ tail -100 /root/lacchain/logs/pantheon_info.log
 ```
 
-You should get something like:
+You should get something like this:
 
 ![Log of latest blocks](/docs/images/log_blocks.PNG)
 
-If any of these two checks doesn't work, try the to restart the pantheon service:
+If any of these two checks doesn't work, try to restart the pantheon service:
 
 ```shell
 service pantheon restart
