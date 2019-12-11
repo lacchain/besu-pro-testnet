@@ -224,6 +224,31 @@ Once your node is ready, you can start it up with this command in **remote machi
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-validator.yml 
 	```
 	
+## Checking your connection
+
+Once you have been permissioned, you can check if your node is connected to the network properly.
+
+* Check that the node has stablished the connections with the peers:
+
+```shell
+$ sudo -i
+$ curl -X POST --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":1}' localhost:4545
+```
+
+You should get a result like this:
+
+![Connections](/docs/images/log_connections.PNG)
+
+Now you can check if the node is syncing blocks by getting the log of the last 100 blocks:
+
+```shell
+$ tail -100 /root/lacchain/logs/pantheon_info.log
+```
+
+You should get something like:
+
+![Log of latest blocks](/docs/images/log_blocks.PNG)
+	
 ## Deploying Dapps on LACCHAIN
 
 For a quick overview of some mainstream tools that you can use to deploy Smart Contracts, connect external applications and broadcast transactions to the LACChain Besu Network, you can check our [Guide](https://github.com/lacchain/besu-network/blob/master/DEPLOY_APPLICATIONS.md).
