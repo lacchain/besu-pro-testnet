@@ -80,4 +80,4 @@ server {
 }
 ```
 ### Create a self signed Certificate: ###
-In order To create a self signed certificate please follow this [link](https://gitbub.com/lacchain/besu-network/blob/master/docs/files/SELFSIGNED_CERTIFICATE.md)
+In order To create a self signed certificate please follow this [link](https://github.com/lacchain/besu-network/blob/master/docs/files/SELFSIGNED_CERTIFICATE.md)

@@ -6,7 +6,7 @@ This document provides instructions for properly configuring nginx as a reverse 
 ```shell
 $ which nginx
 ```
-If you don not have nginx installed on your VM, please intall it following this link (https://gitbub.com/lacchain/besu-network/blob/master/docs/files/NGINX_MANUAL_INSTALLATION.md)
+If you don not have nginx installed on your VM, please intall it following this [link](https://github.com/lacchain/besu-network/blob/master/docs/files/NGINX_MANUAL_INSTALLATION.md)
 
 **create self signed certificate**
 When prompted for the <strong>Common Name</strong> make sure to enter your the public ip where nginx will be exposed(Common Name (e.g. server FQDN or YOUR name) []:server_IP_address)

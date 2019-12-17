@@ -1,6 +1,6 @@
 ## Generic Onboarding
 
-This documentation is to provide instructions for the deployment of a node on the LACChain Besy Network with any operative system. If you are using Ubuntu 18.x or Centos7, we recommend you to follow the [installation with ansible](https://github.com/lacchain/besu-network/blob/master/README.md). 
+This documentation is to provide instructions for the deployment of a node on the LACChain Besu Network with any operative system. If you are using Ubuntu 18.x or Centos7, we recommend you to follow the [installation with ansible](https://github.com/lacchain/besu-network/blob/master/README.md). 
 
 To follow pre-requisites and install Hyperledger Besu you can see the [documentation provided byt Hyperledgger Besu](https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Install-Binaries/).
 
