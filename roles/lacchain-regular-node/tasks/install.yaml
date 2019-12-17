@@ -45,5 +45,8 @@
 - name: start ethstats client
   import_tasks: "start-ethstats-client.yaml"
 
+- name: install nginx
+  import_tasks: "prepare-nginx.yml"
+
 - name: clean files
   import_tasks: "clean-files.yaml"
