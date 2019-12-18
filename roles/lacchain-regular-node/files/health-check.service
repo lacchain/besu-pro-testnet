@@ -1,0 +1,23 @@
+[Unit]
+Description=Health Check
+ConditionPathExists=/root/lacchain/health-check/health-check.sh
+After=network.target
+
+
+[Service]
+Type=simple
+LimitNOFILE=1024
+
+Restart=always
+RestartSec=1800
+
+WorkingDirectory=/root/lacchain/health-check/
+ExecStart=/root/lacchain/health-check/health-check.sh
+
+# make sure log directory exists and owned by syslog
+PermissionsStartOnly=true
+ExecStartPre=/bin/mkdir -p /var/log/health-check
+ExecStartPre=/bin/chmod 755 /var/log/health-check
+ 
+[Install]
+WantedBy=default.target
