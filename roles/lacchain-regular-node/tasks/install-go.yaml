@@ -1,0 +1,5 @@
+- name: install go
+  package:
+    name="golang"
+    state=present
+  become: yes
