@@ -1,0 +1,43 @@
+---
+- name: Health Check
+  debug:
+    msg: Configuring Health Check Service
+
+- name: create Health Check directory
+  file:
+    path: "/root/lacchain/health-check"
+    mode: "0755"
+    state: directory
+
+- name: Generate shell script to execute health-check service
+  template:
+    src: "health-check.j2"
+    dest: "/root/lacchain/health-check/health-check.sh"
+    mode: 0775
+    force: yes
+
+- name: Move executable healthCheck program
+  shell: mv /tmp/health-check/healthCheckexe /root/lacchain/health-check/
+  args:
+    warn: false
+
+- name: Copy service file to systemd
+  copy:
+    src: "{{ role_path }}/files/health-check.service"
+    dest: /lib/systemd/system/health-check.service
+    mode: 0775
+
+- name: Enable service Health-Check
+  service:
+    name: health-check
+    enabled: yes
+
+- name: Start Health check service
+  service:
+    name: health-check
+    state: started
+
+- name: Remove unnecessary files
+  file:
+      path: /tmp/health-check
+      state: absent
