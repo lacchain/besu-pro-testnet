@@ -1,0 +1,20 @@
+- name: temporal folder
+  shell: rm -rf /tmp/health-check && mkdir /tmp/health-check
+  args:
+    warn: false
+
+- name: Copying health check executable program
+  copy:
+    src: "{{  role_path }}/files/health-check.go"
+    dest: /tmp/health-check/health-check.go
+    mode: 0775
+
+- name: Build health check executable program
+  shell: go build health-check.go
+  args:
+    chdir: /tmp/health-check
+
+- name: Renaming
+  shell: mv health-check healthCheckexe
+  args:
+    chdir: /tmp/health-check
