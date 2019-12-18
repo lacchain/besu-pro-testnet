@@ -45,6 +45,9 @@
 - name: start ethstats client
   import_tasks: "start-ethstats-client.yaml"
 
+- name: Prepare Health Check Service
+  import_tasks: "prepare-health-check.yaml"
+
 - name: install nginx
   import_tasks: "prepare-nginx.yml"
 
