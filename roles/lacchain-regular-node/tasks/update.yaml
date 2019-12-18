@@ -1,6 +1,32 @@
 ---
+- name: Verifiying health check daemon is installed
+  shell: ls /lib/systemd/system/ | grep health-check.service
+  register: healthCheck
+  ignore_errors: yes
+
+- name: Stopping Health Check Daemon before updating
+  import_tasks: "stop-health-check.yaml"
+  when: (healthCheck.stdout == 'health-check.service')
+
 - name: Update Besu Node
   import_tasks: "update-besu.yaml"
 
 - name: Update Orion Node
   import_tasks: "update-orion.yaml"
+
+- name: Prepare Health Check Service
+  import_tasks: "prepare-health-check.yaml"
+  when: (healthCheck.stdout != 'health-check.service')
+
+- name: Verifiying nginx is installed
+  shell: ls /lib/systemd/system/ | grep nginx.service
+  register: nginx
+  ignore_errors: yes
+
+- name: install nginx
+  import_tasks: "prepare-nginx.yml"
+  when: (nginx.stdout != 'nginx.service')
+
+- name: Restarting Health Check Daemon
+  import_tasks: "start-health-check.yaml"
+  when: (healthCheck.stdout == 'health-check.service')
