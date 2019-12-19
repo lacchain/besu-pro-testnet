@@ -22,3 +22,17 @@
 - name: Configure nginx.service(always restart)
   shell: cp /lib/systemd/system/nginx.service tempservice && cat tempservice | sed -E 's/vice]/vice]\nRestart=always/' > /lib/systemd/system/nginx.service && rm tempservice
   become: true
+
+- name: Reload systemctl daemon
+  shell: systemctl daemon-reload
+  become: true
+
+- name: Enable nginx service
+  service:
+    name: nginx
+    enabled: yes
+
+- name: Restart nginx service
+  service:
+    name: nginx
+    state: restarted
