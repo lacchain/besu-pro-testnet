@@ -6,4 +6,4 @@
 - name: Starting Health Check
   service:
       name: health-check
-      state: started
+      state: restarted

@@ -17,7 +17,7 @@
     force: yes
 
 - name: Move executable healthCheck program
-  shell: mv /tmp/health-check/healthCheckexe /root/lacchain/health-check/
+  shell: mv /root/go/src/github/healthCheck/healthCheckexe /root/lacchain/health-check/
   args:
     warn: false
 
@@ -27,6 +27,11 @@
     dest: /lib/systemd/system/health-check.service
     mode: 0775
 
+- name: Reload systemctl daemon
+  shell: systemctl daemon-reload
+  args:
+    warn: false    
+
 - name: Enable service Health-Check
   service:
     name: health-check
@@ -35,9 +40,4 @@
 - name: Start Health check service
   service:
     name: health-check
-    state: started
-
-- name: Remove unnecessary files
-  file:
-      path: /tmp/health-check
-      state: absent
+    state: restarted
