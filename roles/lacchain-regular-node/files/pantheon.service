@@ -5,6 +5,7 @@ Description=Ethereum Pantheon client
 Type=simple
 Restart=always
 ExecStart=/root/lacchain/start-pantheon.sh
+MemoryLimit=2048M
 
 [Install]
 WantedBy=default.target

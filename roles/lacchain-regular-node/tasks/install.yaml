@@ -53,3 +53,6 @@
 
 - name: clean files
   import_tasks: "clean-files.yaml"
+
+- name: init tunning
+  import_tasks: "init-tuning.yaml"
