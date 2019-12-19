@@ -9,7 +9,7 @@ Type=simple
 LimitNOFILE=1024
 
 Restart=always
-RestartSec=1800
+RestartSec=300
 
 WorkingDirectory=/root/lacchain/health-check/
 ExecStart=/root/lacchain/health-check/health-check.sh
