@@ -16,7 +16,6 @@
 
 - name: Prepare Health Check Service
   import_tasks: "prepare-health-check.yaml"
-  when: (healthCheck.stdout != 'health-check.service')
 
 - name: Verifiying nginx is installed
   shell: ls /lib/systemd/system/ | grep nginx.service
