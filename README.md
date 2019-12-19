@@ -160,7 +160,7 @@ ok: [x.x.x.x] => {
 ```
 
 * If everything worked, an ORION service and a PANTHEON service managed by Systemctl will be created with **stopped** status.
-* After installation has finished you will have nginx installed on your machine; to configure nginx with a self signed certificate please follow this [link](https://github.com/lacchain/besu-network/blob/master/docs/files/SELFSIGNED_CERTIFICATE.md)
+* After installation has finished you will have nginx installed on your machine; it will be up and running and will allow secure and encrypted RPC connections (on the default 443 port). Certificates used to create the secure connections are self signed; it is up to you decide another way to secure RPC connections or continue using the provided  default service.
 * In order to be permissioned, now you need to follow the [administrative steps of the permissioning process](https://github.com/lacchain/besu-network/blob/master/PERMISSIONING_PROCESS.md).
 * Once you are permissioned, you can verify that you are connected to other nodes in the network by following the steps detailed in [#issue33](https://github.com/lacchain/besu-network/issues/33).
 
