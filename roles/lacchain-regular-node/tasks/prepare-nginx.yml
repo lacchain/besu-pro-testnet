@@ -7,5 +7,8 @@
   import_tasks: "install-nginx-rhel.yml"
   when: (ansible_distribution |lower == 'redhat') or (ansible_distribution |lower == 'centos')
 
+- name: Create Certificates
+  import_tasks: "create-self-signed-certificate.yaml"
+
 - name: Configure nginx
   import_tasks: "configure-nginx.yml"
