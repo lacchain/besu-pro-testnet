@@ -20,7 +20,7 @@
 
 - name: install Gradle
   get_url:
-    url: https://services.gradle.org/distributions/gradle-5.2.1-bin.zip
+    url: https://services.gradle.org/distributions/gradle-6.0-bin.zip
     dest: /tmp/
     force: yes
     owner: root
@@ -29,13 +29,13 @@
 
 - name: unzip Gradle
   unarchive:
-        src: "/tmp/gradle-5.2.1-bin.zip"
+        src: "/tmp/gradle-6.0-bin.zip"
         dest: /usr/local
         copy: no
 
 - name: Symbolic link for pantheon
   file:
-        src: "/usr/local/gradle-5.2.1/bin/{{ item.src }}"
+        src: "/usr/local/gradle-6.0/bin/{{ item.src }}"
         dest: "/usr/bin/{{ item.dest }}"
         state: link
   with_items:

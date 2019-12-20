@@ -14,6 +14,17 @@
 - name: Update Orion Node
   import_tasks: "update-orion.yaml"
 
+- name: Verifying certificate is created
+  shell: ls /root/lacchain/orion/certificates | grep orion_cer.pem
+  register: certificate
+
+- name: Create Orion Certificate
+  import_tasks: "init-orion-certificate.yaml"
+  when: (certificate.stdout != 'orion_cer.pem')
+
+- name: Init Tunning
+  import_tasks: "init-tuning.yaml"
+
 - name: Prepare Health Check Service
   import_tasks: "prepare-health-check.yaml"
 
