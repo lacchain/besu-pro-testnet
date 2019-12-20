@@ -4,25 +4,14 @@
         msg: "Updating Besu"
 
 - name: previous clearing
-  shell: rm -rf /tmp/besu
+  shell: rm -rf /tmp/besu && mkdir /tmp/besu
   args:
-    warn: false 
+    warn: false
 
-- name: Download specified Besu source code
-  git:
-        repo: "https://github.com/hyperledger/besu"
-        dest: "/tmp/besu"
-        version: "{{ besu_release_commit }}"
-
-- name: Building Besu
-  shell: "sh ./gradlew build -x test"
-  args:
-        chdir: /tmp/besu/
-
-- name: Standarizing name
-  shell:  mv *.tar.gz besu.tar.gz
-  args:
-        chdir: /tmp/besu/build/distributions
+- name: pull besu binaries
+  get_url:
+    url: "https://bintray.com/api/ui/download/hyperledger-org/besu-repo/besu-{{ besu_release_version }}.tar.gz"
+    dest: "/tmp/besu/besu.tar.gz"
 
 - name: Preparing temporal folder
   shell: rm -rf /tmp/transit/ && mkdir /tmp/transit #deleting and creating a new
@@ -31,7 +20,7 @@
 
 - name: Extract the Besu tarball  
   unarchive:
-        src: "/tmp/besu/build/distributions/besu.tar.gz"
+        src: "/tmp/besu/besu.tar.gz"
         dest: /tmp/transit #/usr/local
         copy: no
 
@@ -95,4 +84,4 @@
 - name: clearing unnecessary folders
   shell: rm -rf /tmp/transit /tmp/besu
   args:
-    warn: false  
+    warn: false
