@@ -1,13 +1,21 @@
 - name: Delete previous nginx.conf
   file:
-       path: /etc/nginx/nginx.conf
-       state: absent
+    path: /etc/nginx/nginx.conf
+    state: absent
 
-- name: Copy ngix.conf file
-  copy:
-    src: "{{ role_path }}/files/nginx.conf"
+- name: Copy ubuntu ngix.conf file
+  template:
+    src: "{{ role_path }}/files/nginx-ubuntu.conf"
+    dest: /etc/nginx/nginx.conf
+    mode: 0644 
+  when: ansible_distribution |lower == 'ubuntu'
+
+- name: Copy centos ngix.conf file
+  template:
+    src: "{{ role_path }}/files/nginx-rhel.conf"
     dest: /etc/nginx/nginx.conf
     mode: 0644
+  when: (ansible_distribution |lower == 'redhat') or (ansible_distribution |lower == 'centos')
 
 - name: get public ip
   shell: dig +short myip.opendns.com @resolver1.opendns.com 2>/dev/null || curl -s --retry 2 icanhazip.com
