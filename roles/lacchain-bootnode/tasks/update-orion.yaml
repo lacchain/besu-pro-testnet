@@ -4,41 +4,30 @@
       msg: "Updating Orion"
 
 - name: previous clearing
-  shell: rm -rf /tmp/orion
+  shell: rm -rf /tmp/orion && mkdir /tmp/orion
   args:
     warn: false      
 
-- name: Download specified orion source code
-  git:
-        repo: "https://github.com/PegaSysEng/orion"
-        dest: "/tmp/orion"
-        version: "{{ orion_release_commit }}"
-
-- name: Building Orion
-  shell: "sh ./gradlew build -x test"
-  args:
-        chdir: /tmp/orion/
-
-- name: Standarizing name
-  shell:  mv *.tar.gz orion.tar.gz
-  args:
-        chdir: /tmp/orion/build/distributions
+- name: pull orion binaries
+  get_url:
+    url: "https://bintray.com/consensys/binaries/download_file?file_path=orion-{{ orion_release_version}}.tar.gz"
+    dest: "/tmp/orion/orion.tar.gz"
 
 - name: Preparing temporal folder
   shell: rm -rf /tmp/transit/ && mkdir /tmp/transit #deleting and creating a new
   args:
     warn: false
 
-- name: Extract the orion tarball  
+- name: Extract the Orion tarball  
   unarchive:
-        src: "/tmp/orion/build/distributions/orion.tar.gz"
-        dest: /tmp/transit
+        src: "/tmp/orion/orion.tar.gz"
+        dest: /tmp/transit #/usr/local
         copy: no
 
 - name: Renaming extracted file
   shell: mv * orion
   args:
-        chdir: /tmp/transit
+    chdir: /tmp/transit
 
 - name: stop enclave #stopping node before starting the update process
   import_tasks: "stop-orion.yaml"
