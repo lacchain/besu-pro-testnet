@@ -8,6 +8,12 @@
   import_tasks: "stop-health-check.yaml"
   when: (healthCheck.stdout == 'health-check.service')
 
+- name: stop enclave #stopping node before starting the update process
+  import_tasks: "stop-orion.yaml"
+
+- name: stop pantheon #stopping node before starting the update process
+  import_tasks: "stop-node.yaml" 
+
 - name: Update Besu Node
   import_tasks: "update-besu.yaml"
 
@@ -17,6 +23,7 @@
 - name: Verifying certificate is created
   shell: ls /root/lacchain/orion/certificates | grep orion_cer.pem
   register: certificate
+  ignore_errors: yes
 
 - name: Create Orion Certificate
   import_tasks: "init-orion-certificate.yaml"
@@ -40,3 +47,9 @@
 - name: Restarting Health Check Daemon
   import_tasks: "start-health-check.yaml"
   when: (healthCheck.stdout == 'health-check.service')
+
+- name: start orion
+  import_tasks: "start-orion.yaml"
+
+- name: start besu
+  import_tasks: "start-node.yaml"
