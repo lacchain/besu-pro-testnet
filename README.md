@@ -20,7 +20,7 @@ This work was led by [everis](https://www.everis.com/) and was completely donate
 
 * Below you will find instructions for the deployment of nodes using Ansible. This implies that it will be executed from a local machine on a remote server. The local machine and the remote server will communicate via ssh.
 
-* The installation with ansible provided is compatible with **Ubuntu 18.04** and **Centos7**. If you want to deploy your node in a different operative system, you can go to the (documentation for Generic Onboarding)[https://github.com/lacchain/besu-network/blob/master/GENERIC_ONBOARDING.md].
+* The installation with ansible provided is compatible with **Ubuntu 18.04** and **Centos7**. If you want to deploy your node in a different operative system, you can go to the [documentation for Generic Onboarding](https://github.com/lacchain/besu-network/blob/master/GENERIC_ONBOARDING.md).
 
 ## Minimum System Requirements
 
