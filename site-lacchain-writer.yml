@@ -1,4 +1,4 @@
-- hosts: regular
+- hosts: writer
   gather_facts: yes
   become: yes
   vars:
@@ -15,4 +15,4 @@
       private: no
       
   roles:
-    - lacchain-regular-node
+    - lacchain-writer-node

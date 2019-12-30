@@ -5,7 +5,7 @@
 # 35.247.241.166 node_name=bootnode3
 # 35.197.76.152  node_name=bootnode4
 
-[regular]
+[writer]
 # 35.198.58.193   node_ip=35.198.58.193 node_name=sat-everis-ar
 ## Add your node by changing the line below
 # <your node address> password=<orion password> node_name=<node name> node_email=<your@email> dns_name=<your dns>
@@ -21,7 +21,7 @@
 
 #When you want to update, you can customize the version to update by typing the sha commit of the orion and Besu release
 #eg:
-[regular] ##it can also be [bootnodes] or [validators]
+[writer] ##it can also be [bootnodes] or [validators]
 #35.222.239.124 besu_release_version='1.3.8' orion_release_version='1.4.0'
 
 #Current Besu commit sha obtained from: https://github.com/hyperledger/besu/releases

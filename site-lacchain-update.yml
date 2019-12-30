@@ -6,7 +6,7 @@
       prompt: "Would you like to update a validator node? (yes/no)"
       private: no
     - name: "restore"
-      prompt: "Would you like to update a regular node? (yes/no)"
+      prompt: "Would you like to update a writer node? (yes/no)"
       private: no
   roles:
     - lacchain-update-node

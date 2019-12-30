@@ -110,7 +110,7 @@ Make sure you have SSH access to the node you're setting up. This step will vary
 
 ### Preparing installation of a new node ###
 
-* There are three types of nodes (Bootnode / Validator / Regular) that can be created in the Pantheon network at this moment.
+* There are three types of nodes (Bootnode / Validator / Writer) that can be created in the Pantheon network at this moment.
 
 * After cloning the repository on the **local machine**, enter it and create a copy of the `inventory.example` file as `inventory`. Edit that file to add a line for the remote server where you are creating the new node. You can do it with a graphical tool or inside the shell:
 
@@ -118,12 +118,12 @@ Make sure you have SSH access to the node you're setting up. This step will vary
     $ cd lacchain/
     $ cp inventory.example inventory
     $ vi inventory
-    [regular] # or [validators] or [bootnodes] depending on its role
+    [writer] # or [validators] or [bootnodes] depending on its role
     192.168.10.72 password=abc node_name=my_node_name node_email=your@email
     ```
 
 Consider the following points:
-- Place the new line in the section corresponding to your node's role: `[regular]`, `[validators]` or `[bootnodes]`.
+- Place the new line in the section corresponding to your node's role: `[writer]`, `[validators]` or `[bootnodes]`.
 - The first element on the new line is the IP or hostname where you can reach your remote machine from your local machine.
 - The value of `password` is the password that will be used to set up Orion, for private transactions.
 - The value of `node_name` is the name you want for your node in the network monitoring tool.
@@ -143,10 +143,10 @@ Consider the following points:
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-validator.yml
 	```
 
-* To deploy a **regular node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
+* To deploy a **writer node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
 
 	```shell
-	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-regular.yml
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-writer.yml
 	```
 
 * At the end of the installation, if everything worked a PANTHEON service will be created in the case of a **validator node** managed by Systemctl with **stopped** status.
@@ -191,13 +191,13 @@ Once your node is ready, you can start it up with this command in **remote machi
 ### Updates ###
   * You can update **Besu**, by preparing your inventory with:
 	```shell
-	[regular] #here put the role you are gong to update
+	[writer] #here put the role you are gong to update
 	35.193.123.227 
 	```
 
 	Optionally you can choose the sha_commit of the version you want to update refered to Orion; with Besu is is only neede to specify the version:
 	```shell
-	[regular] #here put the role you are gong to update
+	[writer] #here put the role you are gong to update
 	35.193.123.227 besu_release_version='1.3.6' orion_release_version='1.4.0'
 	```
 	Current Besu versions obtained from: https://pegasys.tech/solutions/hyperledger-besu/
@@ -214,7 +214,7 @@ Once your node is ready, you can start it up with this command in **remote machi
 
 	Now according to the role your node has, type one of the following commands on your terminal:
 	```shell
-	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-regular.yml 
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-writer.yml 
 	```
 
 	```shell
