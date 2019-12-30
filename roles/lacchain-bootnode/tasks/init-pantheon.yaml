@@ -129,7 +129,7 @@
         replace: "60606,"
   when: bootnode
 
-- name: add new bootnode to running validator or regular
+- name: add new bootnode to running validator or writer
   replace:
         dest: ~/lacchain/tmp/main.yml
         regexp: "60606,$"

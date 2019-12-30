@@ -1,4 +1,4 @@
 ---
-# handlers file for lacchain-regular-node
+# handlers file for lacchain-writer-node
 - name: run ldconfig
   shell: ldconfig

@@ -1,5 +1,5 @@
-- hosts: regular
+- hosts: writer
   gather_facts: yes
   become: yes
   roles:
-    - lacchain-regular-node
+    - lacchain-writer-node
