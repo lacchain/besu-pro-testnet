@@ -27,10 +27,7 @@
 - name: Renaming extracted file
   shell: mv * besu
   args:
-        chdir: /tmp/transit
-
-- name: stop enclave #stopping node before starting the update process
-  import_tasks: "stop-orion.yaml"        
+        chdir: /tmp/transit   
 
 - name: stop besu #stopping node before starting the update process
   import_tasks: "stop-node.yaml"        
@@ -73,10 +70,7 @@
         - { src: "besu", dest: "pantheon" }
         - { src: "besu.bat", dest: "pantheon.bat" }
         - { src: "besu", dest: "besu" }
-        - { src: "besu.bat", dest: "besu.bat" }
-
-- name: start orion
-  import_tasks: "start-orion.yaml"        
+        - { src: "besu.bat", dest: "besu.bat" }        
 
 - name: start node
   import_tasks: "start-node.yaml"

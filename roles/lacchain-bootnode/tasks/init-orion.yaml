@@ -22,31 +22,6 @@
     content: |
       {{password}}
 
-#- name: Copy constellation nodes file
-#  copy:
-#      src: "{{ role_path }}/files/constellation-nodes.json"
-#      dest: ~/lacchain/tmp/constellation-nodes.json
-#      mode: 0755
-
-#- name: update constellation node files
-#  replace:
-#      path: ~/lacchain/tmp/constellation-nodes.json
-#      regexp: '9000/"$'
-#      replace: '9000/",'
-
-#- name: update constellation nodes file
-#  lineinfile:
-#      path: ~/lacchain/tmp/constellation-nodes.json
-#      regexp: "$]$"
-#      insertbefore: "^]$"
-#      line: '    "https://{{node_ip.stdout}}:9000/"'
-
-#- name: Fetch constellation_nodes updated
-#  fetch:
-#      src: ~/lacchain/tmp/constellation-nodes.json
-#      dest: "{{ role_path }}/files/"
-#      flat: yes
-
 - name: generate configuration orion file
   template:
     src: "orion.j2"

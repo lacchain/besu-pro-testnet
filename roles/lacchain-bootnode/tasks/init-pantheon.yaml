@@ -24,13 +24,6 @@
         mode: 0755
   when: bootnode
 
-#- name: Copy static nodes file
-#  copy:
-#        src: "{{ role_path }}/files/static-nodes.json"
-#        dest: ~/lacchain/tmp/static-nodes.json
-#        mode: 0755
-#  when: bootnode
-
 - name: initializing pantheon from genesis.json
   debug:
         msg: Initializing Pantheon
@@ -71,28 +64,6 @@
   debug:
         msg: enode://{{enode_key.stdout}}@{{node_ip.stdout}}:21000
   when: bootnode
-
-#- name: update static nodes file
-#  replace:
-#        dest: ~/lacchain/tmp/static-nodes.json
-#        regexp: '3"$'
-#        replace: '3",'
-#  when: bootnode
-
-#- name: add new static bootnode validator
-#  lineinfile:
-#        path: ~/lacchain/tmp/static-nodes.json
-#        regexp: "$]$"
-#        insertbefore: "^]$"
-#        line: '    "enode://{{enode_key.stdout}}@{{node_ip.stdout}}:60606"'
-#  when: bootnode
-
-#- name: Fetch static nodes file
-#  fetch:
-#        src: ~/lacchain/tmp/static-nodes.json
-#        dest: "{{ role_path }}/files/"
-#        flat: yes
-#  when: bootnode
 
 - name: update permissioned nodes validator file
   replace:
@@ -142,12 +113,6 @@
         dest: "{{ playbook_dir }}/roles/lacchain-validator-node/vars/"
         flat: yes
   when: bootnode
-
-#- name: copy static nodes to bootnode
-#  copy:
-#        src: "{{ role_path }}/files/static-nodes.json"
-#        dest: ~/lacchain/data/static-nodes.json
-#        mode: 0755
 
 - name: Generate shell script to execute geth service
   template:
