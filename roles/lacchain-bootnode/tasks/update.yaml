@@ -1,6 +1,3 @@
 ---
 - name: Update Besu Node
   import_tasks: "update-besu.yaml"
-
-- name: Update Orion Node
-  import_tasks: "update-orion.yaml"
