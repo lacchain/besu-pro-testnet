@@ -1,4 +1,4 @@
-# LACCHAIN #
+# LACChain #
 
 ## Introduction
 
@@ -262,6 +262,8 @@ For a quick overview of some mainstream tools that you can use to deploy Smart C
 
 For any issues, you can either go to [issues](https://github.com/lacchain/besu-network/issues) or e-mail us at info@lacchain.net. Any feedback is more than welcome!
 
+&nbsp;
+&nbsp;
 
 **LICENSE**
 
