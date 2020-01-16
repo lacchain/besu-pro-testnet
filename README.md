@@ -1,9 +1,5 @@
 # LACCHAIN #
 
-## Notes
-
-This work was led by [everis](https://www.everis.com/) and was completely donated to LACCHAIN Consortium.
-
 ## Introduction
 
 * LACChain Test Networks are DLT infrastructure developed, maintained and provided by the [LACChain Alliance](https://www.iadb.org/en/news/global-alliance-promote-use-blockchain-latin-america-and-caribbean). These networks are classified as public-permissioned blockchain infrastructure, according to the standard [ISO/TC 307](https://www.iso.org/committee/6266604.html). 
@@ -266,13 +262,16 @@ For a quick overview of some mainstream tools that you can use to deploy Smart C
 
 For any issues, you can either go to [issues](https://github.com/lacchain/besu-network/issues) or e-mail us at info@lacchain.net. Any feedback is more than welcome!
 
-&nbsp;
-&nbsp;
-
-
 
 **LICENSE**
 
 <center><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></center>
 
 This work is licensed under a [license](http://creativecommons.org/licenses/by-nc/4.0/)
+
+&nbsp;
+&nbsp;
+
+**Acknowledgement**
+
+We acknowledge very much the contributions of [everis](https://www.everis.com/) to this development, leading the first deployment of the network and actively participating in the day-to-day.
