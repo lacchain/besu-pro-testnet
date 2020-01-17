@@ -8,10 +8,10 @@
   import_tasks: "stop-health-check.yaml"
   when: (healthCheck.stdout == 'health-check.service')
 
-- name: stop enclave #stopping node before starting the update process
+- name: stop enclave
   import_tasks: "stop-orion.yaml"
 
-- name: stop pantheon #stopping node before starting the update process
+- name: stop pantheon
   import_tasks: "stop-node.yaml" 
 
 - name: Update Besu Node
@@ -19,6 +19,17 @@
 
 - name: Update Orion Node
   import_tasks: "update-orion.yaml"
+
+- name: Copy service file to systemd
+  copy:
+    src: "{{ role_path }}/files/orion.service"
+    dest: /lib/systemd/system/orion.service
+    mode: 0775
+
+- name: Enable service orion
+  service:
+    name: orion
+    enabled: yes
 
 - name: Verifying certificate is created
   shell: ls /root/lacchain/orion/certificates | grep orion_cer.pem

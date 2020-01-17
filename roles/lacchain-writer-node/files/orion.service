@@ -1,5 +1,6 @@
 [Unit]
 Description=Orion client
+PartOf=health-check.service
 
 [Service]
 Type=simple

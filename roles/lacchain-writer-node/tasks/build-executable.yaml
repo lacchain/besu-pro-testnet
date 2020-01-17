@@ -1,14 +1,21 @@
 - name: Download health-check source code
   git:
         repo: "https://github.com/eum602/healthCheck.git"
-        dest: "/root/go/src/github/healthCheck"
+        dest: "/root/go/src/healthCheck" 
+
+- name: install health-dependencies for {{ ansible_distribution }}
+  yum:
+   name: "{{ item }}"
+  with_items:
+   - "systemd-devel"
+  when: (ansible_distribution |lower == 'redhat') or (ansible_distribution |lower == 'centos')
 
 - name: Build health check executable program
-  shell: go get ./... && go build health-check.go
+  shell: export GO111MODULE=off && go get ./... && go build *.go
   args:
-    chdir: "/root/go/src/github/healthCheck"
+    chdir: "/root/go/src/healthCheck"
 
 - name: Renaming
-  shell: mv health-check healthCheckexe
+  shell: mv env health-check
   args:
-    chdir: "/root/go/src/github/healthCheck"
+    chdir: "/root/go/src/healthCheck"
