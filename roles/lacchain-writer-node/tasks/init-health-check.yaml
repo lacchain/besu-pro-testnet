@@ -9,15 +9,8 @@
     mode: "0755"
     state: directory
 
-- name: Generate shell script to execute health-check service
-  template:
-    src: "health-check.j2"
-    dest: "/root/lacchain/health-check/health-check.sh"
-    mode: 0775
-    force: yes
-
-- name: Move executable healthCheck program
-  shell: mv /root/go/src/github/healthCheck/healthCheckexe /root/lacchain/health-check/
+- name: Move executable health-check program
+  shell: mv /root/go/src/healthCheck/health-check /root/lacchain/health-check/
   args:
     warn: false
 
