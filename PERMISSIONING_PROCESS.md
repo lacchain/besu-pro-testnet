@@ -1,6 +1,6 @@
 # PERMISSIONING PROCESS
 
-As public blockchain networks, LACChain Test Networks are open to any entity in Latin America and the Caribbean. As permissioned networks, entities must be authenticated and commit to comply with the law in order to be permissioned. 
+As public blockchain networks, LACChain Test Networks are open to any entity in Latin America and the Caribbean. As permissioned networks, entities must be authenticated and commit to comply with law, policies, and regulations in order to be permissioned. 
 
 ### WRITER NODES
 
