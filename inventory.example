@@ -8,7 +8,7 @@
 [writer]
 # 35.198.58.193   node_ip=35.198.58.193 node_name=sat-everis-ar
 ## Add your node by changing the line below
-# <your node address> password=<orion password> node_name=<node name> node_email=<your@email> dns_name=<your dns>
+# <your node address> node_ip=<besu_public_ip> password=<orion password> node_name=<node name> node_email=<your@email> dns_name=<your dns>
 
 [validators]
 # 35.194.50.229  node_name=validator1
