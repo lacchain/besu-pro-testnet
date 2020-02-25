@@ -12,10 +12,6 @@
     mode: '0644'
     force: no
 
-- name: get public ip
-  shell: dig +short myip.opendns.com @resolver1.opendns.com 2>/dev/null || curl -s --retry 2 icanhazip.com
-  register: node_ip
-
 - name: generate configuration openssl file
   template:
     src: "openssl.j2"

@@ -2,7 +2,7 @@ server {
     listen 443 http2 ssl;
     listen [::]:443 http2 ssl;
 
-    server_name {{node_ip.stdout}};
+    server_name {{node_ip}};
 
     ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
     ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;

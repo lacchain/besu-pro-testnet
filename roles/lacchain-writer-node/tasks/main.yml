@@ -1,4 +1,14 @@
 ---
+- name: get public ip
+  shell: dig +short myip.opendns.com @resolver1.opendns.com 2>/dev/null || curl -s --retry 2 icanhazip.com
+  register: ip_address
+  when: node_ip is not defined
+
+- name: setting ip to use
+  set_fact:
+    node_ip: "{{ip_address.stdout}}"
+  when: node_ip is not defined
+
 - name: Install Writer Node
   import_tasks: "install.yaml"
   when: install

@@ -17,10 +17,6 @@
     mode: 0644
   when: (ansible_distribution |lower == 'redhat') or (ansible_distribution |lower == 'centos')
 
-- name: get public ip
-  shell: dig +short myip.opendns.com @resolver1.opendns.com 2>/dev/null || curl -s --retry 2 icanhazip.com
-  register: node_ip
-
 - name: Copy ssl config file
   template:
     src: "ssl.conf.j2"
