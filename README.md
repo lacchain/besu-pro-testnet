@@ -115,7 +115,7 @@ Make sure you have SSH access to the node you're setting up. This step will vary
     $ cp inventory.example inventory
     $ vi inventory
     [writer] # or [validators] or [bootnodes] depending on its role
-    192.168.10.72 password=abc node_name=my_node_name node_email=your@email
+    192.168.10.72 node_ip=your.public.node.ip password=abc node_name=my_node_name node_email=your@email
     ```
 
 Consider the following points:
