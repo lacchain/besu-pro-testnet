@@ -29,12 +29,6 @@
 - name: init pantheon
   import_tasks: "init-pantheon.yaml"
 
-- name: install orion
-  import_tasks: "install-orion.yaml"
-
-- name: init orion
-  import_tasks: "init-orion.yaml"
-
 - name: start node
   import_tasks: "start-node.yaml"
   when: first_node
@@ -44,4 +38,3 @@
 
 - name: clean files
   import_tasks: "clean-files.yaml"
-
