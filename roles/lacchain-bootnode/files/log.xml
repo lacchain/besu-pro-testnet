@@ -13,7 +13,7 @@
         <Policies>
             <TimeBasedTriggeringPolicy />
             <SizeBasedTriggeringPolicy size="10 MB"/>
-        </Policies>
+    	</Policies>
     </RollingFile>
 
     <RollingFile name="debugLog" fileName="/root/lacchain/logs/pantheon_debug.log"
@@ -23,7 +23,13 @@
             <Policies>
                 <SizeBasedTriggeringPolicy size="10 MB" />
             </Policies>
-            <DefaultRolloverStrategy max="10"/>
+	    <DefaultRolloverStrategy>
+                <Delete basePath="/root/lacchain/logs" maxDepth="2">
+                  <IfFileName glob="*_debug/app-*.log" />
+                  <IfLastModified age="30d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+        
       </RollingFile>
          
         <RollingFile name="infoLog" fileName="/root/lacchain/logs/pantheon_info.log"
@@ -33,7 +39,13 @@
             <Policies>
                 <SizeBasedTriggeringPolicy size="10 MB" />
             </Policies>
-            <DefaultRolloverStrategy max="10"/>
+	    <DefaultRolloverStrategy>
+                <Delete basePath="/root/lacchain/logs" maxDepth="2">
+                  <IfFileName glob="*_info/app-*.log" />
+                  <IfLastModified age="30d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+ 
         </RollingFile>
          
         <RollingFile name="errorLog" fileName="/root/lacchain/logs/pantheon_error.log"
@@ -43,7 +55,12 @@
             <Policies>
                 <SizeBasedTriggeringPolicy size="10 MB" />
             </Policies>
-            <DefaultRolloverStrategy max="10"/>
+ 	    <DefaultRolloverStrategy>
+                <Delete basePath="/root/lacchain/logs" maxDepth="2">
+                  <IfFileName glob="*_error/app-*.log" />
+                  <IfLastModified age="30d" />
+                </Delete>
+            </DefaultRolloverStrategy>
         </RollingFile>
 
   </Appenders>
