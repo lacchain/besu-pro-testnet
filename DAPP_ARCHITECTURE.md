@@ -95,9 +95,13 @@ To publish transactions there are a steps to perform:
 
 3. Publish and republish the transaction. Is important to know that you transaction has a chance to get lost or dropped from the decentralized network.
 
-The next diagram describe architecture's components where possible they should be used.
+The next diagram describe architecture's components which possible they should be used.
 
-![Event Consumer](/docs/images/event_consumer.png)
+![Event Consumer](/docs/images/transaction_manager.png)
+
+ The transaction manager is in charge of sending the transaction to the LACChain node, as well as handling the possible errors that could occur if the transaction fails (whether due to gas, incorrect nonce, connection problem, etc). In cases of errors the transaction manager has the responsibility to resend the transaction depending on the error occurred to ensure that the transaction passes correctly. This due to the asynchronous nature of the decentralized network.
+
+ Additionally, if the node will receive too many transactions, which may not enter into block, it is necessary that the transaction manager can limit the number of transactions sent in a block, for this it can lean on the message bus and obtain the amount of necessary transactions that can enter a block.
 
 After explains this considerations you could use [Eth Signer](https://github.com/PegaSysEng/ethsigner/ "Eth Signer") to sing the transaction and store private keys in key vaults.
 
