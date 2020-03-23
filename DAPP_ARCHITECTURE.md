@@ -1,5 +1,5 @@
 # RECOMMENDATIONS FOR DAPP ARCHITECTURE
-This document aims to provide recommendations on the architecture of your decentralized application (Dapp) running on the LACChain Besu Network, which is based on Ethereum.
+This document aims to provide recommendations on the architecture of your decentralized application (Dapp) running on the LACChain network, which is based on [Hyperledger Besu](https://besu.hyperledger.org/en/stable/ "Hyperledger Besu").
 
 ## Decentralized applications (dapps)
 
@@ -52,7 +52,7 @@ Some mobile apps categorized as software wallets are already available to store 
 
 ## Backend
 
-When decentralized networks are scalable and robust enough, we could use them to store all the information of our application, including its UI, business logic, and data. Until that becomes a reality, we need to add backend to our decentralized architectures. The responsabilities of the backend are:
+When decentralized networks are scalable and robust enough, we could use them to store all the public information of our application, including its UI, business logic, and data. Until that becomes a reality, we need to add backend to our decentralized architectures. The responsabilities of the backend are:
 
 * Develop integrations with services and legacy systems.
 
