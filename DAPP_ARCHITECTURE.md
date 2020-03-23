@@ -68,7 +68,7 @@ In order to be able to resend those transactions/event that have been lost, it i
 
 ![Event Consumer](/docs/images/event_consumer.png)
 
-1. Events sync backend service constantly polls the network, trying to retrieve new events. Once there are some new events available, it sends these events to the message bus.
+1. Events sync backend service constantly pulls the network, trying to retrieve new events. Once there are some new events available, it sends these events to the message bus.
 
 2. The message bus (for example Kafka or RabbitMQ) routes the event to every topic/queue which was set up individually for each backend service. 
 
