@@ -14,7 +14,7 @@
 
 * We are developing different monitoring tools to show the performance and activity of the network. Currently, we have available the [EthStats](http://dashboard.lacchain.net/) and the [Transaction Explorer](http://explorer.lacchain.net/). We will be providing more dashboards and monitoring tools soon.
 
-* We have created two guides to help you [Deploy your Dapp on LACChain](https://github.com/lacchain/besu-network/blob/master/DEPLOY_APPLICATIONS.md) and [provide your Dapp with a suitable archiecture](https://github.com/lacchain/besu-network/blob/master/DAPP_ARCHITECTURE.md)
+* We have created two guides to help you [Deploy your Dapp on LACChain](https://github.com/lacchain/besu-network/blob/master/DEPLOY_APPLICATIONS.md) and [provide your Dapp with a suitable archiecture](https://github.com/lacchain/besu-network/blob/master/DAPP_ARCHITECTURE.md).
 
 * We are developing different free tools on LACChain that you can use or replicate. At present, you can enjoy our [LACChain Notarizer](https://notarizer.lacchain.net/) that allows you to prove that a document or a file has not been modified over time. It uses our open source [credentail server](https://github.com/lacchain/credential-server) and [hashing service](https://github.com/lacchain/hashing-service). If you have any questions, you can [check the FAQ](https://medium.com/@lacchain.official/lacchain-notarizer-faq-6ae3dbb3441e).
 
@@ -42,7 +42,7 @@ It is necessary to enable the following network ports in the machine in which we
 
 * **60606**: TCP/UDP - Port to establish communication p2p between nodes.
 
-* **4545**: TCP - Port to establish RPC communication. (this port is used for applications that communicate with Lacchain and may be leaked to the Internet)
+* **4545**: TCP - Port to establish RPC communication. (this port is used for applications that communicate with LACChain and may be leaked to the Internet)
 
 ## Pre-requisites
 
