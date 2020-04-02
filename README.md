@@ -65,8 +65,8 @@ $ sudo apt-get install ansible
 To configure and install Pantheon and Orion, you must clone this git repository in your **local machine**.
 
 ```shell
-$ git clone https://github.com/lacchain/pantheon-network
-$ cd pantheon-network/
+$ git clone https://github.com/lacchain/besu-network
+$ cd besu-network/
 ```
 
 ### Obtain SSH access to your remote machine ###
@@ -168,7 +168,7 @@ ok: [x.x.x.x] => {
 
 ## Node Configuration
 
-### Configuring the Pantheon node file ###
+### Configuring the Besu node file ###
 
 The default configuration should work for everyone. However, depending on your needs and technical knowledge you can modify your local node's settings in `/root/lacchain/config.toml`, e.g. for RPC access or authentication. Please refer to the [reference documentation](https://docs.pantheon.pegasys.tech/en/1.2.0/Configuring-Pantheon/Using-Configuration-File/).
 
