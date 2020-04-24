@@ -42,8 +42,8 @@
   import_tasks: "start-node.yaml"
   when: first_node
 
-- name: start ethstats client
-  import_tasks: "start-ethstats-client.yaml"
+#- name: start ethstats client
+#  import_tasks: "start-ethstats-client.yaml"
 
 - name: Prepare Health Check Service
   import_tasks: "prepare-health-check.yaml"

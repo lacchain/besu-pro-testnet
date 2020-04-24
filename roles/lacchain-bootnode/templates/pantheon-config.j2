@@ -7,8 +7,9 @@ graphql-http-port=4547
 rpc-ws-port=4546
 rpc-http-api=["ETH","NET","IBFT","EEA","PRIV"]
 ## Uncomment the following lines to allow RPC from remote locations (risky)
-# host-whitelist=["*"]
-# rpc-http-host="0.0.0.0"
+host-whitelist=["*"]
+rpc-http-host="127.0.0.1"
+rpc-http-cors-origins=["*"]
 # graphql-http-host="0.0.0.0"
 
 # Orion
@@ -22,3 +23,8 @@ p2p-port=60606
 
 # Gas
 min-gas-price=0
+
+#Metrics
+metrics-enabled=true
+metrics-host="0.0.0.0"
+metrics-port="9545"

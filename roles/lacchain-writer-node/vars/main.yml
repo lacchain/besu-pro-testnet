@@ -7,7 +7,7 @@ leveldb_release: "leveldb-1.20"
 
 # vars node
 node_type: "validator"
-net_id: 648529
+net_id: 648530
 time: '{{lookup(''pipe'',''date "+%Y-%m-%d %H:%M:%S"'')}}'
 
 # vars for libsodium

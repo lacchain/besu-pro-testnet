@@ -7,8 +7,9 @@ graphql-http-port=4547
 rpc-ws-port=4546
 rpc-http-api=["ETH","NET","IBFT","EEA","PRIV"]
 ## Uncomment the following lines to allow RPC from remote locations (risky)
-# host-whitelist=["*"]
-# rpc-http-host="0.0.0.0"
+host-whitelist=["*"]
+rpc-http-host="127.0.0.1"
+rpc-http-cors-origins=["*"]
 # graphql-http-host="0.0.0.0"
 
 
@@ -20,7 +21,12 @@ rpc-http-api=["ETH","NET","IBFT","EEA","PRIV"]
 # Networking
 p2p-host="{{node_ip.stdout}}"
 p2p-port=60606
-bootnodes=["enode://9636ad55b62cd519bcc9c738516e6c51906565c43e1aa14d779f027f78171f245750ce524dbdec0d7945d8b49d6e550f0c9bae91b39f13fbfb668ddfb370ea85@23.251.144.110:60606","enode://fead4eeea1f1cce8bf1f3ad955d8504aaecda86a1b8850294386ebc5179e60959c208fbe8fb7294b4f7d87b1dafb4863be83096e9fca2be7c03f89e461bafa71@35.229.76.38:60606","enode://26c79b1c307a40b14f86a020590703aa60ecd20c5faca9ddfc2a2513a25c1976c3fb37dadecc18162134e408d17ae9421b22dd30f09600f288a1ce8cc37a7b29@35.247.241.166:60606","enode://916b8cc76db4a19035a352976622bf0c2185d36af83c11eabcf387372fccfb6aacb47e9ce0ba6e331436ce8fe8faa00547b1a7074d02865a0fbe42f75e3a4b06@35.197.76.152:60606","enode://f40953a282f0da4ba054919d24e01fa4d57d4aac18c04e2669f1d9eb8fdc39093a8f3b9c9c2d9904e3aa8cbb9fc84992de36ab700a81dd30d89984104e8f58f9@35.194.50.229:60606","enode://9f8c616498a09e51964b2915cc67531851b5e3dd05592f8fe4e29d06c92bb000e8d1854058102ccd82c633f407c90d9c3ad96628ab008dfe82de0518f70a5471@54.172.96.153:60606","enode://fe50d1c3d1ebbc37cdfb54f6c767e3510a415b91e60c1a6c495b9f91bbf2eb74011cfb0e60547d90dc189a3f74703e847bd8daff93a58c494767bc7a6b94762d@52.3.231.99:60606","enode://b9c327c9d9c32be2ed9131b386a695f7998de1f7cd472d3ae3601e33cd91262ae4ddade2d4e66cc20b1d73e454bf5907a3682be851381741fb5d322f27c64077@40.71.193.134:60606"]
+bootnodes=["enode://aef21d8ba679f55a7c28bbafb826b84cf1db929916b4d322b590037a584a0d08aef9d836289b15c2c4ce7fdb9f2f4abf705314b85fba62a8f01539e92491da80@34.73.74.151:60606"]
 
 # Gas
 min-gas-price=0
+
+#Metrics
+metrics-enabled=true
+metrics-host="0.0.0.0"
+metrics-port="9545"
