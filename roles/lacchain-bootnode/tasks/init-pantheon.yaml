@@ -62,7 +62,7 @@
 
 - name: print enode key
   debug:
-        msg: enode://{{enode_key.stdout}}@{{node_ip.stdout}}:21000
+        msg: enode://{{enode_key.stdout}}@{{node_ip.stdout}}:60606
   when: bootnode
 
 - name: update permissioned nodes validator file
@@ -76,7 +76,7 @@
   replace:
         dest: ~/lacchain/tmp/permissions_config.toml
         regexp: "0,]$"
-        replace: ',"enode://{{enode_key.stdout}}@{{node_ip.stdout}}:21000"]'
+        replace: ',"enode://{{enode_key.stdout}}@{{node_ip.stdout}}:60606"]'
   when: bootnode
 
 - name: Fetch permissioned node validator
