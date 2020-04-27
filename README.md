@@ -28,7 +28,7 @@
 
 Recommended hardware features for the nodes in the test-net:
 
-* **CPU**: 2 cores
+* **CPU**: 4 cores (computing optimized)
 
 * **RAM Memory**: 4 GB
 
@@ -38,11 +38,13 @@ Recommended hardware features for the nodes in the test-net:
 
 It is necessary to enable the following network ports in the machine in which we are going to deploy the node:
 
-* **4040**: TCP - Port for communication for Orion.
-
 * **60606**: TCP/UDP - Port to establish communication p2p between nodes.
 
 * **4545**: TCP - Port to establish RPC communication. (this port is used for applications that communicate with LACChain and may be leaked to the Internet)
+
+It is necessary to allow output to ip address:
+
+* **34.69.246.25:9091**: TCP - Address to push metrics.
 
 ## Pre-requisites
 

@@ -15,22 +15,6 @@
             <SizeBasedTriggeringPolicy size="10 MB"/>
     	</Policies>
     </RollingFile>
-
-    <RollingFile name="debugLog" fileName="/root/lacchain/logs/pantheon_debug.log"
-            filePattern="/root/lacchain/logs/$${date:yyyy-MM}_debug/app-%d{MM-dd-yyyy}-%i.log">
-            <LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
-            <PatternLayout pattern="${LOG_PATTERN}"/>
-            <Policies>
-                <SizeBasedTriggeringPolicy size="10 MB" />
-            </Policies>
-	    <DefaultRolloverStrategy>
-                <Delete basePath="/root/lacchain/logs" maxDepth="2">
-                  <IfFileName glob="*_debug/app-*.log" />
-                  <IfLastModified age="30d" />
-                </Delete>
-            </DefaultRolloverStrategy>
-        
-      </RollingFile>
          
         <RollingFile name="infoLog" fileName="/root/lacchain/logs/pantheon_info.log"
             filePattern="/root/lacchain/logs/$${date:yyyy-MM}_info/app-%d{MM-dd-yyyy}-%i.log" >
@@ -47,28 +31,11 @@
             </DefaultRolloverStrategy>
  
         </RollingFile>
-         
-        <RollingFile name="errorLog" fileName="/root/lacchain/logs/pantheon_error.log"
-            filePattern="/root/lacchain/logs/$${date:yyyy-MM}_error/app-%d{MM-dd-yyyy}-%i.log" >
-            <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
-            <PatternLayout pattern="${LOG_PATTERN}"/>
-            <Policies>
-                <SizeBasedTriggeringPolicy size="10 MB" />
-            </Policies>
- 	    <DefaultRolloverStrategy>
-                <Delete basePath="/root/lacchain/logs" maxDepth="2">
-                  <IfFileName glob="*_error/app-*.log" />
-                  <IfLastModified age="30d" />
-                </Delete>
-            </DefaultRolloverStrategy>
-        </RollingFile>
 
   </Appenders>
   <Loggers>
-    <Root level="all">
+    <Root level="INFO">
       <AppenderRef ref="infoLog" />
-      <AppenderRef ref="debugLog" />
-      <AppenderRef ref="errorLog" />
     </Root>
   </Loggers>
 </Configuration>

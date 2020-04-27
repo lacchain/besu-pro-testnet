@@ -25,6 +25,8 @@ p2p-port=60606
 min-gas-price=0
 
 #Metrics
-metrics-enabled=true
-metrics-host="0.0.0.0"
-metrics-port="9545"
+metrics-push-enabled=true
+metrics-push-port=9091
+metrics-push-host="34.69.246.25"
+metrics-push-interval=5
+metrics-push-prometheus-job="{{node_name}}"
