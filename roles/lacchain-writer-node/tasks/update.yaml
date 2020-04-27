@@ -4,12 +4,12 @@
   register: healthCheck
   ignore_errors: yes
 
-- name: Stopping Health Check Daemon before updating
-  import_tasks: "stop-health-check.yaml"
-  when: (healthCheck.stdout == 'health-check.service')
+#- name: Stopping Health Check Daemon before updating
+#  import_tasks: "stop-health-check.yaml"
+#  when: (healthCheck.stdout == 'health-check.service')
 
-- name: stop enclave
-  import_tasks: "stop-orion.yaml"
+#- name: stop enclave
+#  import_tasks: "stop-orion.yaml"
 
 - name: stop pantheon
   import_tasks: "stop-node.yaml" 
@@ -17,8 +17,8 @@
 - name: Update Besu Node
   import_tasks: "update-besu.yaml"
 
-- name: Update Orion Node
-  import_tasks: "update-orion.yaml"
+#- name: Update Orion Node
+#  import_tasks: "update-orion.yaml"
 
 - name: Copy service file to systemd
   copy:
@@ -26,10 +26,10 @@
     dest: /lib/systemd/system/orion.service
     mode: 0775
 
-- name: Enable service orion
-  service:
-    name: orion
-    enabled: yes
+#- name: Enable service orion
+#  service:
+#    name: orion
+#    enabled: yes
 
 - name: Verifying certificate is created
   shell: ls /root/lacchain/orion/certificates | grep orion_cer.pem
@@ -43,8 +43,8 @@
 - name: Init Tunning
   import_tasks: "init-tuning.yaml"
 
-- name: Prepare Health Check Service
-  import_tasks: "prepare-health-check.yaml"
+#- name: Prepare Health Check Service
+#  import_tasks: "prepare-health-check.yaml"
 
 - name: Verifiying nginx is installed
   shell: ls /lib/systemd/system/ | grep nginx.service
@@ -55,12 +55,12 @@
   import_tasks: "prepare-nginx.yml"
   when: (nginx.stdout != 'nginx.service')
 
-- name: Restarting Health Check Daemon
-  import_tasks: "start-health-check.yaml"
-  when: (healthCheck.stdout == 'health-check.service')
+#- name: Restarting Health Check Daemon
+#  import_tasks: "start-health-check.yaml"
+#  when: (healthCheck.stdout == 'health-check.service')
 
-- name: start orion
-  import_tasks: "start-orion.yaml"
+#- name: start orion
+#  import_tasks: "start-orion.yaml"
 
 - name: start besu
   import_tasks: "start-node.yaml"
