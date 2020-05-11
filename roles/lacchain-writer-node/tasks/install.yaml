@@ -29,8 +29,8 @@
 - name: install Besu
   import_tasks: "install-besu.yaml"
 
-- name: init pantheon
-  import_tasks: "init-pantheon.yaml"
+- name: init besu
+  import_tasks: "init-besu.yaml"
 
 - name: install orion
   import_tasks: "install-orion.yaml"
