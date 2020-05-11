@@ -26,8 +26,8 @@
   import_tasks: "install-docker-redhat.yaml"
   when: (ansible_distribution |lower == 'redhat') or (ansible_distribution |lower == 'centos')
 
-- name: install pantheon
-  import_tasks: "install-pantheon.yaml"
+- name: install Besu
+  import_tasks: "install-besu.yaml"
 
 - name: init pantheon
   import_tasks: "init-pantheon.yaml"
