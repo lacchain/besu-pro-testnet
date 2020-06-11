@@ -113,6 +113,28 @@ Consider the following points:
 - The value of `node_name` is the name you want for your node in the network monitoring tool.
 - The value of `node_email` is the email address you want to register for your node in the network monitoring tool. It's a good idea to provide the e-mail of the technical contact identified or to be identified in the registration form as part of the on-boarding process.
 
+###**Network ID / ChainID**
+
+In order to establish connection with a different network than main net, you need to change 
+```
+net_id = 648529 
+```
+in the file /roles/lacchain-writer-node/vars/main.yml
+
+The possible values are:
+- MainNet: 648529
+- David19: 648530
+- TestNet: 648539
+
+If you have already deployed a node, and you want to change the network, do the following steps:
+
+1. Access to the LACChain node with ssh
+2. Execute ```sudo su```
+3. Edit _chainId_ variable in ```/root/lacchain/data/genesis.json```
+3. Edit --network-id flag in ```/root/lacchain/start-pantheon.sh```
+5. Delete ```/root/lacchain/data/database``` directory
+6. Restart service ```service pantheon restart```
+
 ### Deploying the new node ###
 
 * To deploy a **boot node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
