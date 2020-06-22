@@ -20,6 +20,8 @@
 
 * We have also develop some services that allow to check that your nodes are working properly. The [Besu Health Check](https://github.com/lacchain/besu-healthcheck) helps users test interactions with a Besu node by accessing it through RPC. [Node Health Check](https://github.com/lacchain/node-health-check) can be used to guarante availability of the orion transaction manager. These two services are automatically deployed when using the Ansible installation provided below in this document.
 
+* You can see who is already using the network in the [list of permissioned nodes](https://github.com/lacchain/besu-network/blob/master/NODE_LIST.md).
+
 ## Deploy your node!
 
-* To deploy you node for free and use the LACChain Blockchain Network, go [HERE](https://github.com/lacchain/besu-network/blob/master/DEPLOY_NODE.md).
+* To deploy you node for free and use the LACChain Blockchain Network, go [HERE](https://github.com/lacchain/besu-network/blob/master/DEPLOY_NODE.md). 
