@@ -5,10 +5,12 @@
 | 101OBeX | Writer | David Tellez Rodriguez | Raul Nogales Vicente | 0x8e16519f6b4645520b4dba967c809601136d9837b04e21abc4fdf7bd10e5d9ca0x65a804a4f184a385bec9ea4bac8597158af07930b1bee32ac030c6bfcd88cb5f
 | Aduana Chile | Writer | Cristian Zamorano Donoso | Osvaldo Olivares Pérez | 0x12517e300824d5b39dc7120c5932f342bc4294a198371d16f8e9515dbb628b228da98a40795d41fb8f329607f1f389727aa590783d413ae1a27cd55955b6d5fa
 | Aduana Colombia | Writer | Hector Mesa | Adriana Rojas | 0x3632c7f222fcb4af117f7f23eb5d289b8c0fa6a07a35e39c650151a99684b03da07ab2a8e54c2ab3ad5d30c7476e0cb356cbef5da9ec3e4012d41cf0b53bf52
+| Aduana Costa Rica | Writer | N/A | N/A | 0xf98ea2e0894da4e673ec6eb4ce49b6f9a0d8f8374318d35531132815ab10c6d00xd9e9a910be445d17330303d8b91b38e7a558b15495ea5f755de9be4bd9ffe671
 | Aduana México | Writer | Laura Contreras Ramirez | Laura Contreras Ramirez | 0x3fdbade61613b09a575614cedfe54520022f6e816c853b6a5fc9502a7678dadf0x74d35aecd2fca49b42d48de5c3776ad206477a230025bb4d8fb5f225bc79b514
 | Aduana Perú | Writer | Jhonny Antonio Valdez Arevalo | Blanca Luisa Barandiaran Asparrin | 0x8a9ae10f01e212d98c882069924a7d4914c566e9a0f329cfe8750df79e85b50617591992397acf9dc201f2169407810b037efb74105dcc2e8bc5644077148514
 | Aduana Perú | Writer | Jhonny Antonio Valdez Arevalo | Blanca Luisa Barandiaran Asparrin | 0x8a9ae10f01e212d98c882069924a7d4914c566e9a0f329cfe8750df79e85b5060x17591992397acf9dc201f2169407810b037efb74105dcc2e8bc5644077148514
 | ARSON GROUP SAC (Stamping.io Peru) | Writer | Janeth Canela Baldeon | Jose Zarate | 0x4cd3c6452ce1d5ef5a2fd0e7fe74 2ddf347afa372b4706a43001fed83e4b91a6740da413cb7948fcb695abc18b0cd8f4e8a492da1b7e 2026dc553f22c9d88022
+| BlockFactory | Writer | Fabian Chiera | Walter Alvarez Sack | 0x8635fd0a08fd9721ae7f6bd46df5e6caaec5cb9862b0fa34ab6c6a2c744032050x496e12337b0cf5dbc091dfc104df9317baa67cd9035a2d1bc6698b62fe7081f2
 | Cámara Comercio Lima | Writer | David Martínez Perez | David Martínez Perez | 0xbab57c4deb7c9ec3ac0662ebccfe3d9cd747be6b0d4684d153bca2049522fb500xd1625cc57119ad226053d140d03d0af80edae16ab442351dba1ccd40b16e3425
 | Climate Trade | Writer | Jose Blasco Nunez de Cela | Francisco Benefito Valentin | 0xffbb4795b564348fb4495598d0d0b3a7fc08acdb0aecc8f572af490b469a02831dbe483e58eee3e1d0c4b08fa58ddfe39142a41234386521a1812e917b25131b
 | Everis | Writer | Erick Pacheco Pedraza | Juan Jose Domingo Miranda Del Solar | 0x30d446025516c6f016b578f89a4024a37a9da98f671470b0b281c8bfab1ebfac0x327d615cd998a95682830d15dbc736a1e367e132c6d988b28c2208575893b241
@@ -46,5 +48,3 @@
 | Tribalyte Technologies S.L. | Writer | Ronny Demera | Rafael Barriuso | 0x2e84e50c18ccc4e7fd745aa9891e251a03d474f31ceed57c98dfc0280b7be5221a300a5887bfe417e6772a15f0d34510011332aeb920bdc632a884dceb0c5529
 | World Data | Validator | Hisham Alqasrawi | Sergio Bazoberry | 0xda81e2bfa67574b0757db4e5c5999ef7c354030d6f83cbb07ee71d305756cfd20x8912493ac5bf2f059d8cdfb994f44cb8f28726605450f9c194a6d27f21434719
 | World Data | Writer | Hisham Alqasrawi | Sergio Bazoberry | 0xeda7578e00354b3d19abbed9db7a2b06a40c5522279a0b4f90f159e51ab7cfa90x0d96c8131cc652ba2ab9b8c8f38589d0a7d5714e2a1652bd829fcc335a27cb17
-| Aduana Costa Rica | Writer | N/A | N/A | 0xf98ea2e0894da4e673ec6eb4ce49b6f9a0d8f8374318d35531132815ab10c6d00xd9e9a910be445d17330303d8b91b38e7a558b15495ea5f755de9be4bd9ffe671
-| BlockFactory | Writer | Fabian Chiera | Walter Alvarez Sack | 0x8635fd0a08fd9721ae7f6bd46df5e6caaec5cb9862b0fa34ab6c6a2c744032050x496e12337b0cf5dbc091dfc104df9317baa67cd9035a2d1bc6698b62fe7081f2
