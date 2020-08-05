@@ -40,11 +40,13 @@
 | Magia Digital | Writer | Miguel Angel Hurtado Martell | Kevin Osterling Castillo | 0x97739e4076548d3c46eb3ca0f2091ff3e64a5bc3ba9d50fd4a915b70118c1d3f0x9e470f0b4df4baee111aecec0cbc548a8796315cd8bcf4edcc75f446b317af49
 | Multiledgers | Writer | Alan Badin Lisboa | Marcela Goncalves | 0xd9bb698a2b56909f3ec162706b5137b3914d61d0d3ee1b88859d5d33ae5ba19176c965859cb64735bf3cb0ee54d2929ff53c4a6c3dd9c8d5ffb61cc0f6d82d8
 | Multiledgers | Writer | Alan Badin Lisboa | Marcela Goncalves | 0xab83443621a2851148e0a83fa0944f8f79bab6661bb58454e0386ab63f4e31bb0xc7d5c6dd9e8bcf98d8458393c1a15ec71d507c1f04a500937ddccdb764e99580
+| NovuGens | Writer | Carlos Canales | Carlos Canales | 0xN/A
 | OSCE | Writer | Javier Arturo Cavero Goyeneche | Victor Iván Melgar Davila | 0x55296094e38b96070df4cc64b50dc626e7f000f7643a04d5eaab5173c069848c0xf76c12bcb2355f57a34ed8f14afa9a3c1d4f6e56a2550a57e2737e544a644b24
 | OSCE | Writer | Javier Arturo Cavero Goyeneche | Victor Iván Melgar Davila | 0x38d190f7685c2ceb8bd3bba20c590183ccdba0370278da868cef31c21870374e0x3915eacfa2314747bf7bc5bce1516eebc70a2a375f75431ef95925d0789daa5b
 | Pegasys | Writer | Joshua Fernandes | Silvana Rodriguez | 0x35f10294c566e50998fed8d63fb9130eeec8e2464c45777f8d8fde0998f343ee152bb3dcf8f220a21efbdbaf6054a1d1c68324e51662b846ed7b092362366a6d
 | Planisys | Writer | Carlos Horowicz | Carlos Horowicz | 0x5db9a9089653b81622c31fb5e5edc3fd90b506f3ca6345a9abcd8e1c9d69d742926ce3009ff369f325e7af9f26eadfeae12526c044a83abc69faf75f698764c8
 | Quantic Vision (Stamping.io Panama) | Writer | Luis Bethancourt | Eric Jethmal | 0x2ca1d413d5ebc055e0f4ff6917303fd101d5f0f62a9938e9c88545abf685a341dae92251fb7694d7f6793d039c7f2c15115145332767406eefea105b9a6cc5da
+| Sigmoid Bell Inc. | Writer | Chris Fergus | Chris Fergus | 0xN/A
 | Tribalyte Technologies S.L. | Writer | Ronny Demera | Rafael Barriuso | 0x2e84e50c18ccc4e7fd745aa9891e251a03d474f31ceed57c98dfc0280b7be5221a300a5887bfe417e6772a15f0d34510011332aeb920bdc632a884dceb0c5529
 | World Data | Validator | Hisham Alqasrawi | Sergio Bazoberry | 0xda81e2bfa67574b0757db4e5c5999ef7c354030d6f83cbb07ee71d305756cfd20x8912493ac5bf2f059d8cdfb994f44cb8f28726605450f9c194a6d27f21434719
 | World Data | Writer | Hisham Alqasrawi | Sergio Bazoberry | 0xeda7578e00354b3d19abbed9db7a2b06a40c5522279a0b4f90f159e51ab7cfa90x0d96c8131cc652ba2ab9b8c8f38589d0a7d5714e2a1652bd829fcc335a27cb17
