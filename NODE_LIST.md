@@ -40,7 +40,7 @@
 | Magia Digital | Writer | Miguel Angel Hurtado Martell | Kevin Osterling Castillo | 0x97739e4076548d3c46eb3ca0f2091ff3e64a5bc3ba9d50fd4a915b70118c1d3f0x9e470f0b4df4baee111aecec0cbc548a8796315cd8bcf4edcc75f446b317af49
 | Multiledgers | Writer | Alan Badin Lisboa | Marcela Goncalves | 0xd9bb698a2b56909f3ec162706b5137b3914d61d0d3ee1b88859d5d33ae5ba19176c965859cb64735bf3cb0ee54d2929ff53c4a6c3dd9c8d5ffb61cc0f6d82d8
 | Multiledgers | Writer | Alan Badin Lisboa | Marcela Goncalves | 0xab83443621a2851148e0a83fa0944f8f79bab6661bb58454e0386ab63f4e31bb0xc7d5c6dd9e8bcf98d8458393c1a15ec71d507c1f04a500937ddccdb764e99580
-| NovuGens | Writer | Carlos Canales | Carlos Canales | 0xN/A
+| NovuGens | Writer | Carlos Canales | Carlos Canales | 0x0170d6bde570a94033f1f9bf4190e7eb4c89e4db9602dc719c2ad983608c6ec065886a1f11befa761207d7d4aa545fac5e5e126c55f31677441bf7022b2d3f05
 | OSCE | Writer | Javier Arturo Cavero Goyeneche | Victor Iván Melgar Davila | 0x55296094e38b96070df4cc64b50dc626e7f000f7643a04d5eaab5173c069848c0xf76c12bcb2355f57a34ed8f14afa9a3c1d4f6e56a2550a57e2737e544a644b24
 | OSCE | Writer | Javier Arturo Cavero Goyeneche | Victor Iván Melgar Davila | 0x38d190f7685c2ceb8bd3bba20c590183ccdba0370278da868cef31c21870374e0x3915eacfa2314747bf7bc5bce1516eebc70a2a375f75431ef95925d0789daa5b
 | Pegasys | Writer | Joshua Fernandes | Silvana Rodriguez | 0x35f10294c566e50998fed8d63fb9130eeec8e2464c45777f8d8fde0998f343ee152bb3dcf8f220a21efbdbaf6054a1d1c68324e51662b846ed7b092362366a6d
