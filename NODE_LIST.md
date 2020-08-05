@@ -35,6 +35,7 @@
 | IDB | Writer | Diego Lopez | Marcos Allende López | 0x1e77f80ec958cd1146c94bae24f96d11a07d293a81faff1d62adf36dc8fc0b980xad4e293a7a8d706b1e5d160bea4fd701c1f560c3f8bd959ca01641e7a5e97b6e
 | IDB | Validator | Adrian Pareja | Marcos Allende López | 0xc992a0d9009454b9a32dafe0a029c4871a53d2cec1bef60e95b93d8e662c2dbc0x4d3a549a2692f43d958c735bb263be5fe44a47751ce6d891fa834ce33d3c0602
 | Infinito H2T (Stamping.io Ecuador) | Writer | Luis Federman Estrada Osejos | Luis Federman Estrada Osejos | 0x6cbceeef38f35e15ea746b0167d61dc492d1c3615d0ff11e598d6e74599b60d8f316d0ad3ae2e32f75c064a95085464d160f29e64b90de12aa633407d58a20c1
+| Kunfud | Writer | Jose Manuel Cuenca | Ismael Arribas | 0x0
 | LACChain | Writer | Adrian Pareja | Marcos Allende López | 0xf5914e42ca15720bfdafb24c8c4dc7fa31413d92ffe477c785385f66ac2e39fb0xe9bb8ca0dfa75dfe5de94ecc83753e36a93e5858087fdb4440a5ef992ca07432
 | Magia Digital | Writer | Miguel Angel Hurtado Martell | Kevin Osterling Castillo | 0x681b635336ad10ad2ea5bc6ba87ab076df13708bb94f92c4824537ccffa2fb570x2ffa00cdc63f5c7eacafaad097e77bed19a4ae726bb74471d69c3a792753696d
 | Magia Digital | Writer | Miguel Angel Hurtado Martell | Kevin Osterling Castillo | 0x97739e4076548d3c46eb3ca0f2091ff3e64a5bc3ba9d50fd4a915b70118c1d3f0x9e470f0b4df4baee111aecec0cbc548a8796315cd8bcf4edcc75f446b317af49
@@ -46,7 +47,7 @@
 | Pegasys | Writer | Joshua Fernandes | Silvana Rodriguez | 0x35f10294c566e50998fed8d63fb9130eeec8e2464c45777f8d8fde0998f343ee152bb3dcf8f220a21efbdbaf6054a1d1c68324e51662b846ed7b092362366a6d
 | Planisys | Writer | Carlos Horowicz | Carlos Horowicz | 0x5db9a9089653b81622c31fb5e5edc3fd90b506f3ca6345a9abcd8e1c9d69d742926ce3009ff369f325e7af9f26eadfeae12526c044a83abc69faf75f698764c8
 | Quantic Vision (Stamping.io Panama) | Writer | Luis Bethancourt | Eric Jethmal | 0x2ca1d413d5ebc055e0f4ff6917303fd101d5f0f62a9938e9c88545abf685a341dae92251fb7694d7f6793d039c7f2c15115145332767406eefea105b9a6cc5da
-| Sigmoid Bell Inc. | Writer | Chris Fergus | Chris Fergus | 0xN/A
+| Sigmoid Bell Inc. | Writer | Chris Fergus | Chris Fergus | 0x0
 | Tribalyte Technologies S.L. | Writer | Ronny Demera | Rafael Barriuso | 0x2e84e50c18ccc4e7fd745aa9891e251a03d474f31ceed57c98dfc0280b7be5221a300a5887bfe417e6772a15f0d34510011332aeb920bdc632a884dceb0c5529
 | World Data | Validator | Hisham Alqasrawi | Sergio Bazoberry | 0xda81e2bfa67574b0757db4e5c5999ef7c354030d6f83cbb07ee71d305756cfd20x8912493ac5bf2f059d8cdfb994f44cb8f28726605450f9c194a6d27f21434719
 | World Data | Writer | Hisham Alqasrawi | Sergio Bazoberry | 0xeda7578e00354b3d19abbed9db7a2b06a40c5522279a0b4f90f159e51ab7cfa90x0d96c8131cc652ba2ab9b8c8f38589d0a7d5714e2a1652bd829fcc335a27cb17
