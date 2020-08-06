@@ -26,7 +26,7 @@
 | Everis | Validator | Erick Pacheco Pedraza | Juan Jose Domingo Miranda Del Solar | 0xfa83941b3a21b2288d7716b781be405f6f583c803efafedc0761d1255fbf66470x0539cc245963974070b5a8a497daa6ff1ad56d183bfb91b615e7f556c6f003f0
 | Everis | Validator | Erick Pacheco Pedraza | Juan Jose Domingo Miranda Del Solar | 0x34f9c86d2b2563ccd10adf73a09a368bc12fd39bac4a24794ac644b33bff2a6e0x05e50fc757b75b0058b0ced49e097acafe7e6fcfe5596e4ab1a4a44b90f96c9e
 | Grupo Sabra/Extrimian SA | Validator | Albert Ruiz | Pedro Perrota | 0xe5f03dc355af69b458deaaf4d6399d5ac969690c4746c5535f62f0149da30bc76c82503bce6831964ac6a3afbdebc81decee3477a39a16e2538966b06bacdf88
-| Grupo Sabra/Extrimian SA | Bootnode | Albert Ruiz | Pedro Perrota | 0xb9c327c9d9c32be2ed9131b386a695f7998de1f7 | cd472d3ae3601e33cd91262ae4ddade2d4e66cc20b1d73e454bf5907a3682be851381741fb5d322f27c64077
+| Grupo Sabra/Extrimian SA | Bootnode | Albert Ruiz | Pedro Perrota | 0xb9c327c9d9c32be2ed9131b386a695f7998de1f7cd472d3ae3601e33cd91262ae4ddade2d4e66cc20b1d73e454bf5907a3682be851381741fb5d322f27c64077
 | IDB | Validator | Adrian Pareja | Marcos Allende López | 0x9f8c616498a09e51964b2915cc67531851b5e3dd05592f8fe4e29d06c92bb0000xe8d1854058102ccd82c633f407c90d9c3ad96628ab008dfe82de0518f70a5471
 | IDB | Validator | Adrian Pareja | Marcos Allende López | 0x96e6c5d10b044361da7fc5772d58fd914889096959c2b66c0f81e5fd877932e77e938abacb8c9a236e3ed513b283e49d9a4dc5fefd63435a1ab586d5e6c6dd81
 | IDB | Validator | Adrian Pareja | Marcos Allende López | 0xccfe32fc60a85843160982ae96d801d43f23968d9a3940ff07e6bfa890f58f3c7381b617977dee9b552b8250217dd7e8ca1a45cc54811e2807809f300bcd0471
