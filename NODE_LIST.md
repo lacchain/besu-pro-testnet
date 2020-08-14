@@ -5,7 +5,7 @@
 | 101OBeX | Writer | David Tellez Rodriguez | Raul Nogales Vicente | 0x8e16519f6b4645520b4dba967c809601136d9837b04e21abc4fdf7bd10e5d9ca0x65a804a4f184a385bec9ea4bac8597158af07930b1bee32ac030c6bfcd88cb5f
 | Aduana Chile | Writer | Cristian Zamorano Donoso | Osvaldo Olivares Pérez | 0x12517e300824d5b39dc7120c5932f342bc4294a198371d16f8e9515dbb628b228da98a40795d41fb8f329607f1f389727aa590783d413ae1a27cd55955b6d5fa
 | Aduana Colombia | Writer | Hector Mesa | Adriana Rojas | 0x3632c7f222fcb4af117f7f23eb5d289b8c0fa6a07a35e39c650151a99684b03da07ab2a8e54c2ab3ad5d30c7476e0cb356cbef5da9ec3e4012d41cf0b53bf52
-| Aduana Costa Rica | Writer | N/A | N/A | 0xf98ea2e0894da4e673ec6eb4ce49b6f9a0d8f8374318d35531132815ab10c6d00xd9e9a910be445d17330303d8b91b38e7a558b15495ea5f755de9be4bd9ffe671
+| Aduana Costa Rica | Writer | Gerardo Mora Vargas | Gerardo Mora Vargas | 0xf98ea2e0894da4e673ec6eb4ce49b6f9a0d8f8374318d35531132815ab10c6d00xd9e9a910be445d17330303d8b91b38e7a558b15495ea5f755de9be4bd9ffe671
 | Aduana México | Writer | Laura Contreras Ramirez | Laura Contreras Ramirez | 0x3fdbade61613b09a575614cedfe54520022f6e816c853b6a5fc9502a7678dadf0x74d35aecd2fca49b42d48de5c3776ad206477a230025bb4d8fb5f225bc79b514
 | Aduana Perú | Writer | Jhonny Antonio Valdez Arevalo | Blanca Luisa Barandiaran Asparrin | 0x8a9ae10f01e212d98c882069924a7d4914c566e9a0f329cfe8750df79e85b50617591992397acf9dc201f2169407810b037efb74105dcc2e8bc5644077148514
 | Aduana Perú | Writer | Jhonny Antonio Valdez Arevalo | Blanca Luisa Barandiaran Asparrin | 0x8a9ae10f01e212d98c882069924a7d4914c566e9a0f329cfe8750df79e85b5060x17591992397acf9dc201f2169407810b037efb74105dcc2e8bc5644077148514
