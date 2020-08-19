@@ -7,7 +7,6 @@
 | Aduana Colombia | Writer | Hector Mesa | Adriana Rojas | 0x3632c7f222fcb4af117f7f23eb5d289b8c0fa6a07a35e39c650151a99684b03da07ab2a8e54c2ab3ad5d30c7476e0cb356cbef5da9ec3e4012d41cf0b53bf52
 | Aduana Costa Rica | Writer | Gerardo Mora Vargas | Gerardo Mora Vargas | 0xf98ea2e0894da4e673ec6eb4ce49b6f9a0d8f8374318d35531132815ab10c6d00xd9e9a910be445d17330303d8b91b38e7a558b15495ea5f755de9be4bd9ffe671
 | Aduana México | Writer | Laura Contreras Ramirez | Laura Contreras Ramirez | 0x3fdbade61613b09a575614cedfe54520022f6e816c853b6a5fc9502a7678dadf0x74d35aecd2fca49b42d48de5c3776ad206477a230025bb4d8fb5f225bc79b514
-| Aduana Perú | Writer | Jhonny Antonio Valdez Arevalo | Blanca Luisa Barandiaran Asparrin | 0x8a9ae10f01e212d98c882069924a7d4914c566e9a0f329cfe8750df79e85b50617591992397acf9dc201f2169407810b037efb74105dcc2e8bc5644077148514
 | Aduana Perú | Writer | Jhonny Antonio Valdez Arevalo | Blanca Luisa Barandiaran Asparrin | 0x8a9ae10f01e212d98c882069924a7d4914c566e9a0f329cfe8750df79e85b5060x17591992397acf9dc201f2169407810b037efb74105dcc2e8bc5644077148514
 | ARSON GROUP SAC (Stamping.io Peru) | Writer | Janeth Canela Baldeon | Jose Zarate | 0x4cd3c6452ce1d5ef5a2fd0e7fe74 2ddf347afa372b4706a43001fed83e4b91a6740da413cb7948fcb695abc18b0cd8f4e8a492da1b7e 2026dc553f22c9d88022
 | BlockFactory | Writer | Fabian Chiera | Walter Alvarez Sack | 0x8635fd0a08fd9721ae7f6bd46df5e6caaec5cb9862b0fa34ab6c6a2c744032050x496e12337b0cf5dbc091dfc104df9317baa67cd9035a2d1bc6698b62fe7081f2
