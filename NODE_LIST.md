@@ -40,6 +40,8 @@
 | IDB | 648629 | Brazil | Bootnode | Adrian Pareja | Marcos Allende López | 0x91ca844776cc9bf69cd4eadaeefdf105815b61ec7ba0fef0ab3fc0c954a8af3bfbbdbc9975ca8cd6d1bd366bcd69df2066f2ed17bed4d1c53164d46e94afa03b
 | IDB | 648629 | Brazil | Validator | Adrian Pareja | Marcos Allende López | 0x2b51e2a1b6a34da3965008bd28efc4d110aca9815fe6bd32839bb49ad1a9e3f4e0fd48e764cbac6d034012b70fadd02ace48a6c79e9b8bd58bb3d6f23ea40c59
 | IDB | 648629 | Brazil | Writer | Adrian Pareja | Marcos Allende López | 0x87f035182e9498f916031e15d267e0b3d9e54ebd69935ad7c065dc32f3306219a24a4cb6a03bdad6c212f4c193da812ed7335c243a49a86c929b9eaa911e843a
+| IDB | 648530 | Covid | Validator | Adrian Pareja | Marcos Allende López | 0xa677d655440fc338eefb5e31c3db1e07b56afbc28dee74822f600b1fb81f3657343f04cb2f68e5dd44ea606e041642bacc9151d91ab0527c878db0005ea30ca0
+| IDB | 648530 | Covid | Validator | Adrian Pareja | Marcos Allende López | 0x6a12dc75c631d88f41bb00f46d3c20051ab09527bd0656df842f6953562db4f7880dd1b93149ffc8eeaa7a4c3a9fa546a9afb9c92d376afd88acbd7f39a442a6
 | Idemia | 648529 | Central | Writer | Sebastien Bahloul | Zaira Perez | 0x83698fce964bc25fdce66c09460b2755d291df6d068ddabb50ea8bfefe6d0eb1712f1c81559b752154a1e7bfda5c11dab70395eec9da0da777e0e6330ea0e7db
 | Infinito H2T (Stamping.io Ecuador) | 648529 | Central | Writer | Luis Federman Estrada Osejos | Luis Federman Estrada Osejos | 0x6cbceeef38f35e15ea746b0167d61dc492d1c3615d0ff11e598d6e74599b60d8f316d0ad3ae2e32f75c064a95085464d160f29e64b90de12aa633407d58a20c1
 | Kunfud | 648529 | Central | Writer | Jose Manuel Cuenca | Ismael Arribas | 0x0
