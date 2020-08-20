@@ -56,7 +56,7 @@
 | Pegasys | 648529 | Central | Writer | Joshua Fernandes | Silvana Rodriguez | 0x35f10294c566e50998fed8d63fb9130eeec8e2464c45777f8d8fde0998f343ee152bb3dcf8f220a21efbdbaf6054a1d1c68324e51662b846ed7b092362366a6d
 | Planisys | 648529 | Central | Writer | Carlos Horowicz | Carlos Horowicz | 0x5db9a9089653b81622c31fb5e5edc3fd90b506f3ca6345a9abcd8e1c9d69d742926ce3009ff369f325e7af9f26eadfeae12526c044a83abc69faf75f698764c8
 | Quantic Vision (Stamping.io Panama) | 648529 | Central | Writer | Luis Bethancourt | Eric Jethmal | 0x2ca1d413d5ebc055e0f4ff6917303fd101d5f0f62a9938e9c88545abf685a341dae92251fb7694d7f6793d039c7f2c15115145332767406eefea105b9a6cc5da
-| Sigmoid Bell Inc. | 648529 | Central | Writer | Chris Fergus | Chris Fergus | 224bfd99a7800d51acc3c3e2c57707d60c5217e33b2bf29bbeb4a588f874923736b124dd3e60d484f18ab16a81b1171d7c15ea4cf97650bddd42a16779de21c3
+| Sigmoid Bell Inc. | 648529 | Central | Writer | Chris Fergus | Chris Fergus | 0x224bfd99a7800d51acc3c3e2c57707d60c5217e33b2bf29bbeb4a588f874923736b124dd3e60d484f18ab16a81b1171d7c15ea4cf97650bddd42a16779de21c3
 | Tribalyte Technologies S.L. | 648529 | Central | Writer | Ronny Demera | Rafael Barriuso | 0x2e84e50c18ccc4e7fd745aa9891e251a03d474f31ceed57c98dfc0280b7be5221a300a5887bfe417e6772a15f0d34510011332aeb920bdc632a884dceb0c5529
 | World Data | 648529 | Central | Validator | Hisham Alqasrawi | Sergio Bazoberry | 0xda81e2bfa67574b0757db4e5c5999ef7c354030d6f83cbb07ee71d305756cfd20x8912493ac5bf2f059d8cdfb994f44cb8f28726605450f9c194a6d27f21434719
 | World Data | 648529 | Central | Writer | Hisham Alqasrawi | Sergio Bazoberry | 0xeda7578e00354b3d19abbed9db7a2b06a40c5522279a0b4f90f159e51ab7cfa90x0d96c8131cc652ba2ab9b8c8f38589d0a7d5714e2a1652bd829fcc335a27cb17
