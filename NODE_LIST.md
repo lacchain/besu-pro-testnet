@@ -12,8 +12,7 @@
 | BlockFactory | 648529 | Central |  Writer | Fabian Chiera | Walter Alvarez Sack | 0x8635fd0a08fd9721ae7f6bd46df5e6caaec5cb9862b0fa34ab6c6a2c744032050x496e12337b0cf5dbc091dfc104df9317baa67cd9035a2d1bc6698b62fe7081f2
 | BNDES | 648629 | Brazil | Bootnode | André Cerqueira | Suzana Maranhão | 0x36f61289ab72fb28aef14d64dfeb7df25c32bb5b0793de9dcb16d6e70d8000b1c2c3042c2daebbbc0b06b01cdb8da8afc4f77dd5f69aca306ab7eaba96e00df6
 | BNDES | 648629 | Brazil | Validator | André Cerqueira | Suzana Maranhão | 0x941f5acce35a7628e712fb2ef8c57d43a5dbec5aa1b24fcd003f1e928a2f3426df8ee47f1ea61bc1a220b378584384c45c6075f78be1e4d01fbf2c5b8940c429
-| BNDES | 648629 | Brazil | Validator | André Cerqueira | Suzana Maranhão | 
-0xf54c174f22a8c9f9ccf530cdce9c322f595eb514f8878cdadd721b8509ddc41374d4646d33c827063bb04db09fbde97758205af11c65ffca70ca67dc554b1857
+| BNDES | 648629 | Brazil | Validator | André Cerqueira | Suzana Maranhão | 0xf54c174f22a8c9f9ccf530cdce9c322f595eb514f8878cdadd721b8509ddc41374d4646d33c827063bb04db09fbde97758205af11c65ffca70ca67dc554b1857
 | BNDES | 648629 | Brazil | Writer | André Cerqueira | Suzana Maranhão | 0x888b9e3288769f1b0356b28cdba57b77e6d31b7efe7d7b4c298b08438ecb7b3fdb91d87b4d058891c3d187827ffb249fcfd69d48549404b27411f190b87230b6
 | Cámara Comercio Lima | 648529 | Central | Writer | David Martínez Perez | David Martínez Perez | 0xbab57c4deb7c9ec3ac0662ebccfe3d9cd747be6b0d4684d153bca2049522fb500xd1625cc57119ad226053d140d03d0af80edae16ab442351dba1ccd40b16e3425
 | Climate Trade | 648529 | Central | Writer | Jose Blasco Nunez de Cela | Francisco Benefito Valentin | 0xffbb4795b564348fb4495598d0d0b3a7fc08acdb0aecc8f572af490b469a02831dbe483e58eee3e1d0c4b08fa58ddfe39142a41234386521a1812e917b25131b
