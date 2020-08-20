@@ -10,6 +10,11 @@
 | Aduana Perú | 648529 | Central | Writer | Jhonny Antonio Valdez Arevalo | Blanca Luisa Barandiaran Asparrin | 0x8a9ae10f01e212d98c882069924a7d4914c566e9a0f329cfe8750df79e85b5060x17591992397acf9dc201f2169407810b037efb74105dcc2e8bc5644077148514
 | ARSON GROUP SAC (Stamping.io Peru) | 648529 | Central | Writer | Janeth Canela Baldeon | Jose Zarate | 0x4cd3c6452ce1d5ef5a2fd0e7fe74 2ddf347afa372b4706a43001fed83e4b91a6740da413cb7948fcb695abc18b0cd8f4e8a492da1b7e 2026dc553f22c9d88022
 | BlockFactory | 648529 | Central |  Writer | Fabian Chiera | Walter Alvarez Sack | 0x8635fd0a08fd9721ae7f6bd46df5e6caaec5cb9862b0fa34ab6c6a2c744032050x496e12337b0cf5dbc091dfc104df9317baa67cd9035a2d1bc6698b62fe7081f2
+| BNDES | 648629 | Brazil | Bootnode | André Cerqueira | Suzana Maranhão | 0x36f61289ab72fb28aef14d64dfeb7df25c32bb5b0793de9dcb16d6e70d8000b1c2c3042c2daebbbc0b06b01cdb8da8afc4f77dd5f69aca306ab7eaba96e00df6
+| BNDES | 648629 | Brazil | Validator | André Cerqueira | Suzana Maranhão | 0x941f5acce35a7628e712fb2ef8c57d43a5dbec5aa1b24fcd003f1e928a2f3426df8ee47f1ea61bc1a220b378584384c45c6075f78be1e4d01fbf2c5b8940c429
+| BNDES | 648629 | Brazil | Validator | André Cerqueira | Suzana Maranhão | 
+0xf54c174f22a8c9f9ccf530cdce9c322f595eb514f8878cdadd721b8509ddc41374d4646d33c827063bb04db09fbde97758205af11c65ffca70ca67dc554b1857
+| BNDES | 648629 | Brazil | Writer | André Cerqueira | Suzana Maranhão | 0x888b9e3288769f1b0356b28cdba57b77e6d31b7efe7d7b4c298b08438ecb7b3fdb91d87b4d058891c3d187827ffb249fcfd69d48549404b27411f190b87230b6
 | Cámara Comercio Lima | 648529 | Central | Writer | David Martínez Perez | David Martínez Perez | 0xbab57c4deb7c9ec3ac0662ebccfe3d9cd747be6b0d4684d153bca2049522fb500xd1625cc57119ad226053d140d03d0af80edae16ab442351dba1ccd40b16e3425
 | Climate Trade | 648529 | Central | Writer | Jose Blasco Nunez de Cela | Francisco Benefito Valentin | 0xffbb4795b564348fb4495598d0d0b3a7fc08acdb0aecc8f572af490b469a02831dbe483e58eee3e1d0c4b08fa58ddfe39142a41234386521a1812e917b25131b
 | Everis | 648529 | Central | Writer | Erick Pacheco Pedraza | Juan Jose Domingo Miranda Del Solar | 0x30d446025516c6f016b578f89a4024a37a9da98f671470b0b281c8bfab1ebfac0x327d615cd998a95682830d15dbc736a1e367e132c6d988b28c2208575893b241
@@ -33,9 +38,9 @@
 | IDB | 648529 | Central | Writer | Adrian Pareja | Marcos Allende López | 0x43d616512b13ab466a22cfc2ba90c8bb28acb2af6de86d778be01f89b617be460x8d572265c1a437cdbede397dbf2688f84a84f557b91fe518e36331a207dc5548
 | IDB | 648529 | Central | Writer | Diego Lopez | Marcos Allende López | 0x1e77f80ec958cd1146c94bae24f96d11a07d293a81faff1d62adf36dc8fc0b980xad4e293a7a8d706b1e5d160bea4fd701c1f560c3f8bd959ca01641e7a5e97b6e
 | IDB | 648529 | Central | Validator | Adrian Pareja | Marcos Allende López | 0xc992a0d9009454b9a32dafe0a029c4871a53d2cec1bef60e95b93d8e662c2dbc0x4d3a549a2692f43d958c735bb263be5fe44a47751ce6d891fa834ce33d3c0602
-| IDB | 648629 | BNDES | Bootnode | Adrian Pareja | Marcos Allende López | 0x91ca844776cc9bf69cd4eadaeefdf105815b61ec7ba0fef0ab3fc0c954a8af3bfbbdbc9975ca8cd6d1bd366bcd69df2066f2ed17bed4d1c53164d46e94afa03b
-| IDB | 648629 | BNDES | Validator | Adrian Pareja | Marcos Allende López | 0x2b51e2a1b6a34da3965008bd28efc4d110aca9815fe6bd32839bb49ad1a9e3f4e0fd48e764cbac6d034012b70fadd02ace48a6c79e9b8bd58bb3d6f23ea40c59
-| IDB | 648629 | BNDES | Writer | Adrian Pareja | Marcos Allende López | 0x87f035182e9498f916031e15d267e0b3d9e54ebd69935ad7c065dc32f3306219a24a4cb6a03bdad6c212f4c193da812ed7335c243a49a86c929b9eaa911e843a
+| IDB | 648629 | Brazil | Bootnode | Adrian Pareja | Marcos Allende López | 0x91ca844776cc9bf69cd4eadaeefdf105815b61ec7ba0fef0ab3fc0c954a8af3bfbbdbc9975ca8cd6d1bd366bcd69df2066f2ed17bed4d1c53164d46e94afa03b
+| IDB | 648629 | Brazil | Validator | Adrian Pareja | Marcos Allende López | 0x2b51e2a1b6a34da3965008bd28efc4d110aca9815fe6bd32839bb49ad1a9e3f4e0fd48e764cbac6d034012b70fadd02ace48a6c79e9b8bd58bb3d6f23ea40c59
+| IDB | 648629 | Brazil | Writer | Adrian Pareja | Marcos Allende López | 0x87f035182e9498f916031e15d267e0b3d9e54ebd69935ad7c065dc32f3306219a24a4cb6a03bdad6c212f4c193da812ed7335c243a49a86c929b9eaa911e843a
 | Idemia | 648529 | Central | Writer | Sebastien Bahloul | Zaira Perez | 0x83698fce964bc25fdce66c09460b2755d291df6d068ddabb50ea8bfefe6d0eb1712f1c81559b752154a1e7bfda5c11dab70395eec9da0da777e0e6330ea0e7db
 | Infinito H2T (Stamping.io Ecuador) | 648529 | Central | Writer | Luis Federman Estrada Osejos | Luis Federman Estrada Osejos | 0x6cbceeef38f35e15ea746b0167d61dc492d1c3615d0ff11e598d6e74599b60d8f316d0ad3ae2e32f75c064a95085464d160f29e64b90de12aa633407d58a20c1
 | Kunfud | 648529 | Central | Writer | Jose Manuel Cuenca | Ismael Arribas | 0x0
