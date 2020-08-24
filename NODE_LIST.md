@@ -39,6 +39,7 @@
 | IDB | 648529 | Central | Validator | Adrian Pareja | Marcos Allende López | 0xc992a0d9009454b9a32dafe0a029c4871a53d2cec1bef60e95b93d8e662c2dbc0x4d3a549a2692f43d958c735bb263be5fe44a47751ce6d891fa834ce33d3c0602
 | IDB | 648629 | Brazil | Bootnode | Adrian Pareja | Marcos Allende López | 0x91ca844776cc9bf69cd4eadaeefdf105815b61ec7ba0fef0ab3fc0c954a8af3bfbbdbc9975ca8cd6d1bd366bcd69df2066f2ed17bed4d1c53164d46e94afa03b
 | IDB | 648629 | Brazil | Validator | Adrian Pareja | Marcos Allende López | 0x2b51e2a1b6a34da3965008bd28efc4d110aca9815fe6bd32839bb49ad1a9e3f4e0fd48e764cbac6d034012b70fadd02ace48a6c79e9b8bd58bb3d6f23ea40c59
+| IDB | 648629 | Brazil | Writer | Adrian Pareja | Marcos Allende López | 0x1e6a36a93dcfe3ae3567a508a041edd33d3b22504da4d0608646f9d604c95aae5077df9b009a82a7d59ce5385f9a17e73efe1c76ae55bf52ab06a428cf0acbc0
 | IDB | 648629 | Brazil | Writer | Adrian Pareja | Marcos Allende López | 0x87f035182e9498f916031e15d267e0b3d9e54ebd69935ad7c065dc32f3306219a24a4cb6a03bdad6c212f4c193da812ed7335c243a49a86c929b9eaa911e843a
 | IDB | 648530 | Covid | Validator | Adrian Pareja | Marcos Allende López | 0xa677d655440fc338eefb5e31c3db1e07b56afbc28dee74822f600b1fb81f3657343f04cb2f68e5dd44ea606e041642bacc9151d91ab0527c878db0005ea30ca0
 | IDB | 648530 | Covid | Validator | Adrian Pareja | Marcos Allende López | 0x6a12dc75c631d88f41bb00f46d3c20051ab09527bd0656df842f6953562db4f7880dd1b93149ffc8eeaa7a4c3a9fa546a9afb9c92d376afd88acbd7f39a442a6
