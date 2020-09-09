@@ -44,6 +44,7 @@
 | IDB | 648530 | Covid | Validator | Adrian Pareja | Marcos Allende López | 0xa677d655440fc338eefb5e31c3db1e07b56afbc28dee74822f600b1fb81f3657343f04cb2f68e5dd44ea606e041642bacc9151d91ab0527c878db0005ea30ca0
 | IDB | 648530 | Covid | Validator | Adrian Pareja | Marcos Allende López | 0x6a12dc75c631d88f41bb00f46d3c20051ab09527bd0656df842f6953562db4f7880dd1b93149ffc8eeaa7a4c3a9fa546a9afb9c92d376afd88acbd7f39a442a6
 | Idemia | 648529 | Central | Writer | Sebastien Bahloul | Zaira Perez | 0x83698fce964bc25fdce66c09460b2755d291df6d068ddabb50ea8bfefe6d0eb1712f1c81559b752154a1e7bfda5c11dab70395eec9da0da777e0e6330ea0e7db
+| IECISA | 648529 | Central | Writer | Antonio Gonzalez Sanz | María Salgado Iturrino | d5fd0be94eecd5d1d7e0a5b7d6362809989d4b42af3870bc9edf95dd77133a610c87ea24a71caf054bc01507ddc8d42b69da8f16e167d8dac8063670da08d5d6
 | Infinito H2T (Stamping.io Ecuador) | 648529 | Central | Writer | Luis Federman Estrada Osejos | Luis Federman Estrada Osejos | 0x6cbceeef38f35e15ea746b0167d61dc492d1c3615d0ff11e598d6e74599b60d8f316d0ad3ae2e32f75c064a95085464d160f29e64b90de12aa633407d58a20c1
 | Kunfud | 648529 | Central | Writer | Jose Manuel Cuenca | Ismael Arribas | N/A
 | LACChain | 648529 | Central | Writer | Adrian Pareja | Marcos Allende López | 0xf5914e42ca15720bfdafb24c8c4dc7fa31413d92ffe477c785385f66ac2e39fb0xe9bb8ca0dfa75dfe5de94ecc83753e36a93e5858087fdb4440a5ef992ca07432
