@@ -2,7 +2,7 @@
 
 | Count | Entity | Network ID | Network Name | Type  | Technical Contact | Business contact | NodeID | 
 | ----- | ------ | ---------- | ------------ | ----- | ----------------- | ---------------- | ------ |
-|     1 | 101OBeX | 648529 | Central | Writer | David Tellez Rodriguez | Raul Nogales Vicente | 0x8e16519f6b4645520b4dba967c809601136d9837b04e21abc4fdf7bd10e5d9ca0x65a804a4f184a385bec9ea4bac8597158af07930b1bee32ac030c6bfcd88cb5f
+|   1   | 101OBeX | 648529 | Central | Writer | David Tellez Rodriguez | Raul Nogales Vicente | 0x8e16519f6b4645520b4dba967c809601136d9837b04e21abc4fdf7bd10e5d9ca0x65a804a4f184a385bec9ea4bac8597158af07930b1bee32ac030c6bfcd88cb5f
 |   2   | Aduana Chile | 648529 | Central | Writer | Cristian Zamorano Donoso | Osvaldo Olivares Pérez | 0x12517e300824d5b39dc7120c5932f342bc4294a198371d16f8e9515dbb628b228da98a40795d41fb8f329607f1f389727aa590783d413ae1a27cd55955b6d5fa
 |   3   | Aduana Colombia | 648529 | Central | Writer | Hector Mesa | Adriana Rojas | 0x3632c7f222fcb4af117f7f23eb5d289b8c0fa6a07a35e39c650151a99684b03da07ab2a8e54c2ab3ad5d30c7476e0cb356cbef5da9ec3e4012d41cf0b53bf52
 |   4   | Aduana Costa Rica | 648529 | Central | Writer | Gerardo Mora Vargas | Gerardo Mora Vargas | 0xf98ea2e0894da4e673ec6eb4ce49b6f9a0d8f8374318d35531132815ab10c6d00xd9e9a910be445d17330303d8b91b38e7a558b15495ea5f755de9be4bd9ffe671
