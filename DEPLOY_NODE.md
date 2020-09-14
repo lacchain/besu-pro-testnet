@@ -113,13 +113,13 @@ Consider the following points:
 - The value of `node_name` is the name you want for your node in the network monitoring tool.
 - The value of `node_email` is the email address you want to register for your node in the network monitoring tool. It's a good idea to provide the e-mail of the technical contact identified or to be identified in the registration form as part of the on-boarding process.
 
-###**Network ID / ChainID**
+### **Network ID / ChainID**
 
 In order to establish connection with a different network than main net, you need to change 
 ```
 net_id = 648529 
 ```
-in the file /roles/lacchain-writer-node/vars/main.yml
+in the file `/roles/lacchain-writer-node/vars/main.yml`
 
 The possible values are:
 - MainNet: 648529
