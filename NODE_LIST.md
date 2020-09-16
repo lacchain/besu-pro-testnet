@@ -63,3 +63,4 @@
 |  59   | Tribalyte Technologies S.L. | 648529 | Central | Writer | Ronny Demera | Rafael Barriuso | 0x2e84e50c18ccc4e7fd745aa9891e251a03d474f31ceed57c98dfc0280b7be5221a300a5887bfe417e6772a15f0d34510011332aeb920bdc632a884dceb0c5529
 |  60   | World Data | 648529 | Central | Validator | Hisham Alqasrawi | Sergio Bazoberry | 0xda81e2bfa67574b0757db4e5c5999ef7c354030d6f83cbb07ee71d305756cfd20x8912493ac5bf2f059d8cdfb994f44cb8f28726605450f9c194a6d27f21434719
 |  61   | World Data | 648529 | Central | Writer | Hisham Alqasrawi | Sergio Bazoberry | 0xeda7578e00354b3d19abbed9db7a2b06a40c5522279a0b4f90f159e51ab7cfa90x0d96c8131cc652ba2ab9b8c8f38589d0a7d5714e2a1652bd829fcc335a27cb17
+|  62   | World Data | 648530 | David19 | Writer | Hisham Alqasrawi | Sergio Bazoberry | 0x28c4aa3e4413ddb3c923310de5d6db9248a94116a1dd89815000d8b5f8b8035d0x8398ca08d8617caf316c876401fa3670563bb75a6d7b28de5e0208d62493ce87
