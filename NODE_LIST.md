@@ -42,8 +42,8 @@
 |  38   | IDB | 648629 | Brazil | Validator | Adrian Pareja | Marcos Allende López | 0x2b51e2a1b6a34da3965008bd28efc4d110aca9815fe6bd32839bb49ad1a9e3f4e0fd48e764cbac6d034012b70fadd02ace48a6c79e9b8bd58bb3d6f23ea40c59
 |  39   | IDB | 648629 | Brazil | Writer | Adrian Pareja | Marcos Allende López | 0x1e6a36a93dcfe3ae3567a508a041edd33d3b22504da4d0608646f9d604c95aae5077df9b009a82a7d59ce5385f9a17e73efe1c76ae55bf52ab06a428cf0acbc0
 |  40   | IDB | 648629 | Brazil | Writer | Adrian Pareja | Marcos Allende López | 0x87f035182e9498f916031e15d267e0b3d9e54ebd69935ad7c065dc32f3306219a24a4cb6a03bdad6c212f4c193da812ed7335c243a49a86c929b9eaa911e843a
-|  41   | IDB | 648530 | Covid | Validator | Adrian Pareja | Marcos Allende López | 0xa677d655440fc338eefb5e31c3db1e07b56afbc28dee74822f600b1fb81f3657343f04cb2f68e5dd44ea606e041642bacc9151d91ab0527c878db0005ea30ca0
-|  42   | IDB | 648530 | Covid | Validator | Adrian Pareja | Marcos Allende López | 0x6a12dc75c631d88f41bb00f46d3c20051ab09527bd0656df842f6953562db4f7880dd1b93149ffc8eeaa7a4c3a9fa546a9afb9c92d376afd88acbd7f39a442a6
+|  41   | IDB | 648530 | DAVID19 | Validator | Adrian Pareja | Marcos Allende López | 0xa677d655440fc338eefb5e31c3db1e07b56afbc28dee74822f600b1fb81f3657343f04cb2f68e5dd44ea606e041642bacc9151d91ab0527c878db0005ea30ca0
+|  42   | IDB | 648530 | DAVID19 | Validator | Adrian Pareja | Marcos Allende López | 0x6a12dc75c631d88f41bb00f46d3c20051ab09527bd0656df842f6953562db4f7880dd1b93149ffc8eeaa7a4c3a9fa546a9afb9c92d376afd88acbd7f39a442a6
 |  43   | Idemia | 648529 | Central | Writer | Sebastien Bahloul | Zaira Perez | 0x83698fce964bc25fdce66c09460b2755d291df6d068ddabb50ea8bfefe6d0eb1712f1c81559b752154a1e7bfda5c11dab70395eec9da0da777e0e6330ea0e7db
 |  44   | IECISA | 648529 | Central | Writer | Antonio Gonzalez Sanz | María Salgado Iturrino | d5fd0be94eecd5d1d7e0a5b7d6362809989d4b42af3870bc9edf95dd77133a610c87ea24a71caf054bc01507ddc8d42b69da8f16e167d8dac8063670da08d5d6
 |  45   | Infinito H2T (Stamping.io Ecuador) | 648529 | Central | Writer | Luis Federman Estrada Osejos | Luis Federman Estrada Osejos | 0x6cbceeef38f35e15ea746b0167d61dc492d1c3615d0ff11e598d6e74599b60d8f316d0ad3ae2e32f75c064a95085464d160f29e64b90de12aa633407d58a20c1
@@ -63,4 +63,4 @@
 |  59   | Tribalyte Technologies S.L. | 648529 | Central | Writer | Ronny Demera | Rafael Barriuso | 0x2e84e50c18ccc4e7fd745aa9891e251a03d474f31ceed57c98dfc0280b7be5221a300a5887bfe417e6772a15f0d34510011332aeb920bdc632a884dceb0c5529
 |  60   | World Data | 648529 | Central | Validator | Hisham Alqasrawi | Sergio Bazoberry | 0xda81e2bfa67574b0757db4e5c5999ef7c354030d6f83cbb07ee71d305756cfd20x8912493ac5bf2f059d8cdfb994f44cb8f28726605450f9c194a6d27f21434719
 |  61   | World Data | 648529 | Central | Writer | Hisham Alqasrawi | Sergio Bazoberry | 0xeda7578e00354b3d19abbed9db7a2b06a40c5522279a0b4f90f159e51ab7cfa90x0d96c8131cc652ba2ab9b8c8f38589d0a7d5714e2a1652bd829fcc335a27cb17
-|  62   | World Data | 648530 | David19 | Writer | Hisham Alqasrawi | Sergio Bazoberry | 0x28c4aa3e4413ddb3c923310de5d6db9248a94116a1dd89815000d8b5f8b8035d0x8398ca08d8617caf316c876401fa3670563bb75a6d7b28de5e0208d62493ce87
+|  62   | World Data | 648530 | DAVID19 | Writer | Hisham Alqasrawi | Sergio Bazoberry | 0x28c4aa3e4413ddb3c923310de5d6db9248a94116a1dd89815000d8b5f8b8035d0x8398ca08d8617caf316c876401fa3670563bb75a6d7b28de5e0208d62493ce87
