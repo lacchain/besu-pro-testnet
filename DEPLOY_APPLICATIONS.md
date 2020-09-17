@@ -317,4 +317,4 @@ Finally click on "Confirm" button. The transaction will be send to the LACChain 
 
 ## Additional
 
-If you want to interact with your deployed contract you could follow the follow tutorial [Send Transactions To LACCHAIN]()
+If you want to interact with your deployed contract you could follow the follow tutorial Send Transactions To LACCHAIN (work in progress).
