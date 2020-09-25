@@ -208,6 +208,7 @@ Once your node is ready, you can start it up with this command in **remote machi
 	```
 	Current Besu versions obtained from: https://pegasys.tech/solutions/hyperledger-besu/
 	Tested BESU versions: 
+	1.5.2
 	1.4.4
 	1.3.6
 

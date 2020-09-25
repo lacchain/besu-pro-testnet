@@ -59,8 +59,8 @@
   import_tasks: "start-health-check.yaml"
   when: (healthCheck.stdout == 'health-check.service')
 
-- name: start orion
-  import_tasks: "start-orion.yaml"
+#- name: start orion
+#  import_tasks: "start-orion.yaml"
 
 - name: start besu
   import_tasks: "start-node.yaml"
