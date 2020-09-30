@@ -26,7 +26,7 @@
 
 * To deploy you node for free and use the LACChain Blockchain Network, go [HERE](https://github.com/lacchain/besu-network/blob/master/DEPLOY_NODE.md). 
 
-Copyright 2020 LACChain
+## Copyright 2020 LACChain
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
