@@ -12,7 +12,7 @@ Recommended hardware features for the nodes in the test-net:
 
 * **CPU**: 2 cores
 
-* **RAM Memory**: 4 GB
+* **RAM Memory**: 8 GB
 
 * **Hard Disk**: 30 GB SSD
 
