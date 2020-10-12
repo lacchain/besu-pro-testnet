@@ -22,7 +22,7 @@
 
 * You can see who is already using the network in the [list of permissioned nodes](https://github.com/lacchain/besu-network/blob/master/NODE_LIST.md).
 
-* For more information, please check the [WIKI](https://github.com/lacchain/wiki.md).
+* For more information, please check the [WIKI](https://github.com/lacchain/wiki/README.md).
 
 ## Deploy your node!
 
