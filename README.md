@@ -22,6 +22,8 @@
 
 * You can see who is already using the network in the [list of permissioned nodes](https://github.com/lacchain/besu-network/blob/master/NODE_LIST.md).
 
+* For more information, please check the [WIKI](https://github.com/lacchain/wiki.md).
+
 ## Deploy your node!
 
 * To deploy you node for free and use the LACChain Blockchain Network, go [HERE](https://github.com/lacchain/besu-network/blob/master/DEPLOY_NODE.md). 
