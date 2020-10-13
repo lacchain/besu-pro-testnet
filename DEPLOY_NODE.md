@@ -14,7 +14,7 @@ Recommended hardware features for the nodes in the test-net:
 
 * **RAM Memory**: 8 GB
 
-* **Hard Disk**: 30 GB SSD
+* **Hard Disk**: 50 GB SSD
 
 * **Operating System**: Ubuntu 16.04, Ubuntu 18.04, Centos7, always 64 bits
 
@@ -115,16 +115,16 @@ Consider the following points:
 
 ### **Network ID / ChainID**
 
-In order to establish connection with a different network than main net, you need to change 
+In order to establish connection with a different network than central net, you need to change 
 ```
 net_id = 648529 
 ```
 in the file `/roles/lacchain-writer-node/vars/main.yml`
 
 The possible values are:
-- MainNet: 648529
+- Central: 648529
 - David19: 648530
-- TestNet: 648539
+- Academy: 648539
 
 If you have already deployed a node, and you want to change the network, do the following steps:
 
