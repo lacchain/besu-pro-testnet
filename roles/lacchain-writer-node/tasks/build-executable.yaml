@@ -5,9 +5,8 @@
 
 - name: install health-dependencies for {{ ansible_distribution }}
   yum:
-   name: "{{ item }}"
-  with_items:
-   - "systemd-devel"
+   name:
+     - "systemd-devel"
   when: (ansible_distribution |lower == 'redhat') or (ansible_distribution |lower == 'centos')
 
 - name: Build health check executable program
