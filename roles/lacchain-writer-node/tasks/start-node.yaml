@@ -3,7 +3,7 @@
   debug:
       msg: Starting Besu Node
 
-- name: Execute Pantheon service
+- name: Execute Besu service
   service:
       name: pantheon
       state: started

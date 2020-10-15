@@ -6,4 +6,6 @@
 
 - name: "Preparing GOPATH"
   shell: mkdir -p /root/go/src/github
+  args:
+    warn: false
   ignore_errors: yes

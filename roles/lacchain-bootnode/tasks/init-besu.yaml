@@ -1,7 +1,7 @@
 ---
-- name: Init pantheon
+- name: Init besu
   debug:
-        msg: "Init Pantheon"
+        msg: "Init Besu"
 
 - name: Get public ip
   shell: dig +short myip.opendns.com @resolver1.opendns.com 2>/dev/null || curl -s --retry 2 icanhazip.com
@@ -22,7 +22,7 @@
         src: "{{ role_path }}/files/permissions_config.toml"
         dest: ~/lacchain/tmp/permissions_config.toml
         mode: 0755
-  when: bootnode
+  when: bootnode|bool
 
 - name: initializing pantheon from genesis.json
   debug:
@@ -39,80 +39,80 @@
         src: "{{ role_path }}/files/key"
         dest: ~/lacchain/data/key
         mode: 0700
-  when: first_node
+  when: first_node|bool
 
 - name: Copy bootnode key to first bootnode node
   copy:
         src: "{{ role_path }}/files/bootnode"
         dest: ~/lacchain/data/bootnode
         mode: 0700
-  when: first_node
+  when: first_node|bool
 
 - name: Copy permissioned nodes file
   copy:
         src: "{{ role_path }}/files/permissions_config.toml"
         dest: ~/lacchain/data/permissions_config.toml
         mode: 0755
-  when: first_node
+  when: first_node|bool
 
 - name: Generate node key
   shell: pantheon --genesis-file=/root/lacchain/data/genesis.json --data-path=/root/lacchain/data public-key export --to=/root/lacchain/data/bootnode | grep -oE "0x[A-Fa-f0-9]*" | sed 's/0x//'
   register: enode_key
-  when: bootnode
+  when: bootnode|bool
 
 - name: print enode key
   debug:
         msg: enode://{{enode_key.stdout}}@{{node_ip.stdout}}:21000
-  when: bootnode
+  when: bootnode|bool
 
 - name: update permissioned nodes validator file
   replace:
         dest: ~/lacchain/tmp/permissions_config.toml
         regexp: '0"]$'
         replace: "0,]"
-  when: bootnode
+  when: bootnode|bool
 
 - name: add new permissioned nodes validator
   replace:
         dest: ~/lacchain/tmp/permissions_config.toml
         regexp: "0,]$"
         replace: ',"enode://{{enode_key.stdout}}@{{node_ip.stdout}}:21000"]'
-  when: bootnode
+  when: bootnode|bool
 
 - name: Fetch permissioned node validator
   fetch:
         src: ~/lacchain/tmp/permissions_config.toml
         dest: "{{ role_path }}/files/"
         flat: yes
-  when: bootnode
+  when: bootnode|bool
 
 - name: Copy bootnodes variable from validators
   copy:
         src: "{{ playbook_dir }}/roles/lacchain-validator-node/vars/main.yml"
         dest: ~/lacchain/tmp/main.yml
         mode: 0700
-  when: bootnode
+  when: bootnode|bool
 
 - name: update bootnodes connection
   replace:
         dest: ~/lacchain/tmp/main.yml
         regexp: '60606"$'
         replace: "60606,"
-  when: bootnode
+  when: bootnode|bool
 
 - name: add new bootnode to running validator or writer
   replace:
         dest: ~/lacchain/tmp/main.yml
         regexp: "60606,$"
         replace: ',"enode://{{enode_key.stdout}}@{{node_ip.stdout}}:60606"]'
-  when: bootnode
+  when: bootnode|bool
 
 - name: Fetch main.yml to repository
   fetch:
         src: ~/lacchain/tmp/permissions_config.toml
         dest: "{{ playbook_dir }}/roles/lacchain-validator-node/vars/"
         flat: yes
-  when: bootnode
+  when: bootnode|bool
 
 - name: Generate shell script to execute geth service
   template:

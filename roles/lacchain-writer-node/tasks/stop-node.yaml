@@ -3,7 +3,7 @@
   debug:
       msg: Stopping Besu Node
 
-- name: Stop Pantheon service
+- name: Stop Besu service
   service:
       name: pantheon
       state: stopped
