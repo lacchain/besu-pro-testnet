@@ -37,8 +37,7 @@
 |  33   | IDB | 648529 | Central | Bootnode | Adrian Pareja | Marcos Allende López | 0xfe50d1c3d1ebbc37cdfb54f6c767e3510a415b91e60c1a6c495b9f91bbf2eb74011cfb0e60547d90dc189a3f74703e847bd8daff93a58c494767bc7a6b94762d
 |  34   | IDB | 648529 | Central | Bootnode | Adrian Pareja | Marcos Allende López | 0x140626be59e4f2c57ab9787481dd571bc8ed87764a5b035fa33f38f746d770484cfc0eca0dc5d00c7bfb18caa057477462f7af216a84bd9faea68e446e4ed1c7
 |  35   | IDB | 648529 | Central | Bootnode | Adrian Pareja | Marcos Allende López | 0xb97f1b94e3a5e78de9a6318bfaf5e97eda84aeda20b5407c3694c39e79cfc8cb7088bb92f73635f7c64da9ee4a347212b61a3070c584946b9dae0a37e4af8009
-|  36   | IDB | 648529 | Central | Validator | Adrian Pareja | Marcos Allende López | 
-0x96e6c5d10b044361da7fc5772d58fd914889096959c2b66c0f81e5fd877932e77e938abacb8c9a236e3ed513b283e49d9a4dc5fefd63435a1ab586d5e6c6dd81
+|  36   | IDB | 648529 | Central | Validator | Adrian Pareja | Marcos Allende López | 0x96e6c5d10b044361da7fc5772d58fd914889096959c2b66c0f81e5fd877932e77e938abacb8c9a236e3ed513b283e49d9a4dc5fefd63435a1ab586d5e6c6dd81
 |  37   | IDB | 648529 | Central | Validator | Adrian Pareja | Marcos Allende López | 0xccfe32fc60a85843160982ae96d801d43f23968d9a3940ff07e6bfa890f58f3c7381b617977dee9b552b8250217dd7e8ca1a45cc54811e2807809f300bcd0471
 |  38   | IDB | 648529 | Central | Validator | Adrian Pareja | Marcos Allende López | 0x6d9785111f60bf4be6def268019d57058666a61ab9b300dc4d6fa0eb9a5fcbc6bcef63a5bb169d2fddfeb3485f73e826955c806ee4bc42e8874c6df2a84704c3
 |  39   | IDB | 648529 | Central | Validator | Adrian Pareja | Marcos Allende López | 0x21d7e04de287da81c8f3a223d31674df655669e1d03479c032c8c86d2431b441e0ed53d5d9dab73b21169839f8e20850b808c80e9f99bea5d448d25b42a6cfde
