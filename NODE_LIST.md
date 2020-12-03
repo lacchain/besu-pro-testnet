@@ -1,6 +1,6 @@
 # List of permissioned nodes
 
-| Count | Entity | Network ID | Network Name | Type  | Technical Contact | Business contact | NodeID | 
+| Count | Entity | Network ID | Network Name | Type  | Technical Contact | Business contact | NodeID |
 | ----- | ------ | ---------- | ------------ | ----- | ----------------- | ---------------- | ------ |
 |   1   | 101OBeX | 648529 | Central | Writer | David Tellez Rodriguez | Raul Nogales Vicente | 0x8e16519f6b4645520b4dba967c809601136d9837b04e21abc4fdf7bd10e5d9ca0x65a804a4f184a385bec9ea4bac8597158af07930b1bee32ac030c6bfcd88cb5f
 |   2   | Aduana Chile | 648529 | Central | Writer | Cristian Zamorano Donoso | Osvaldo Olivares Pérez | 0x12517e300824d5b39dc7120c5932f342bc4294a198371d16f8e9515dbb628b228da98a40795d41fb8f329607f1f389727aa590783d413ae1a27cd55955b6d5fa
@@ -56,20 +56,22 @@
 |  52   | Kruger Corporation | 648529 | Central | Writer | Francisco Lomas | Francisco Lomas | 0x644d8b6f267739fd5523a417680f8332b552f9b5e00df4e4c774270a41533f536cb6afb68d405c1b3b16c1c0024f45d558145d18648660923782e8aa2d35b2e8
 |  53   | Kunfud | 648529 | Central | Writer | Jose Manuel Cuena | Ismael Arribas | 0x1005c482f4832ca41f43cb3a40df68bf0f9fd5fc021152325df717f122dee070a1a688992fca4e8726f5c54bd80515f8ab6b8720c86b1ece2bb7fc515fd181e6
 |  54   | LACChain | 648529 | Central | Writer | Adrian Pareja | Marcos Allende López | 0xf5914e42ca15720bfdafb24c8c4dc7fa31413d92ffe477c785385f66ac2e39fb0xe9bb8ca0dfa75dfe5de94ecc83753e36a93e5858087fdb4440a5ef992ca07432
-|  55   | Magia Digital | 648529 | Central | Writer | Miguel Angel Hurtado Martell | Kevin Osterling Castillo | 0xcceb9a354a4db161b37842b7c40c1efe759d1951e995259bf49144c0268ad15a36d28b9182df411aaf3c7d15c2b96087ccbea64736bb7c5fe9b7578b9dcd4e43
-|  56   | Magia Digital | 648529 | Central | Writer | Miguel Angel Hurtado Martell | Kevin Osterling Castillo | 0x97739e4076548d3c46eb3ca0f2091ff3e64a5bc3ba9d50fd4a915b70118c1d3f0x9e470f0b4df4baee111aecec0cbc548a8796315cd8bcf4edcc75f446b317af49
-|  57   | Metrika Inc. | 648529 | Central | Writer | Chris Fergus | Chris Fergus | 0x224bfd99a7800d51acc3c3e2c57707d60c5217e33b2bf29bbeb4a588f874923736b124dd3e60d484f18ab16a81b1171d7c15ea4cf97650bddd42a16779de21c3
-|  58   | Metrika Inc. | 648529 | Central | Writer | Chris Fergus | Chris Fergus | 0xd33a9cb73b09d06241207cc844e7b7df27e984462419e6474c92bab76fee2d89d7c40898b8057e02ec1668a165adbb1c722d6d800843ca48b784a582b83f9b48
-|  59   | Multiledgers | 648529 | Central | Writer | Alan Badin Lisboa | Marcela Goncalves | 0xd9bb698a2b56909f3ec162706b5137b3914d61d0d3ee1b88859d5d33ae5ba19176c965859cb64735bf3cb0ee54d2929ff53c4a6c3dd9c8d5ffb61cc0f6d82d8
-|  60   | Multiledgers | 648529 | Central | Writer | Alan Badin Lisboa | Marcela Goncalves | 0xab83443621a2851148e0a83fa0944f8f79bab6661bb58454e0386ab63f4e31bb0xc7d5c6dd9e8bcf98d8458393c1a15ec71d507c1f04a500937ddccdb764e99580
-|  61   | NovuGens | 648529 | Central | Writer | Carlos Canales | Carlos Canales | 0x0170d6bde570a94033f1f9bf4190e7eb4c89e4db9602dc719c2ad983608c6ec065886a1f11befa761207d7d4aa545fac5e5e126c55f31677441bf7022b2d3f05
-|  62   | OSCE | 648529 | Central | Writer | Javier Arturo Cavero Goyeneche | Victor Iván Melgar Davila | 0x55296094e38b96070df4cc64b50dc626e7f000f7643a04d5eaab5173c069848c0xf76c12bcb2355f57a34ed8f14afa9a3c1d4f6e56a2550a57e2737e544a644b24
-|  63   | OSCE | 648529 | Central | Writer | Javier Arturo Cavero Goyeneche | Victor Iván Melgar Davila | 0x38d190f7685c2ceb8bd3bba20c590183ccdba0370278da868cef31c21870374e0x3915eacfa2314747bf7bc5bce1516eebc70a2a375f75431ef95925d0789daa5b
-|  64   | Pegasys | 648529 | Central | Writer | Joshua Fernandes | Silvana Rodriguez | 0x35f10294c566e50998fed8d63fb9130eeec8e2464c45777f8d8fde0998f343ee152bb3dcf8f220a21efbdbaf6054a1d1c68324e51662b846ed7b092362366a6d
-|  65   | Planisys | 648529 | Central | Writer | Carlos Horowicz | Carlos Horowicz | 0x5db9a9089653b81622c31fb5e5edc3fd90b506f3ca6345a9abcd8e1c9d69d742926ce3009ff369f325e7af9f26eadfeae12526c044a83abc69faf75f698764c8
-|  66   | Quantic Vision (Stamping.io Panama) | 648529 | Central | Writer | Luis Bethancourt | Eric Jethmal | 0x2ca1d413d5ebc055e0f4ff6917303fd101d5f0f62a9938e9c88545abf685a341dae92251fb7694d7f6793d039c7f2c15115145332767406eefea105b9a6cc5da
-|  67   | Tribalyte Technologies S.L. | 648529 | Central | Writer | Ronny Demera | Rafael Barriuso | 0x2e84e50c18ccc4e7fd745aa9891e251a03d474f31ceed57c98dfc0280b7be5221a300a5887bfe417e6772a15f0d34510011332aeb920bdc632a884dceb0c5529
-|  68   | Vlinder Inc. | 648529 | Central | Writer | Kaliraj Subra Manian | Malini Srinivasan | 0xdbecec589da50b42ddd42b7d6e29c4cb2e0f878bb3afb8b0067bcb726fa251b5613e0478d3a812a5b82743c8c0bd2b8fdf57c8d609fb3adc333119b02d4a2f1e
-|  69   | World Data | 648529 | Central | Validator | Hisham Alqasrawi | Sergio Bazoberry | 0xda81e2bfa67574b0757db4e5c5999ef7c354030d6f83cbb07ee71d305756cfd20x8912493ac5bf2f059d8cdfb994f44cb8f28726605450f9c194a6d27f21434719
-|  70   | World Data | 648529 | Central | Writer | Hisham Alqasrawi | Sergio Bazoberry | 0xeda7578e00354b3d19abbed9db7a2b06a40c5522279a0b4f90f159e51ab7cfa90x0d96c8131cc652ba2ab9b8c8f38589d0a7d5714e2a1652bd829fcc335a27cb17
-|  71   | World Data | 648530 | DAVID19 | Writer | Hisham Alqasrawi | Sergio Bazoberry | 0x28c4aa3e4413ddb3c923310de5d6db9248a94116a1dd89815000d8b5f8b8035d0x8398ca08d8617caf316c876401fa3670563bb75a6d7b28de5e0208d62493ce87
+|  55   | LifeChain | 648529 | Central | Writer | Alejandro López Ochoa | Alejandro López Ochoa | 0xe6b89b1840447ee48a230bf4f044afe6c464c4de8f7c83955cde5fc7e5e08fcb3a416852096f12c2d5f5d5fc5cdec42cb9563393c02df4b9a63bab852f658b50
+
+|  56   | Magia Digital | 648529 | Central | Writer | Miguel Angel Hurtado Martell | Kevin Osterling Castillo | 0xcceb9a354a4db161b37842b7c40c1efe759d1951e995259bf49144c0268ad15a36d28b9182df411aaf3c7d15c2b96087ccbea64736bb7c5fe9b7578b9dcd4e43
+|  57   | Magia Digital | 648529 | Central | Writer | Miguel Angel Hurtado Martell | Kevin Osterling Castillo | 0x97739e4076548d3c46eb3ca0f2091ff3e64a5bc3ba9d50fd4a915b70118c1d3f0x9e470f0b4df4baee111aecec0cbc548a8796315cd8bcf4edcc75f446b317af49
+|  58   | Metrika Inc. | 648529 | Central | Writer | Chris Fergus | Chris Fergus | 0x224bfd99a7800d51acc3c3e2c57707d60c5217e33b2bf29bbeb4a588f874923736b124dd3e60d484f18ab16a81b1171d7c15ea4cf97650bddd42a16779de21c3
+|  59   | Metrika Inc. | 648529 | Central | Writer | Chris Fergus | Chris Fergus | 0xd33a9cb73b09d06241207cc844e7b7df27e984462419e6474c92bab76fee2d89d7c40898b8057e02ec1668a165adbb1c722d6d800843ca48b784a582b83f9b48
+|  60   | Multiledgers | 648529 | Central | Writer | Alan Badin Lisboa | Marcela Goncalves | 0xd9bb698a2b56909f3ec162706b5137b3914d61d0d3ee1b88859d5d33ae5ba19176c965859cb64735bf3cb0ee54d2929ff53c4a6c3dd9c8d5ffb61cc0f6d82d8
+|  61   | Multiledgers | 648529 | Central | Writer | Alan Badin Lisboa | Marcela Goncalves | 0xab83443621a2851148e0a83fa0944f8f79bab6661bb58454e0386ab63f4e31bb0xc7d5c6dd9e8bcf98d8458393c1a15ec71d507c1f04a500937ddccdb764e99580
+|  62   | NovuGens | 648529 | Central | Writer | Carlos Canales | Carlos Canales | 0x0170d6bde570a94033f1f9bf4190e7eb4c89e4db9602dc719c2ad983608c6ec065886a1f11befa761207d7d4aa545fac5e5e126c55f31677441bf7022b2d3f05
+|  63   | OSCE | 648529 | Central | Writer | Javier Arturo Cavero Goyeneche | Victor Iván Melgar Davila | 0x55296094e38b96070df4cc64b50dc626e7f000f7643a04d5eaab5173c069848c0xf76c12bcb2355f57a34ed8f14afa9a3c1d4f6e56a2550a57e2737e544a644b24
+|  64   | OSCE | 648529 | Central | Writer | Javier Arturo Cavero Goyeneche | Victor Iván Melgar Davila | 0x38d190f7685c2ceb8bd3bba20c590183ccdba0370278da868cef31c21870374e0x3915eacfa2314747bf7bc5bce1516eebc70a2a375f75431ef95925d0789daa5b
+|  65   | Pegasys | 648529 | Central | Writer | Joshua Fernandes | Silvana Rodriguez | 0x35f10294c566e50998fed8d63fb9130eeec8e2464c45777f8d8fde0998f343ee152bb3dcf8f220a21efbdbaf6054a1d1c68324e51662b846ed7b092362366a6d
+|  66   | Planisys | 648529 | Central | Writer | Carlos Horowicz | Carlos Horowicz | 0x5db9a9089653b81622c31fb5e5edc3fd90b506f3ca6345a9abcd8e1c9d69d742926ce3009ff369f325e7af9f26eadfeae12526c044a83abc69faf75f698764c8
+|  67   | Quantic Vision (Stamping.io Panama) | 648529 | Central | Writer | Luis Bethancourt | Eric Jethmal | 0x2ca1d413d5ebc055e0f4ff6917303fd101d5f0f62a9938e9c88545abf685a341dae92251fb7694d7f6793d039c7f2c15115145332767406eefea105b9a6cc5da
+|  68   | Tribalyte Technologies S.L. | 648529 | Central | Writer | Ronny Demera | Rafael Barriuso | 0x2e84e50c18ccc4e7fd745aa9891e251a03d474f31ceed57c98dfc0280b7be5221a300a5887bfe417e6772a15f0d34510011332aeb920bdc632a884dceb0c5529
+|  69   | Vlinder Inc. | 648529 | Central | Writer | Kaliraj Subra Manian | Malini Srinivasan | 0xdbecec589da50b42ddd42b7d6e29c4cb2e0f878bb3afb8b0067bcb726fa251b5613e0478d3a812a5b82743c8c0bd2b8fdf57c8d609fb3adc333119b02d4a2f1e
+|  70   | World Data | 648529 | Central | Validator | Hisham Alqasrawi | Sergio Bazoberry | 0xda81e2bfa67574b0757db4e5c5999ef7c354030d6f83cbb07ee71d305756cfd20x8912493ac5bf2f059d8cdfb994f44cb8f28726605450f9c194a6d27f21434719
+|  71   | World Data | 648529 | Central | Writer | Hisham Alqasrawi | Sergio Bazoberry | 0xeda7578e00354b3d19abbed9db7a2b06a40c5522279a0b4f90f159e51ab7cfa90x0d96c8131cc652ba2ab9b8c8f38589d0a7d5714e2a1652bd829fcc335a27cb17
+|  72   | World Data | 648530 | DAVID19 | Writer | Hisham Alqasrawi | Sergio Bazoberry | 0x28c4aa3e4413ddb3c923310de5d6db9248a94116a1dd89815000d8b5f8b8035d0x8398ca08d8617caf316c876401fa3670563bb75a6d7b28de5e0208d62493ce87
