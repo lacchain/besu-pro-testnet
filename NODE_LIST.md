@@ -57,7 +57,6 @@
 |  53   | Kunfud | 648529 | Central | Writer | Jose Manuel Cuena | Ismael Arribas | 0x1005c482f4832ca41f43cb3a40df68bf0f9fd5fc021152325df717f122dee070a1a688992fca4e8726f5c54bd80515f8ab6b8720c86b1ece2bb7fc515fd181e6
 |  54   | LACChain | 648529 | Central | Writer | Adrian Pareja | Marcos Allende López | 0xf5914e42ca15720bfdafb24c8c4dc7fa31413d92ffe477c785385f66ac2e39fb0xe9bb8ca0dfa75dfe5de94ecc83753e36a93e5858087fdb4440a5ef992ca07432
 |  55   | LifeChain | 648529 | Central | Writer | Alejandro López Ochoa | Alejandro López Ochoa | 0xe6b89b1840447ee48a230bf4f044afe6c464c4de8f7c83955cde5fc7e5e08fcb3a416852096f12c2d5f5d5fc5cdec42cb9563393c02df4b9a63bab852f658b50
-
 |  56   | Magia Digital | 648529 | Central | Writer | Miguel Angel Hurtado Martell | Kevin Osterling Castillo | 0xcceb9a354a4db161b37842b7c40c1efe759d1951e995259bf49144c0268ad15a36d28b9182df411aaf3c7d15c2b96087ccbea64736bb7c5fe9b7578b9dcd4e43
 |  57   | Magia Digital | 648529 | Central | Writer | Miguel Angel Hurtado Martell | Kevin Osterling Castillo | 0x97739e4076548d3c46eb3ca0f2091ff3e64a5bc3ba9d50fd4a915b70118c1d3f0x9e470f0b4df4baee111aecec0cbc548a8796315cd8bcf4edcc75f446b317af49
 |  58   | Metrika Inc. | 648529 | Central | Writer | Chris Fergus | Chris Fergus | 0x224bfd99a7800d51acc3c3e2c57707d60c5217e33b2bf29bbeb4a588f874923736b124dd3e60d484f18ab16a81b1171d7c15ea4cf97650bddd42a16779de21c3
