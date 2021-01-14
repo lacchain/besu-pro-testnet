@@ -1,0 +1,23 @@
+- name: Download lacchain-cli
+  git:
+        repo: "https://github.com/lacchain/lacchain-cli.git"
+        dest: "/tmp/transit/lacchain-cli"
+
+- name: moving files to /usr
+  shell: mv /tmp/transit/lacchain-cli /usr/local
+
+- name: Symbolic link for besu (pantheon and besu are linked to BESU)
+  file:
+        src: "/usr/local/lacchain-cli/{{ item.src }}"
+        dest: "/usr/bin/{{ item.dest }}"
+        state: link
+  with_items:
+        - { src: "lacchain-cli", dest: "lacchain-cli" }
+
+- name: Create cron Job for Uptade Bootnodes 
+  cron:
+        name: "Update bootnodes Lacchain configfile";
+        user: "root";
+        minute: 0;
+        hour: 8;
+        job: "lacchain-cli update --config=bootnode";
