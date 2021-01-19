@@ -14,7 +14,7 @@ Recommended hardware features for the nodes in the test-net:
 
 * **RAM Memory**: 8 GB
 
-* **Hard Disk**: 50 GB SSD
+* **Hard Disk**: 100 GB SSD
 
 * **Operating System**: Ubuntu 16.04, Ubuntu 18.04, Centos7, always 64 bits
 
