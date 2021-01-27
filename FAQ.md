@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-As maintainers of the LACChain network, we often see a lot of questions that surface repeatedly. This document is an attempt to gather some of those and provide some answers!
+This document is an attempt to collect some of the questions frequently asked by the users of the LACChain Besu Network.
 
 ## Table of Contents
 
@@ -24,12 +24,12 @@ As maintainers of the LACChain network, we often see a lot of questions that sur
 
 ### How to change the node's name in the ethStats?
 
-To change the name you can follow the following [instructions](https://github.com/lacchain/besu-network/issues/98) considering setting the new name (different from the previous one) in the "--node_name" flag.
+To change the name of your node you can follow this [instructions](https://github.com/lacchain/besu-network/issues/98) to set the new name (different from the previous one) in the "--node_name" flag.
 
 
 ### How to name my node in ethStats?
 
-Before installing the node in the inventory file, you can set the name of the node in the "node_name" variable. More reference [here](https://github.com/lacchain/besu-network/blob/master/DEPLOY_NODE.md#preparing-installation-of-a-new-node).
+Before installing the node in the inventory file, you can set the name of the node in the "node_name" variable. More information [here](https://github.com/lacchain/besu-network/blob/master/DEPLOY_NODE.md#preparing-installation-of-a-new-node).
 
 ### I see my node name on the dashboard with a weird suffix "xxx"
 
@@ -54,15 +54,15 @@ To obtain the enode you can follow the instructions [here](https://github.com/la
 
 Check the following:
 
-- If the node was not permitted, you can see the instructions to allow the node [here](https://github.com/lacchain/besu-network/blob/master/PERMISSIONING_PROCESS.md).
-- Verify that the input and output IP is the same with which the node was permitted.
+- If the node was not permissioned, you can see the instructions to get your node permissioned [here](https://github.com/lacchain/besu-network/blob/master/PERMISSIONING_PROCESS.md).
+- Verify that the input and output IP is the same with which the node was permissioned.
 - Verify the firewall allows connections UDP and TCP through port 60606
 
 ### Why did my node stop syncing blocks?
 
-First check that your node is connected to the LACCchain network, if so then consider the following:
+First check that your node is connected to the LACChain network, if so then consider the following:
 
-- Verify that the `IP` has not changed, or the firewall allows TCP and UDP connections through port 60606.
+- Verify that the `IP` has not changed and the firewall allows TCP and UDP connections through port 60606.
 - In case the node is deployed in a private data center, verify that the `NTP server` is synchronized with the Google, Amazon or Microsoft cloud servers.
 - Verify that the list of bootnodes is the same as the `bootnodes` parameter in this [file](https://github.com/lacchain/besu-network/blob/master/roles/lacchain-writer-node/templates/pantheon-config.j2).
 - Please verify that you have enough disk space with the following command:
