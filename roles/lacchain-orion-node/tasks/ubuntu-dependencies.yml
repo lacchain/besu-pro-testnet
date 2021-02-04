@@ -8,6 +8,7 @@
       - git
       - make
       - gcc
+      #      - libsodium-dev
       - build-essential
       - libdb-dev
       - zlib1g-dev
@@ -31,7 +32,7 @@
         dest: /usr/local
         copy: no
 
-- name: Symbolic link for gradle
+- name: Symbolic link for pantheon
   file:
         src: "/usr/local/gradle-6.0/bin/{{ item.src }}"
         dest: "/usr/bin/{{ item.dest }}"

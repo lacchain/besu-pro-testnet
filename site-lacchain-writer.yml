@@ -14,5 +14,28 @@
       prompt: "Do you agree with the Terms and Conditions of use of LACChain Test Network? [Y/N]"
       private: no
       
+  tasks:
+    - fail:
+        msg: 'Please Accept the conditions by typing Y when prompted.'
+      when: " (haveRead != 'Y' and haveRead != 'y') or ( isAgree != 'Y' and isAgree != 'y' ) "
+
+    - debug:
+        msg: "Starting Installation"
+
+- hosts: orion
+  gather_facts: yes
+  become: yes
+  vars:
+    install: true
+
+  roles:
+    - role: lacchain-orion-node
+      when: orion | bool
+
+- hosts: writer
+  gather_facts: yes
+  become: yes
+  vars:
+    install: true
   roles:
     - lacchain-writer-node
