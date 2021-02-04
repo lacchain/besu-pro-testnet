@@ -1,7 +1,7 @@
-- hosts: writer
+- hosts: orion
   gather_facts: yes
   become: yes
   vars:
     update: true
   roles:
-    - lacchain-writer-node
+    - lacchain-orion-node

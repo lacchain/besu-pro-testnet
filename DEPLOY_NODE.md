@@ -225,9 +225,15 @@ Once your node is ready, you can start it up with this command in **remote machi
 ```
 
 ### Updates ###
-  * You can update **Besu**, by preparing your inventory with:
+  * You can update your node, by preparing your inventory with:
+    * For Besu
 	```shell
 	[writer] #here put the role you are going to update
+	35.193.123.227 
+	```
+    * For Orion
+    ```shell
+	[orion] #here put the role you are going to update
 	35.193.123.227 
 	```
 
@@ -253,6 +259,10 @@ Once your node is ready, you can start it up with this command in **remote machi
 	Now according to the role your node has, type one of the following commands on your terminal:
 	```shell
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-writer.yml 
+	```
+
+	```shell
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-orion.yml 
 	```
 
 	```shell
