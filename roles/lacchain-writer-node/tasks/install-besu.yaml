@@ -21,7 +21,7 @@
 - name: Extract the Besu tarball  
   unarchive:
         src: "/tmp/besu/besu.tar.gz"
-        dest: /tmp/transit #/usr/local
+        dest: /tmp/transit
         copy: no
 
 - name: Renaming extracted file

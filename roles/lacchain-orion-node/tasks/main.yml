@@ -9,11 +9,6 @@
     node_ip: "{{ip_address.stdout}}"
   when: node_ip is not defined
 
-- name: setting orion ip
-  set_fact:
-    node_ip_orion: "{%for host in groups['orion']%}{{hostvars[host]['node_ip']}}{% endfor %}" 
-  when: orion | bool
-
-- name: Install Writer Node
+- name: Install Orion Node
   import_tasks: "install.yaml"
   when: install

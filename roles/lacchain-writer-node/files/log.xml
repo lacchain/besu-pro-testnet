@@ -63,6 +63,21 @@
             </DefaultRolloverStrategy>
         </RollingFile>
 
+        <RollingFile name="traceLog" fileName="/root/lacchain/logs/pantheon_trace.log"
+            filePattern="/root/lacchain/logs/$${date:yyyy-MM}_trace/app-%d{MM-dd-yyyy}-%i.log" >
+            <LevelRangeFilter minLevel="TRACE" maxLevel="TRACE" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB" />
+            </Policies>
+ 	    <DefaultRolloverStrategy>
+                <Delete basePath="/root/lacchain/logs" maxDepth="2">
+                  <IfFileName glob="*_trace/app-*.log" />
+                  <IfLastModified age="30d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
   </Appenders>
   <Loggers>
     <Root level="all">
@@ -72,5 +87,3 @@
     </Root>
   </Loggers>
 </Configuration>
-
-

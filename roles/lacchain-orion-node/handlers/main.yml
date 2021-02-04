@@ -1,0 +1,4 @@
+---
+# handlers file for lacchain-orion-node
+- name: run ldconfig
+  shell: ldconfig

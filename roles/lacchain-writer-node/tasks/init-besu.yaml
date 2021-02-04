@@ -12,30 +12,17 @@
     - { dest: "~/lacchain/data/keystore", mode: "0440" }
     - { dest: "~/lacchain/logs", mode: "0440" }
     - { dest: "~/lacchain/tmp", mode: "0440" }
+    - { dest: "~/lacchain/orion/keystore", mode: "0440"}
 
-- name: Copy permissioned nodes file
-  copy:
-    src: "{{ role_path }}/files/permissions_config.toml"
-    dest: ~/lacchain/tmp/permissions_config.toml
-    mode: 0755
-  when: validator|bool
-
-- name: initializing pantheon from genesis.json
+- name: initializing besu from genesis.json
   debug:
-    msg: Initializing Pantheon
+    msg: Initializing Besu
 
 - name: Copy genesis ibft2.0 file
   copy:
     src: "{{ role_path }}/files/genesis.json"
     dest: ~/lacchain/data/genesis.json
     mode: 0755
-
-- name: Copy node key to first validator node
-  copy:
-    src: "{{ role_path }}/files/key"
-    dest: ~/lacchain/data/key
-    mode: 0700
-  when: first_node|bool
 
 - name: Generate node key
   shell: pantheon --data-path=/root/lacchain/data public-key export-address --to=/root/lacchain/data/nodeAddress | grep -oE "0x[A-Fa-f0-9]*" | sed 's/0x//'
@@ -45,52 +32,26 @@
   debug:
     msg: enode://{{enode_key.stdout}}@{{node_ip}}:60606
 
-- name: update permissioned nodes validator file
-  replace:
-    dest: ~/lacchain/tmp/permissions_config.toml
-    regexp: ':60606"]$'
-    replace: ':60606",]'
-  when: validator|bool
-
-- name: add new permissioned nodes validator
-  replace:
-    dest: ~/lacchain/tmp/permissions_config.toml
-    regexp: ",]$"
-    replace: ',"enode://{{enode_key.stdout}}@{{node_ip}}:60606"]'
-  when: validator|bool
-
-- name: Fetch permissioned node validator
-  fetch:
-    src: ~/lacchain/tmp/permissions_config.toml
-    dest: "{{ role_path }}/files/"
-    flat: yes
-  when: validator|bool
-
-- name: copy permissioned nodes to node validator
-  copy:
-    src: "{{ role_path }}/files/permissions_config.toml"
-    dest: ~/lacchain/data/permissions_config.toml
-    mode: 0755
-
-- name: copy address to first validator node
-  copy:
-    src: "{{ role_path }}/files/UTC--2017-09-20T08-43-59.003454005Z--58b8527743f89389b754c63489262fdfc9ba9db6"
-    dest: ~/lacchain/data/keystore/UTC--2017-09-20T08-43-59.003454005Z--58b8527743f89389b754c63489262fdfc9ba9db6
-    mode: 0700
-  when: first_node|bool
-
-- name: Generate shell script to execute pantheon service
+- name: Generate shell script to execute besu service
   template:
     src: "startpantheon.j2"
     dest: "~/lacchain/start-pantheon.sh"
     mode: 0775
     force: yes
 
-- name: Generate Pantheon configuration file
+- name: Generate Besu configuration file when Orion is Enabled
+  template:
+    src: "pantheon-orion-config.j2"
+    dest: "~/lacchain/config.toml"
+    mode: 0775
+  when: orion | bool
+
+- name: Generate Besu configuration file when Orion is Disabled
   template:
     src: "pantheon-config.j2"
     dest: "~/lacchain/config.toml"
     mode: 0775
+  when: orion | bool == false
 
 - name: Copy service file to systemd
   copy:
@@ -104,7 +65,14 @@
     dest: "~/lacchain/log.xml"
     mode: 0775
 
-- name: Enable service pantheon
+- name: Copy Orion Public Key
+  copy:
+    src: "{{ role_path }}/files/nodeKey.pub"
+    dest: ~/lacchain/orion/keystore/nodeKey.pub
+    mode: 0644
+  when: orion | bool
+
+- name: Enable service Besu
   service:
     name: pantheon
     enabled: yes

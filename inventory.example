@@ -19,6 +19,9 @@
 # 35.236.23.216  node_name=validator6
 # 35.198.6.207   node_name=validator7
 
+[orion]
+#35.237.111.174
+
 #When you want to update, you can customize the version to update by typing the sha commit of the orion and Besu release
 #eg:
 [writer] ##it can also be [bootnodes] or [validators]
@@ -54,6 +57,8 @@ install=false
 besu_release_version='1.5.2'
 orion_release_version='1.6.0'
 dns_name=lacchain.com
+orion=false
+
 [bootnodes:vars]
 bootnode=true
 

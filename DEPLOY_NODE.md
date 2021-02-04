@@ -4,11 +4,11 @@
 
 * The installation with ansible provided is compatible with **Ubuntu 18.04** and **Centos7**. If you want to deploy your node in a different operative system, you can go to the [documentation for Generic Onboarding](https://github.com/lacchain/besu-network/blob/master/GENERIC_ONBOARDING.md).
 
-
+* **It is important to mention** that in case an organization needs Orion, it must be deployed in a different instance (virtual machine), in this case the organization will require two virtual machines. It is worth mentioning that **Orion is optional** and the organization can join the network only with Besu.
 
 ## Minimum System Requirements
 
-Recommended hardware features for the nodes in the test-net:
+Recommended hardware features for Besu and Orion nodes in the test-net:
 
 * **CPU**: 2 cores
 
@@ -20,11 +20,15 @@ Recommended hardware features for the nodes in the test-net:
 
 It is necessary to enable the following network ports in the machine in which we are going to deploy the node:
 
-* **4040**: TCP - Port for communication for Orion.
+* **Besu Node**:
+  * **60606**: TCP/UDP - Port to establish communication p2p between nodes.
 
-* **60606**: TCP/UDP - Port to establish communication p2p between nodes.
+  * **4545**: TCP - Port to establish RPC communication. (this port is used for applications that communicate with LACChain and may be leaked to the Internet)
 
-* **4545**: TCP - Port to establish RPC communication. (this port is used for applications that communicate with LACChain and may be leaked to the Internet)
+* **Orion Node**: 
+  * **4040**: TCP - Port to communicate with other Orion nodes.
+  
+  * **4444**: TCP - Port for communication between Besu and Orion.
 
 ## Pre-requisites
 
@@ -53,11 +57,11 @@ $ cd besu-network/
 
 ### Obtain SSH access to your remote machine ###
 
-Make sure you have SSH access to the node you're setting up. This step will vary depending on your context (physical machine, cloud provider, etc.). This document assumes that you are able to log into your remote machine using the following command: `ssh remote_user@remote_host`.
+Make sure you have SSH access to nodes you're setting up. This step will vary depending on your context (physical machine, cloud provider, etc.). This document assumes that you are able to log into your remote machine using the following command: `ssh remote_user@remote_host`.
 
 ### Prepare installation of Oracle Java 11 ###
 
-* It is a requisite for Pantheon to install Java 11 in its LATEST version. Since Java cannot be downloaded directly, you must follow the next steps to install it:
+* It is a requisite for Besu and Orion to install Java 11 in its LATEST version. Since Oracle Java cannot be downloaded directly, you must follow the next steps to install it:
 	1.  Download the correspondent java tar.gz(for ubuntu) or java .rpm(for centos) file from https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html. Oracle will request that you create an account before downloading the package.
 	2.  Once the file is downloaded, send the Oracle java11 package to your remote machine by using SCP Linux command:
 		```shell
@@ -89,12 +93,14 @@ Make sure you have SSH access to the node you're setting up. This step will vary
 		```shell
 		$ sudo yum update
 		```
+	6. **[Only for Orion]** You must also follow previous steps for the instance where Orion will be installed.
 
-## Pantheon + Orion Installation ##
+
+## Besu + Orion Installation ##
 
 ### Preparing installation of a new node ###
 
-* There are three types of nodes (Bootnode / Validator / Writer) that can be created in the Pantheon network at this moment.
+* There are three types of nodes (Bootnode / Validator / Writer / Orion) that can be created in the LACChain network at this moment.
 
 * After cloning the repository on the **local machine**, enter it and create a copy of the `inventory.example` file as `inventory`. Edit that file to add a line for the remote server where you are creating the new node. You can do it with a graphical tool or inside the shell:
 
@@ -112,6 +118,21 @@ Consider the following points:
 - The value of `password` is the password that will be used to set up Orion, for private transactions.
 - The value of `node_name` is the name you want for your node in the network monitoring tool.
 - The value of `node_email` is the email address you want to register for your node in the network monitoring tool. It's a good idea to provide the e-mail of the technical contact identified or to be identified in the registration form as part of the on-boarding process.
+
+* **[Only for Orion]** 
+  * In your `inventory` file add a line below [orion] role. This new line is the IP or hostname where you can reach your remote machine from your local machine. In this Ip or hostname will be installed Orion node. 
+  * Additionally, change `orion` variable located under the [all: vars] tag in same inventory file to `true`.
+  * The inventory file looks like similar to:
+  ```lang-toml
+     [orion]
+     127.0.0.1 ---> Change for your IP Orion instance
+     
+	 [all:vars]
+     password=default_password
+     node_email=default@email
+     ...
+     orion=false ---> Set to true to install Orion
+  ```
 
 ### **Network ID / ChainID**
 
@@ -165,8 +186,8 @@ ok: [x.x.x.x] => {
 }
 ```
 
-* If everything worked, an ORION service and a PANTHEON service managed by Systemctl will be created with **stopped** status.
-* After installation has finished you will have nginx installed on your machine; it will be up and running and will allow secure and encrypted RPC connections (on the default 443 port). Certificates used to create the secure connections are self signed; it is up to you decide another way to secure RPC connections or continue using the provided  default service.
+* If everything worked, an ORION service **(if it was chosen)** and a PANTHEON service managed by Systemctl will be created with **stopped** status on each instance.
+* After installation has finished you will have nginx installed on each instance chosen; it will be up and running and will allow secure and encrypted RPC connections (on the default 443 port). Certificates used to create the secure connections are self signed; it is up to you decide another way to secure RPC connections or continue using the provided  default service.
 * In order to be permissioned, now you need to follow the [administrative steps of the permissioning process](https://github.com/lacchain/besu-network/blob/master/PERMISSIONING_PROCESS.md).
 * Once you are permissioned, you can verify that you are connected to other nodes in the network by following the steps detailed in [#issue33](https://github.com/lacchain/besu-network/issues/33).
 
@@ -174,15 +195,20 @@ ok: [x.x.x.x] => {
 
 ### Configuring the Besu node file ###
 
-The default configuration should work for everyone. However, depending on your needs and technical knowledge you can modify your local node's settings in `/root/lacchain/config.toml`, e.g. for RPC access or authentication. Please refer to the [reference documentation](https://docs.pantheon.pegasys.tech/en/1.2.0/Configuring-Pantheon/Using-Configuration-File/).
+The default configuration should work for everyone. However, depending on your needs and technical knowledge you can modify your local node's settings in `/root/lacchain/config.toml`, e.g. for RPC access or authentication. Please refer to the [reference documentation](https://besu.hyperledger.org/en/1.5.3/Reference/CLI/CLI-Syntax/).
 
 ### Start up your node ###
 
 Once your node is ready, you can start it up with this command in **remote machine**:
 
+* For Besu instance:
+```shell
+<remote_machine>$ service pantheon start
+```
+
+* For Orion instance:
 ```shell
 <remote_machine>$ service orion start
-<remote_machine>$ service pantheon start
 ```
 
 ### Node Operation ###
@@ -197,7 +223,7 @@ Once your node is ready, you can start it up with this command in **remote machi
 ### Updates ###
   * You can update **Besu**, by preparing your inventory with:
 	```shell
-	[writer] #here put the role you are gong to update
+	[writer] #here put the role you are going to update
 	35.193.123.227 
 	```
 
@@ -258,7 +284,7 @@ You should get something like this:
 
 ![Log of latest blocks](/docs/images/log_blocks.PNG)
 
-If any of these two checks doesn't work, try to restart the pantheon service:
+If any of these two checks doesn't work, try to restart the besu service:
 
 ```shell
 $ service pantheon restart
