@@ -170,12 +170,16 @@ If you have already deployed a node, and you want to change the network, do the 
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-validator.yml
 	```
 
-* To deploy a **writer node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
+* To deploy a **writer node** with/without **orion node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
 
 	```shell
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-writer.yml
 	```
+* [**in case you have previously deployed a writer node without orion**] To deploy a **orion node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
 
+	```shell
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-orion.yml
+	```
 * At the end of the installation, if everything worked a PANTHEON service will be created in the case of a **validator node** managed by Systemctl with **stopped** status.
 
 Don't forget to write down your node's "enode" from the log by locating the line that looks like this:
@@ -221,9 +225,15 @@ Once your node is ready, you can start it up with this command in **remote machi
 ```
 
 ### Updates ###
-  * You can update **Besu**, by preparing your inventory with:
+  * You can update your node, by preparing your inventory with:
+    * For Besu
 	```shell
 	[writer] #here put the role you are going to update
+	35.193.123.227 
+	```
+    * For Orion
+    ```shell
+	[orion] #here put the role you are going to update
 	35.193.123.227 
 	```
 
@@ -249,6 +259,10 @@ Once your node is ready, you can start it up with this command in **remote machi
 	Now according to the role your node has, type one of the following commands on your terminal:
 	```shell
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-writer.yml 
+	```
+
+	```shell
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-orion.yml 
 	```
 
 	```shell
