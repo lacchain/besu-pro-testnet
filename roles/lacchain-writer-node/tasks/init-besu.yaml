@@ -13,6 +13,7 @@
     - { dest: "~/lacchain/logs", mode: "0440" }
     - { dest: "~/lacchain/tmp", mode: "0440" }
     - { dest: "~/lacchain/orion/keystore", mode: "0440"}
+    - { dest: "~/lacchain/scripts", mode: "0440"}
 
 - name: initializing besu from genesis.json
   debug:

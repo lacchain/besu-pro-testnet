@@ -16,6 +16,7 @@
         - { dest: "~/lacchain/data", mode: "0440" }
         - { dest: "~/lacchain/logs", mode: "0440" }
         - { dest: "~/lacchain/tmp", mode: "0440" }
+        - { dest: "~/lacchain/scripts", mode: "0440"}
 
 - name: Copy permissioned nodes file
   copy:
