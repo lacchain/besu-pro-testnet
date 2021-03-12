@@ -1,4 +1,17 @@
 ---
+- name: copy script to clean logs
+  copy:
+    src: "{{ role_path }}/files/clean-docker-logs.sh"
+    dest: ~/lacchain/scripts/clean-docker-logs.sh
+    mode: 0755
+
+- name: set crontab
+  cron:
+    name: "clean docker logs"
+    minute: "0"
+    hour: "13"
+    job: "/root/lacchain/scripts/clean-docker-logs.sh"
+    
 - name: start docker ethstats client
   shell: mkdir -p /opt/ethstats-cli && docker run -d --restart always --net host -v /opt/ethstats-cli/:/root/.config/configstore/ alethio/ethstats-cli --register --account-email {{node_email}} --node-name "{{node_name}}" --server-url http://35.236.236.77:3000 --client-url ws://127.0.0.1:4546
   args:
