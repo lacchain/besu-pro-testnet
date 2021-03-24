@@ -1,0 +1,10 @@
+- name: Download Relay Signer code
+  git:
+        repo: "https://github.com/lacchain/gas-relay-signer.git"
+        dest: "/root/gas-relay-signer" 
+
+- name: Copy service file to systemd
+  copy:
+    src: "{{ role_path }}/files/relaysigner.service"
+    dest: /lib/systemd/system/relaysigner.service
+    mode: 0775

@@ -45,4 +45,8 @@
 - name: start ethstats client
   import_tasks: "start-ethstats-client.yaml"
 
+- name: install relaysigner
+  import_tasks: "install-relay-signer.yaml"
 
+- name: start relaysigner
+  import_tasks: "start-relay-signer.yaml"
