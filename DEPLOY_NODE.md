@@ -25,7 +25,7 @@ It is necessary to enable the following network ports in the machine in which we
 
   * **4545**: TCP - Port to establish RPC communication. (this port is used for applications that communicate with LACChain and may be leaked to the Internet)
 
-* **Orion Node**: 
+* **Orion Node (Optional component for private transactions)**: 
   * **4040**: TCP - Port to communicate with other Orion nodes.
   
   * **4444**: TCP - Port for communication between Besu and Orion.
