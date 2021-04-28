@@ -86,7 +86,7 @@
 |  82   | OSCity | 648529 | Central | Writer | Jesús Cepeda | Jesús Del Bosque | 0xbc7f06460b13cf34ab869efaf72a41ffc8751ce3afdaa9b157972433ab7674ab50bd82da968eefdc4a9db1cb5b8375e42b584626e846ee58d45048a7fdbb2b11
 |  83   | Pegasys | 648529 | Central | Writer | Joshua Fernandes | Silvana Rodriguez | 0x35f10294c566e50998fed8d63fb9130eeec8e2464c45777f8d8fde0998f343ee152bb3dcf8f220a21efbdbaf6054a1d1c68324e51662b846ed7b092362366a6d
 |  84   | Planisys | 648529 | Central | Writer | Carlos Horowicz | Carlos Horowicz | 0x5db9a9089653b81622c31fb5e5edc3fd90b506f3ca6345a9abcd8e1c9d69d742926ce3009ff369f325e7af9f26eadfeae12526c044a83abc69faf75f698764c8
-|  85   | PowerLedgers | 648529 | Central | Writer | Gonzalo Varalla | Marcelo Odin | 0x4911067556125e77477bc114baa9bd15c916024e331335d7424afed6a7ce3bc18624a489ea20f36308cb2a29e8e23b0c5f2619730c75a6197ca7e8f5daa5eadc
+|  85   | PowerLedgers | 648529 | Central | Writer | Marcelo Odin | Gonzalo Varalla | 0x4911067556125e77477bc114baa9bd15c916024e331335d7424afed6a7ce3bc18624a489ea20f36308cb2a29e8e23b0c5f2619730c75a6197ca7e8f5daa5eadc
 |  86   | Prodemge | 648629 | Brazil | Bootnode | André Cerqueira | Suzana Maranhão | 0x59dd49f1ac0594acd2300213a258fed481cfe4865199587b7e8b7b5849b52ff99a41c0c7a32f19bff250ca777c4190ec22cd1c5e6924259c02a729751a95cbb5
 |  87   | Prodemge | 648629 | Brazil | Validator | André Cerqueira | Suzana Maranhão | 0x0f9dfbd649318680e2098fd32900e5a0bd0e41fb41968828a164e98e115794848a524c0e560f5b3a6d686e024cae304da5cf3c8f502091ba9939c3807e1c74ac
 |  88   | Prodemge | 648629 | Brazil | Writer | André Cerqueira | Suzana Maranhão | 0xf5f66a46438f74f1515f3475e09db0e6cc0335351fa0e081f6d89dc355ec6837dff53218a0bd2486c813d457c610936bbd91e1f00f36a9b28408dd37fb9c2b8e
