@@ -34,7 +34,7 @@ Satellite nodes do not play an essential role in the correct functioning of the 
 
     Observer nodes are those that can only read the blockchain. Observer nodes are only connected to boot nodes.
 
-    **Note: Observer nodes haven’t been enabled in the LACChain Besu Network yet.**
+    **Note: Observer nodes haven’t been enabled in the LACChain Blockchain Network yet.**
 
 ## Architecture
 
@@ -50,12 +50,12 @@ For the purpose of the LACChain Global Alliance, peer-to-peer(P2P) architectures
 
 In peer-to-peer systems each peer behaves both as a server and as a client. Each peer or client can send and receive data directly from any other peer or client. In blockchain jargon peers are generally called nodes. Each node can request data from it’s own databases, and it can also read from another node’s database. 
 
-LACChain Besu Network is deployed using [Hyperledger Besu](https://www.hyperledger.org/projects/besu "Hyperledger Besu"), which is a Ethereum enterprise client. In LACChain Besu Network all nodes can request information from other node about the network’s current state (smart contracts, account balance, latest blocks, etc.). Additionally, each node maintains both a synchronized copy of the full ledger and a repository of the smart contracts that have been deployed in the network. 
+LACChain Blockchain Network is based on [Hyperledger Besu](https://www.hyperledger.org/projects/besu "Hyperledger Besu"), which is a Ethereum enterprise client. In LACChain Blockchain Network all nodes can request information from other node about the network’s current state (smart contracts, account balance, latest blocks, etc.). Additionally, each node maintains both a synchronized copy of the full ledger and a repository of the smart contracts that have been deployed in the network. 
 
 Nodes rely on validator nodes to validate transactions and generate now blocks through the application
-of the consensus protocol. LACChain Besu Network operates with [IBFT2.0 consensus protocol](https://www.researchgate.net/publication/335990137_IBFT_20_A_Safe_and_Live_Variation_of_the_IBFT_Blockchain_Consensus_Protocol_for_Eventually_Synchronous_Networks).
+of the consensus protocol. LACChain Blockchain Network operates with [IBFT2.0 consensus protocol](https://www.researchgate.net/publication/335990137_IBFT_20_A_Safe_and_Live_Variation_of_the_IBFT_Blockchain_Consensus_Protocol_for_Eventually_Synchronous_Networks).
 
-As LACChain Besu Network is based on Ethereum infrastructure, the architecture of the network has two stacks. A Discovery Stack to discover existing nodes in the network and Connection Stack to send messages or communicate with other nodes in the network. 
+As LACChain Blockchain Network is based on Ethereum infrastructure, the architecture of the network has two stacks. A Discovery Stack to discover existing nodes in the network and Connection Stack to send messages or communicate with other nodes in the network. 
 
 ![LACCHAIN Stacks](/docs/images/stacks.png)
 
@@ -63,17 +63,17 @@ As LACChain Besu Network is based on Ethereum infrastructure, the architecture o
 
 For a P2P network work properly, there must be a good implementation of node discovery that allows a node to discover other nodes that are part of the network. In LACChain Networks, as detailed previously in Section Topology, nodes can have the category of validator, boot, writer or observer.
 
-The discover protocol implemented in LACChain Besu Network to build the peer to peer network is based on [Kademlia](https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf "Kademlia paper").
+The discover protocol implemented in LACChain Blockchain Network to build the peer to peer network is based on [Kademlia](https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf "Kademlia paper").
 
-Kademlia is a well-defined distributed hash table recognized as a robust standard and protocol. LACChain Besu Network inherits from Ethereum [the use of the discovery part of the Kademlia protocol](https://github.com/ethereum/wiki/wiki/Kademlia-Peer-Selection "Kademlia in Ethereum").
+Kademlia is a well-defined distributed hash table recognized as a robust standard and protocol. LACChain Blockchain Network inherits from Ethereum [the use of the discovery part of the Kademlia protocol](https://github.com/ethereum/wiki/wiki/Kademlia-Peer-Selection "Kademlia in Ethereum").
 
-To begin the discovery process, a node needs an identity. Currently, the identity of the node is achieved through an enodeID, which is then hashed with [keccak](https://keccak.team/keccak_specs_summary.html "keccak") into a 256-bit value. For more details, you can go to [node identity](https://github.com/ethereum/devp2p/blob/master/rlpx.md#node-identity "node-identity"). In the future, LACChain nodes will be using Decentralized Identifiers (DIDs) and Verifiable Credentials (VC) for identification and authentication. In order for a node to get an identity in LACChain Besu Network, you can follow the instructions in the [README](https://github.com/lacchain/besu-network).
+To begin the discovery process, a node needs an identity. Currently, the identity of the node is achieved through an enodeID, which is then hashed with [keccak](https://keccak.team/keccak_specs_summary.html "keccak") into a 256-bit value. For more details, you can go to [node identity](https://github.com/ethereum/devp2p/blob/master/rlpx.md#node-identity "node-identity"). In the future, LACChain nodes will be using Decentralized Identifiers (DIDs) and Verifiable Credentials (VC) for identification and authentication. In order for a node to get an identity in LACChain Blockchain Network, you can follow the instructions in the [README](https://github.com/lacchain/besu-network).
 
-Once you have deployed your node, got your identity and followed the administrative steps to be permissioned in [LACChain Besu Network](https://github.com/lacchain/besu-network/blob/master/PERMISSIONING_PROCESS.md), you node will start the discovery process.
+Once you have deployed your node, got your identity and followed the administrative steps to be permissioned in [LACChain Blockchain Network](https://github.com/lacchain/besu-network/blob/master/PERMISSIONING_PROCESS.md), you node will start the discovery process.
 
 LACChain uses [**UDP** protocol](https://www.geeksforgeeks.org/user-datagram-protocol-udp/) to exchange information across the P2P network. The steps to achieve the discovery of nodes in the network are the following:
 
-* LIST: When a new node aims to join a network, it needs to be provided with a list of nodes that are already part of that network so it can try to communicate with them. In LACChain Besu Network, the addresses of the boot nodes are hard-coded and the list is located at **/root/lacchain/orion.conf**. 
+* LIST: When a new node aims to join a network, it needs to be provided with a list of nodes that are already part of that network so it can try to communicate with them. In LACChain Blockchain Network, the addresses of the boot nodes are hard-coded and the list is located at **/root/lacchain/orion.conf**. 
 
 ![configuration of boots nodes](/docs/images/boot_config.png)
 
