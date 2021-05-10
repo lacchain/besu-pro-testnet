@@ -308,7 +308,7 @@ If that doesn't solve the problem, contact us at info@lacchain.net.
 	
 ## Deploying Dapps on LACCHAIN
 
-For a quick overview of some mainstream tools that you can use to deploy Smart Contracts, connect external applications and broadcast transactions to the LACChain Besu Network, you can check our [Guide](https://github.com/lacchain/besu-network/blob/master/DEPLOY_APPLICATIONS.md).
+For a quick overview of some mainstream tools that you can use to deploy Smart Contracts, connect external applications and broadcast transactions to the LACChain Blockchain Network based on Hyperledger Besu, you can check our [Guide](https://github.com/lacchain/besu-network/blob/master/DEPLOY_APPLICATIONS.md).
 
 ## Contact
 
