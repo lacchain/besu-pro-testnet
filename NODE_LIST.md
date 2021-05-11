@@ -46,7 +46,7 @@
 |  42   | Extrimian SA | 648529 | Central | Validator | Martin Escudero | Pedro Perrota | 0x290d1227c14496d1ecaef974b288f12e97f285eb93c53556ed45eb2fc9834b56eb19c67228a66f5ccfb6e4a4037c7e8e120ab4bd7b2c16dc31125e5eadafce8d
 |  43   | Extrimian SA | 648529 | Central | Writer | Martin Escudero | Pedro Perrota | 0x609e2ed60bd907f38f3a7be353cb34cc8f08dc55ed307ae4b954cfb0f51046f005575b634d71d2ac90e080486a56b221a6ea769fca64e9bcdf016288e8b3a14b
 |  44   | Finweg S.A. | 648529 | Central | Writer | Antonio Sotomayor | Antonio Sotomayor | 0x30fe901d897fe55858c97550e78d535fa6ac09b965dd3cbb15d66b83f3920b234692069b81109305b92c258ce0025b5139fe0072fc7b811edd86ca31d3fe49b3
-|  45   | Go Elevate | 648529 | Central | Writer | - | - | 0xf46d9a802111ed9d4d4ed3f70276a13e5f9d3b9703c5ea2c5f15c19070ca6d06d472e78efa0ceccbbeb1876ed6581cd9fc5f9142158f10b33e8f7f276bf5dbbc
+|  45   | Go Elevate | 648529 | Central | Writer | Ruben Ghio | Ruben Ghio | 0xf46d9a802111ed9d4d4ed3f70276a13e5f9d3b9703c5ea2c5f15c19070ca6d06d472e78efa0ceccbbeb1876ed6581cd9fc5f9142158f10b33e8f7f276bf5dbbc
 |  46   | IDB | 648529 | Central | Bootnode | Adrian Pareja | Marcos Allende López | 0xfe50d1c3d1ebbc37cdfb54f6c767e3510a415b91e60c1a6c495b9f91bbf2eb74011cfb0e60547d90dc189a3f74703e847bd8daff93a58c494767bc7a6b94762d
 |  47   | IDB | 648529 | Central | Bootnode | Adrian Pareja | Marcos Allende López | 0x140626be59e4f2c57ab9787481dd571bc8ed87764a5b035fa33f38f746d770484cfc0eca0dc5d00c7bfb18caa057477462f7af216a84bd9faea68e446e4ed1c7
 |  48   | IDB | 648529 | Central | Bootnode | Adrian Pareja | Marcos Allende López | 0xb97f1b94e3a5e78de9a6318bfaf5e97eda84aeda20b5407c3694c39e79cfc8cb7088bb92f73635f7c64da9ee4a347212b61a3070c584946b9dae0a37e4af8009
