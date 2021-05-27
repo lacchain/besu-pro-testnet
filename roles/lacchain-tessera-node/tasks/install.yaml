@@ -1,0 +1,38 @@
+---
+#- name: Acceptance Verification
+#  import_tasks: "agreements-acceptance.yml"
+#  when: orion | bool 
+
+- name: install dependencies for  {{ ansible_distribution }}
+  import_tasks: "ubuntu-dependencies.yml"
+  when: ansible_distribution |lower == 'ubuntu'
+
+- name: install dependencies for  {{ ansible_distribution }}
+  import_tasks: "rhel-dependencies.yml"
+  when: (ansible_distribution |lower == 'redhat') or (ansible_distribution |lower == 'centos')
+
+- name: install java for {{ ansible_distribution }}
+  import_tasks: "install-java-ubuntu.yaml"
+  when: ansible_distribution |lower == 'ubuntu'
+
+- name: install java for {{ ansible_distribution }}
+  import_tasks: "install-java-centos.yaml"
+  when: (ansible_distribution |lower == 'redhat') or (ansible_distribution |lower == 'centos')  
+
+- name: install tessera
+  import_tasks: "install-tessera.yaml"
+
+- name: init tessera
+  import_tasks: "init-tessera.yaml"
+
+#- name: Prepare Health Check Service
+#  import_tasks: "prepare-health-check.yaml"
+
+- name: install nginx
+  import_tasks: "prepare-nginx.yml"
+
+- name: init tunning
+  import_tasks: "init-tuning.yaml"
+
+- name: start Tessera
+  import_tasks: "start-tessera.yaml"

@@ -1,0 +1,51 @@
+---
+#- name: Verifiying health check daemon is installed
+#  shell: ls /lib/systemd/system/ | grep health-check.service
+#  register: healthCheck
+#  ignore_errors: yes
+
+#- name: Stopping Health Check Daemon before updating
+#  import_tasks: "stop-health-check.yaml"
+#  when: (healthCheck.stdout == 'health-check.service')
+
+- name: stop enclave
+  import_tasks: "stop-tessera.yaml"
+
+- name: Update Tessera Node
+  import_tasks: "update-tessera.yaml"
+
+- name: Copy service file to systemd
+  copy:
+    src: "{{ role_path }}/files/tessera.service"
+    dest: /lib/systemd/system/tessera.service
+    mode: 0775
+
+- name: Enable service tessera
+  service:
+    name: tessera
+    enabled: yes
+
+- name: Verifying certificate is created
+  shell: ls /root/lacchain/tessera/certificates | grep tessera_cer.pem
+  register: certificate
+  ignore_errors: yes
+
+- name: Create Tessera Certificate
+  import_tasks: "init-tessera-certificate.yaml"
+  when: (certificate.stdout != 'tessera_cer.pem')
+
+- name: Verifiying nginx is installed
+  shell: ls /lib/systemd/system/ | grep nginx.service
+  register: nginx
+  ignore_errors: yes
+
+- name: install nginx
+  import_tasks: "prepare-nginx.yml"
+  when: (nginx.stdout != 'nginx.service')
+
+#- name: Restarting Health Check Daemon
+#  import_tasks: "start-health-check.yaml"
+#  when: (healthCheck.stdout == 'health-check.service')
+
+- name: start tessera
+  import_tasks: "start-tessera.yaml"

@@ -170,16 +170,23 @@ If you have already deployed a node, and you want to change the network, do the 
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-validator.yml
 	```
 
-* To deploy a **writer node** with/without **orion node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
+* To deploy a **writer node** with/without **orion/tessera node**  execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
 
 	```shell
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-writer.yml
 	```
-* [**in case you have previously deployed a writer node without orion**] To deploy a **orion node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
+* [**in case you have previously deployed a writer node without orion or tessera**] To deploy a **orion or tessera node** execute one of the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
 
 	```shell
+	*Orion*
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-orion.yml
 	```
+
+	```shell
+	*Tessera*
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-tessera.yml
+	```
+
 * At the end of the installation, if everything worked a PANTHEON service will be created in the case of a **validator node** managed by Systemctl with **stopped** status.
 
 Don't forget to write down your node's "enode" from the log by locating the line that looks like this:

@@ -1,0 +1,63 @@
+{
+   "type" : "config",
+   "version" : "20.10.2-SNAPSHOT",
+   "useWhiteList" : false,
+   "disablePeerDiscovery" : false,
+   "bootstrapNode" : false,
+   "jdbc" : {
+      "username" : "user1",
+      "password" : "Password",
+      "url" : "jdbc:h2:/root/lacchain/tessera/tessera",
+      "autoCreateTables" : true,
+      "fetchSize" : 0
+   },
+   "serverConfigs" : [ {
+      "app" : "Q2T",
+      "communicationType" : "REST",
+      "bindingAddress" : "http://0.0.0.0:4444",
+      "serverAddress" : "http://{{node_ip}}:4444/",
+      "properties" : {
+      }
+   }, {
+      "app" : "P2P",
+      "communicationType" : "REST",
+      "sslConfig" : {
+         "tls" : "OFF",
+         "generateKeyStoreIfNotExisted" : false,
+         "serverTlsKeyPath" : "/root/lacchain/orion/certificates/orion_cer.key",
+         "serverTlsCertificatePath" : "/root/lacchain/orion/certificates/orion_cer.pem",
+         "serverTrustCertificates" : [ "/root/lacchain/orion/certificates/orion_ca.pem"],
+         "serverTrustMode" : "CA",
+         "clientTlsKeyPath" : "/root/lacchain/orion/certificates/orion_cer.key",
+         "clientTlsCertificatePath" : "/root/lacchain/orion/certificates/orion_cer.pem",
+         "clientTrustCertificates" : [ "/root/lacchain/orion/certificates/orion_ca.pem"],
+         "clientTrustMode" : "CA",
+         "knownClientsFile" : "/root/lacchain/orion/tls-known-clients",
+         "knownServersFile" : "/root/lacchain/orion/tls-known-servers",
+         "clientAuth" : true
+      },
+      "bindingAddress" : "http://0.0.0.0:4040",
+      "serverAddress" : "http://{{node_ip}}:4040/",
+      "properties" : {
+      }
+   } ],
+   "peer" : {
+      "url" : "http://192.168.1.1:4040"
+   },
+   "keys" : {
+      "passwordFile" : "/root/lacchain/tmp/.account_pass",
+      "keyData" : {
+         "privateKeyPath" : "/root/lacchain/tessera/keystore/nodeKey.key",
+         "publicKeyPath" : "/root/lacchain/tessera/keystore/nodeKey.pub"
+      }
+   },
+   "alwaysSendTo" : [ ],
+   "features" : {
+      "enableRemoteKeyValidation" : false,
+      "enablePrivacyEnhancements" : false
+   },
+   "encryptor" : {
+      "type" : "NACL"
+   },
+   "mode" : "orion"
+}

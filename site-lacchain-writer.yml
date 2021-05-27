@@ -32,6 +32,16 @@
     - role: lacchain-orion-node
       when: orion | bool
 
+- hosts: tessera
+  gather_facts: yes
+  become: yes
+  vars:
+    install: true
+
+  roles:
+    - role: lacchain-tessera-node
+      when: tessera | bool
+
 - hosts: writer
   gather_facts: yes
   become: yes

@@ -22,6 +22,9 @@
 [orion]
 #35.237.111.174
 
+[tessera]
+#35.237.111.174
+
 #When you want to update, you can customize the version to update by typing the sha commit of the orion and Besu release
 #eg:
 [writer] ##it can also be [bootnodes] or [validators]
@@ -56,8 +59,10 @@ first_node=false
 install=false
 besu_release_version='1.5.2'
 orion_release_version='1.6.0'
+tessera_release_version='21.1.1'
 dns_name=lacchain.com
 orion=false
+tessera=false
 
 [bootnodes:vars]
 bootnode=true
