@@ -10,7 +10,7 @@
 
 * This LACChain Blockchain Network is based on [Hyperledger Besu](https://www.hyperledger.org/projects/besu), an open-source, mainnet compatible, Java based, and Apache 2.0 licensed Ethereum client. For more information you can read the [code](https://github.com/hyperledger/besu) and the [documentation](https://github.com/hyperledger/besu-docs).
 
-* This LACChain Blockchain network uses [IBFT2.0](https://docs.pantheon.pegasys.tech/en/latest/Consensus-Protocols/IBFT/) consensus protocol for the validation of transactions and generation of new blocks.
+* This LACChain Blockchain network uses [IBFT2.0](https://besu.hyperledger.org/en/stable/HowTo/Configure/Consensus-Protocols/IBFT/) consensus protocol for the validation of transactions and generation of new blocks.
 
 * We are developing different monitoring tools to show the performance and activity of the network. Currently, we have available the [EthStats](http://dashboard.lacchain.net/) and the [Transaction Explorer](http://explorer.lacchain.net/). We will be providing more dashboards and monitoring tools soon.
 
