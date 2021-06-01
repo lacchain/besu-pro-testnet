@@ -1,0 +1,4 @@
+---
+# handlers file for lacchain-tessera-node
+- name: run ldconfig
+  shell: ldconfig

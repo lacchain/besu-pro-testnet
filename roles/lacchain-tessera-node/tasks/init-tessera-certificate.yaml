@@ -1,0 +1,39 @@
+- name: create tessera directories
+  file:
+    path: "{{ item.dest }}"
+    mode: "{{ item.mode }}"
+    state: directory
+  with_items:
+    - { dest: "~/lacchain/tessera/certificates", mode: "0440" }
+    - { dest: "~/lacchain/tessera/certificates/CAs", mode: "0440" }
+
+- name: generate configuration openssl file
+  template:
+    src: "openssl.j2"
+    dest: "~/lacchain/tessera/openssl.cnf"
+    force: yes
+
+- name: generating CA Key
+  shell: openssl genrsa -out tessera_ca.key 2048
+  args:
+    chdir: ~/lacchain/tessera/certificates
+
+- name: generating CA Certificate
+  shell: openssl req -x509 -new -nodes -key /root/lacchain/tessera/certificates/tessera_ca.key -sha256 -days 1024 -out tessera_ca.pem -subj "/C=US/ST=Washington/L=Seatle/O=Lacchain/OU=Network/CN=Lacchain CA"
+  args:
+    chdir: ~/lacchain/tessera/certificates
+
+- name: generating Tessera Certificate Key  
+  shell: openssl genrsa -out tessera_cer.key 2048
+  args:
+    chdir: ~/lacchain/tessera/certificates
+    
+- name: generating Certificate Signig Request
+  shell: openssl req -new -key /root/lacchain/tessera/certificates/tessera_cer.key -out tessera_cer.csr -subj "/C=US/ST=Washington/L=Seatle/O=Lacchain/OU=Network/CN={{dns_name}}" -config /root/lacchain/tessera/openssl.cnf
+  args:
+    chdir: ~/lacchain/tessera/certificates
+
+- name: Signing CSR using CA key
+  shell: openssl x509 -req -in /root/lacchain/tessera/certificates/tessera_cer.csr -CA /root/lacchain/tessera/certificates/tessera_ca.pem -CAkey /root/lacchain/tessera/certificates/tessera_ca.key -CAcreateserial -out tessera_cer.pem -days 500 -sha256 -extfile /root/lacchain/tessera/openssl.cnf -extensions v3_req
+  args:
+    chdir: ~/lacchain/tessera/certificates

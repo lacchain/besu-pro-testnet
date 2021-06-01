@@ -1,0 +1,9 @@
+---
+- name: Stop Tessera Enclave
+  debug:
+      msg: Stopping Tessera Node
+
+- name: Stop Tessera service
+  service:
+      name: tessera
+      state: stopped 
