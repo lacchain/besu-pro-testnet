@@ -1,0 +1,33 @@
+---
+- name: Install tessera
+  debug:
+      msg: "Installing Tessera"
+
+- name: Include installation libsodium for  {{ ansible_distribution }}
+  import_tasks: "ubuntu-install-libsodium.yaml"
+  when: ansible_distribution |lower == 'ubuntu'
+
+- name: Include installation leveldb for  {{ ansible_distribution }}
+  import_tasks: "ubuntu-install-leveldb.yaml"
+  when: ansible_distribution |lower == 'ubuntu'
+
+- name: create lacchain directories
+  file:
+        path: "{{ item.dest }}"
+        mode: "{{ item.mode }}"
+        state: directory
+  with_items:
+        - { dest: "/usr/local/tessera", mode: "0440" }
+
+- name: Download Tessera Binaries
+  get_url:
+      url: " https://oss.sonatype.org/service/local/repositories/releases/content/net/consensys/quorum/tessera/tessera-app/{{ tessera_release_version}}/tessera-app-{{ tessera_release_version}}-app.jar"
+      dest: "/tmp/tessera-app.jar"
+
+- name: moving files to /usr
+  shell: mv /tmp/tessera-app.jar /usr/local/tessera
+
+- name: clearing unnecessary folders
+  shell: rm -rf /tmp/transit /tmp/tessera-app.jar
+  args:
+    warn: false

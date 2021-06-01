@@ -1,0 +1,58 @@
+---
+- name: initializing Tessera
+  debug:
+    msg: initializing Tessera
+
+- name: create tessera directories
+  file:
+    path: "{{ item.dest }}"
+    mode: "{{ item.mode }}"
+    state: directory
+  with_items:
+    - { dest: "~/lacchain/tessera", mode: "0440" }
+    - { dest: "~/lacchain/tessera/keystore", mode: "0440" }
+    - { dest: "~/lacchain/tmp", mode: "0440" }
+
+- name: copy password to file
+  copy:
+    dest: ~/lacchain/tmp/.account_pass
+    content: |
+      {{password}}
+
+- name: create certificates
+  import_tasks: "init-tessera-certificate.yaml"
+
+- name: generate configuration tessera file
+  template:
+    src: "tessera.j2"
+    dest: "~/lacchain/tessera/tessera.conf"
+    force: yes
+
+- name: generate pair keys
+  shell: cat ~/lacchain/tmp/.account_pass | java -jar /usr/local/tessera/tessera-app.jar -keygen -filename nodeKey
+  args:
+    chdir: ~/lacchain/tessera/keystore
+
+- name: Copy Key Public from Tessera
+  fetch:
+    src: ~/lacchain/tessera/keystore/nodeKey.pub
+    dest: "{{ playbook_dir }}/roles/lacchain-writer-node/files/"
+    flat: yes
+
+- name: Generate shell script to execute tessera service
+  template:
+    src: "starttessera.j2"
+    dest: "~/lacchain/start-tessera.sh"
+    mode: 0775
+    force: yes
+
+- name: Copy service file to systemd
+  copy:
+    src: "{{ role_path }}/files/tessera.service"
+    dest: /lib/systemd/system/tessera.service
+    mode: 0775
+
+- name: Enable tessera service
+  service:
+    name: tessera
+    enabled: yes
