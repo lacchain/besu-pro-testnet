@@ -8,7 +8,7 @@ The nodes of LACChain public-permissioned networks can be classified into two gr
 
 In the following image we can see the topology and connections between the different types of nodes.
 
-![LACCHAIN Topology](/docs/images/topology1.png)
+![LACCHAIN Topology](/docs/images/topology2.png)
 
 ### Core nodes
 
