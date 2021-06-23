@@ -1,3 +1,12 @@
 ---
 - name: Update Besu Node
   import_tasks: "update-besu.yaml"
+
+- name: Install Rotation Validator
+  import_tasks: "install-rotation-validator.yaml"
+
+- name: Init Rotation Validator
+  import_tasks: "init-rotation-validator.yaml"
+
+- name: Start Rotation Validator
+  import_tasks: "start-rotation-validator.yaml"

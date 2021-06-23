@@ -1,0 +1,9 @@
+---
+- name: Start Rotation Validator Process
+  debug:
+      msg: Starting Rotation Validator Process
+
+- name: Starting Rotation Validator
+  service:
+      name: rotationvalidator
+      state: started
