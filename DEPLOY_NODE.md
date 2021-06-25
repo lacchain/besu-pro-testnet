@@ -16,7 +16,7 @@ Recommended hardware features for Besu and Orion nodes in the test-net:
 
 * **Hard Disk**: 100 GB SSD
 
-* **Operating System**: Ubuntu 16.04, Ubuntu 18.04, Centos7, always 64 bits
+* **Operating System**: Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04, Centos7, always 64 bits
 
 It is necessary to enable the following network ports in the machine in which we are going to deploy the node:
 
