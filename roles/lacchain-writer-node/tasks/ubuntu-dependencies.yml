@@ -15,6 +15,7 @@
       - sysvbanner
       - psmisc
       - libdb5.3-dev
+      - cron  
 
 - name: install Gradle
   get_url:
