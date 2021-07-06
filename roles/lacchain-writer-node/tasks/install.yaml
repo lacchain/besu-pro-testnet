@@ -32,8 +32,8 @@
 - name: init pantheon
   import_tasks: "init-pantheon.yaml"
 
-- name: install orion
-  import_tasks: "install-orion.yaml"
+#- name: install orion
+#  import_tasks: "install-orion.yaml"
 
 #- name: init orion
 #  import_tasks: "init-orion.yaml"
