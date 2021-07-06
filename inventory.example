@@ -46,7 +46,7 @@ bootnode=false
 validator=false
 first_node=false
 install=false
-besu_release_version='1.3.6'
+besu_release_version='1.5.3'
 orion_release_version='1.4.0'
 dns_name=lacchain.com
 [bootnodes:vars]

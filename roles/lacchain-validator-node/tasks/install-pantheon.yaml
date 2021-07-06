@@ -1,30 +1,75 @@
 ---
-- name: Install pantheon
+- name: Install besu
   debug:
-        msg: "Installing Pantheon"
+        msg: "Installing Besu"
 
-- name: Download pantheon source code
-  git:
-        repo: "https://github.com/PegaSysEng/pantheon.git"
-        dest: "/tmp/pantheon"
-        version: a8ea12a8379a7951b2e940bc8a9f1568c805ef4e
-
-- name: Building Pantheon
-  shell: "sh ./gradlew build -x test"
+- name: previous clearing
+  shell: rm -rf /tmp/besu && mkdir /tmp/besu
   args:
-        chdir: /tmp/pantheon/
+    warn: false
 
-- name: Extract the Pantheon tarball
+- name: pull besu binaries
+  get_url:
+    url: "https://hyperledger.jfrog.io/artifactory/besu-binaries/besu/{{ besu_release_version}}/besu-{{ besu_release_version}}.tar.gz"
+    dest: "/tmp/besu/besu.tar.gz"
+
+- name: Preparing temporal folder
+  shell: rm -rf /tmp/transit/ && mkdir /tmp/transit #deleting and creating a new
+  args:
+    warn: false
+
+- name: Extract the Besu tarball  
   unarchive:
-        src: "/tmp/pantheon/build/distributions/pantheon-1.2.0.tar.gz"
-        dest: /usr/local
+        src: "/tmp/besu/besu.tar.gz"
+        dest: /tmp/transit #/usr/local
         copy: no
 
-- name: Symbolic link for pantheon
+- name: Renaming extracted file
+  shell: mv * besu
+  args:
+        chdir: /tmp/transit
+
+- name: Deleting old folders
+  shell: rm -rf /usr/local/besu
+  args:
+    warn: false
+
+- name: moving files to /usr
+  shell: mv /tmp/transit/besu /usr/local
+        
+ #removing old link
+- name: Deleting old installed versions of besu or pantheon
   file:
-        src: "/usr/local/pantheon-1.2.0/bin/{{ item.src }}"
+       path: /usr/bin/{{ item.dest }}
+       state: absent
+  with_items:
+        - { dest: "pantheon" }
+        - { dest: "pantheon.bat" }
+        - { dest: "besu"}
+        - { dest: "besu.bat"}
+
+- name: Support for deployments prior to centos support
+  file:
+       path: /usr/local/bin/{{ item.dest }}
+       state: absent
+  with_items:
+        - { dest: "pantheon" }
+        - { dest: "pantheon.bat" }
+        - { dest: "besu"}
+        - { dest: "besu.bat"}          
+
+- name: Symbolic link for besu (pantheon and besu are linked to BESU)
+  file:
+        src: "/usr/local/besu/bin/{{ item.src }}"
         dest: "/usr/bin/{{ item.dest }}"
         state: link
   with_items:
-        - { src: "pantheon", dest: "pantheon" }
-        - { src: "pantheon.bat", dest: "pantheon.bat" }
+        - { src: "besu", dest: "pantheon" }
+        - { src: "besu.bat", dest: "pantheon.bat" }
+        - { src: "besu", dest: "besu" }
+        - { src: "besu.bat", dest: "besu.bat" }
+
+- name: clearing unnecessary folders
+  shell: rm -rf /tmp/transit /tmp/besu
+  args:
+    warn: false

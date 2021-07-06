@@ -1,0 +1,5 @@
+
+- name: Download rotation validator
+  git:
+      repo: "https://github.com/lacchain/rotation-validator.git"
+      dest: "/root/lacchain/rotation-validator"

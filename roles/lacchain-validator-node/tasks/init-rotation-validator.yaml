@@ -1,0 +1,20 @@
+---
+- name: Init Rotation Validator
+  debug:
+    msg: Configuring Rotation Validator Process
+
+- name: Copy service file to systemd
+  copy:
+    src: "{{ role_path }}/files/rotation-validator.service"
+    dest: /lib/systemd/system/rotationvalidator.service
+    mode: 0775
+
+- name: Reload systemctl daemon
+  shell: systemctl daemon-reload
+  args:
+    warn: false    
+
+- name: Enable service Rotation Validator
+  service:
+    name: rotationvalidator
+    enabled: yes
