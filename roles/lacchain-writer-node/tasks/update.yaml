@@ -62,5 +62,11 @@
 #- name: start orion
 #  import_tasks: "start-orion.yaml"
 
+- name: install relay signer
+  import_tasks: "install-relay-signer.yaml"
+
+#- name: start relay signer
+#  import_tasks: "start-relay-signer.yaml"
+
 - name: start besu
   import_tasks: "start-node.yaml"

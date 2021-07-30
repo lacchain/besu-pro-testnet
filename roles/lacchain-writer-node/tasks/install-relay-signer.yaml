@@ -1,0 +1,29 @@
+- name: Download Relay Signer code
+  git:
+        repo: "https://github.com/lacchain/gas-management.git"
+        dest: "/root/lacchain/gas-relay-signer" 
+
+- name: Generate Relay Signer configuration file
+  template:
+    src: "relay-signer-config.j2"
+    dest: "~/lacchain/gas-relay-signer/config.toml"
+    mode: 0644
+
+- name: Get Key
+  shell: cat ~/lacchain/data/key
+  register: key
+
+- name: Set WRITER_KEY default
+  template:
+    src: writer-key.sh.j2
+    dest: /etc/profile.d/writer-key.sh
+    mode: 0644
+
+- name: reset environment 
+  shell: bash -c 'source /etc/profile.d/writer-key.sh'
+
+- name: Copy service file to systemd
+  copy:
+    src: "{{ role_path }}/files/relaysigner.service"
+    dest: /lib/systemd/system/relaysigner.service
+    mode: 0775

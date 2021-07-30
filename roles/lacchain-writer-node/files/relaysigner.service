@@ -1,0 +1,20 @@
+[Unit]
+Description=RelaySigner service
+ConditionPathExists=/root/lacchain/gas-relay-signer/gas-relay-signer
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+LimitNOFILE=1024
+
+Restart=on-failure
+RestartSec=10
+startLimitIntervalSec=60
+
+WorkingDirectory=/root/lacchain/gas-relay-signer
+ExecStart=/root/lacchain/gas-relay-signer/gas-relay-signer
+
+[Install]
+WantedBy=multi-user.target
