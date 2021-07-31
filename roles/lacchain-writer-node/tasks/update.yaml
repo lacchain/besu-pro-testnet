@@ -53,7 +53,7 @@
 
 - name: install nginx
   import_tasks: "prepare-nginx.yml"
-  when: (nginx.stdout != 'nginx.service')
+#  when: (nginx.stdout != 'nginx.service')
 
 #- name: Restarting Health Check Daemon
 #  import_tasks: "start-health-check.yaml"
