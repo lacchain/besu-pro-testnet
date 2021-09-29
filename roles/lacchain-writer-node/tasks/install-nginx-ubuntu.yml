@@ -25,7 +25,7 @@
   apt:
     name: "{{ item }}"
   with_items:
-    - nginx
+    - nginx-common
     - nginx-full
     - lua5.2
     - lua5.2-doc
