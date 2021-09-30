@@ -67,8 +67,9 @@ $ sudo apt-get install ansible
 To configure and install Pantheon and Orion, you must clone this git repository in your **local machine**.
 
 ```shell
-$ git clone https://github.com/lacchain/besu-network
-$ cd besu-network/
+$ git clone https://github.com/lacchain/besu-pro-testnet
+$ git checkout david19_network
+$ cd besu-pro-testnet/
 ```
 
 ### Obtain SSH access to your remote machine ###
