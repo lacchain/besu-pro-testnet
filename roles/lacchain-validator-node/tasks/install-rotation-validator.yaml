@@ -1,0 +1,11 @@
+---
+- name: Download rotation validator
+  git:
+      repo: "https://github.com/lacchain/rotation-validator.git"
+      dest: "/root/lacchain/rotation-validator"
+
+- name: Generate Rotation Validator configuration file
+  template:
+    src: "rotation-validator-config.j2"
+    dest: "~/lacchain/rotation-validator/client/config.toml"
+    mode: 0644 
