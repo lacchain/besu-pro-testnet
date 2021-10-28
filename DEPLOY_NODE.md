@@ -4,7 +4,7 @@
 
 * The installation with ansible provided is compatible with **Ubuntu** and **Centos7**. If you want to deploy your node in a different operative system, you can go to the [documentation for Generic Onboarding](https://github.com/lacchain/besu-network/blob/master/GENERIC_ONBOARDING.md).
 
-* **It is important to mention** that in case an organization needs Orion, it must be deployed in a different instance (virtual machine), in this case the organization will require two virtual machines. It is worth mentioning that **Orion/Tessera is optional** and the organization can join the network only with Besu.
+* **It is important to mention** that in case an organization needs Orion/Tessera, it must be deployed in a different instance (virtual machine), in this case the organization will require two virtual machines. It is worth mentioning that **Orion/Tessera is optional** and the organization can join the network only with Besu.
 
 ## Minimum System Requirements
 
@@ -26,9 +26,9 @@ It is necessary to enable the following network ports in the machine in which we
   * **4545**: TCP - Port to establish RPC communication. (this port is used for applications that communicate with LACChain and may be leaked to the Internet)
 
 * **Orion/Tessera Node (Optional component for private transactions)**: 
-  * **4040**: TCP - Port to communicate with other Orion nodes.
+  * **4040**: TCP - Port to communicate with other Orion/Tessera nodes.
   
-  * **4444**: TCP - Port for communication between Besu and Orion.
+  * **4444**: TCP - Port for communication between Besu and Orion/Tessera.
 
 ## Pre-requisites
 
