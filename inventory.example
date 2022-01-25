@@ -32,6 +32,8 @@
 
 #Current Besu commit sha obtained from: https://github.com/hyperledger/besu/releases
 #Tested BESU versions: 
+# 21.1.6
+# 20.10.4
 # 1.5.3
 # 1.5.2
 # 1.4.4
@@ -41,6 +43,8 @@
 
 #Current orion commit sha versions obtained from: https://github.com/PegaSysEng/orion/releases
 #Tested orion versions: 
+# 21.1.0
+# 20.10.0
 # 1.6.0
 # 1.5.2
 # 1.4.0
@@ -59,8 +63,8 @@ bootnode=false
 validator=false
 first_node=false
 install=false
-besu_release_version='1.5.3'
-orion_release_version='1.6.0'
+besu_release_version='21.1.6'
+orion_release_version='21.1.0'
 tessera_release_version='21.1.1'
 dns_name=lacchain.com
 orion=false
