@@ -10,7 +10,7 @@
 
 Recommended hardware features for Besu and Orion nodes in the test-net:
 
-* **CPU**: 2 cores
+* **CPU**: 2 virtual CPUs
 
 * **RAM Memory**: 8 GB
 
