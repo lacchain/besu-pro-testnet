@@ -1,11 +1,18 @@
 ---
+- name: Checking if rotation validator exists
+  stat:
+    path: "/root/lacchain/rotation-validator/client/config.toml"
+  register: rotation_validator   
+
 - name: Download rotation validator
   git:
       repo: "https://github.com/lacchain/rotation-validator.git"
       dest: "/root/lacchain/rotation-validator"
+  when: not rotation_validator.stat.exists
 
 - name: Generate Rotation Validator configuration file
   template:
     src: "rotation-validator-config.j2"
     dest: "~/lacchain/rotation-validator/client/config.toml"
-    mode: 0644 
+    mode: 0644
+  when: not rotation_validator.stat.exists 
