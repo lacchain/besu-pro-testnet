@@ -69,6 +69,12 @@
         - { src: "besu", dest: "besu" }
         - { src: "besu.bat", dest: "besu.bat" }
 
+- name: Copy latest genesis ibft2.0 file
+  copy:
+    src: "{{ role_path }}/files/genesis.json"
+    dest: ~/lacchain/data/genesis.json
+    mode: 0755
+
 - name: clearing unnecessary folders
   shell: rm -rf /tmp/transit /tmp/besu
   args:
