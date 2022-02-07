@@ -2,11 +2,12 @@
   "config": {
     "chainId": 648529,
     "constantinopleFixBlock": 0,
-    "contractSizeLimit": 2147483647,
+    "berlinBlock": 37044085,
+    "contractSizeLimit": 8000000,
     "ibft2": {
       "blockperiodseconds": 2,
       "epochlength": 30000,
-      "requesttimeoutseconds": 4
+      "requesttimeoutseconds": 10
     }
   },
   "nonce": "0x0",
