@@ -18,7 +18,7 @@
     src: "{{ role_path }}/files/permissions_config.toml"
     dest: ~/lacchain/tmp/permissions_config.toml
     mode: 0755
-  when: validator
+  when: validator | bool
 
 - name: initializing pantheon from genesis.json
   debug:
@@ -35,7 +35,7 @@
     src: "{{ role_path }}/files/key"
     dest: ~/lacchain/data/key
     mode: 0700
-  when: first_node
+  when: first_node | bool
 
 - name: Generate node key
   shell: pantheon --data-path=/root/lacchain/data public-key export-address --to=/root/lacchain/data/nodeAddress | grep -oE "0x[A-Fa-f0-9]*" | sed 's/0x//'
@@ -50,21 +50,21 @@
     dest: ~/lacchain/tmp/permissions_config.toml
     regexp: ':60606"]$'
     replace: ':60606",]'
-  when: validator
+  when: validator | bool
 
 - name: add new permissioned nodes validator
   replace:
     dest: ~/lacchain/tmp/permissions_config.toml
     regexp: ",]$"
     replace: ',"enode://{{enode_key.stdout}}@{{node_ip}}:60606"]'
-  when: validator
+  when: validator | bool
 
 - name: Fetch permissioned node validator
   fetch:
     src: ~/lacchain/tmp/permissions_config.toml
     dest: "{{ role_path }}/files/"
     flat: yes
-  when: validator
+  when: validator | bool
 
 - name: copy permissioned nodes to node validator
   copy:
@@ -77,7 +77,7 @@
     src: "{{ role_path }}/files/UTC--2017-09-20T08-43-59.003454005Z--58b8527743f89389b754c63489262fdfc9ba9db6"
     dest: ~/lacchain/data/keystore/UTC--2017-09-20T08-43-59.003454005Z--58b8527743f89389b754c63489262fdfc9ba9db6
     mode: 0700
-  when: first_node
+  when: first_node | bool
 
 - name: Generate shell script to execute pantheon service
   template:
