@@ -16,7 +16,7 @@
 
 - name: Deploying node
   debug:
-    msg: You are deploying on {{network}}
+    msg: You are deploying a WRITER on {{network}}
 
 - name: get public ip
   shell: dig +short myip.opendns.com @resolver1.opendns.com 2>/dev/null || curl -s --retry 2 icanhazip.com

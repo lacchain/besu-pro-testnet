@@ -6,8 +6,12 @@ leveldb_version: "leveldb-1.20.tar.gz"
 leveldb_release: "leveldb-1.20"
 
 # vars node
-node_type: "validator"
-net_id: 648529
+#node_type: "boot"  use this variable in future
+net_id_protestnet: 648529
+net_id_devnet: 648530
+net_id_mainnet: 648541
+statsserver_protestnet: http://35.236.236.77:3000
+statsserver_mainnet: http://34.138.136.105:3000
 time: '{{lookup(''pipe'',''date "+%Y-%m-%d %H:%M:%S"'')}}'
 
 # vars for libsodium

@@ -35,6 +35,7 @@
 
 - name: start ethstats client
   import_tasks: "start-ethstats-client.yaml"
+  when: (networkT == '0') or (networkT == '1')  # ethstats-client is disable on devnet
 
 - name: clean files
   import_tasks: "clean-files.yaml"

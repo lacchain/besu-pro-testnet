@@ -3,5 +3,34 @@
   become: yes
   vars:
     install: true
+  vars_prompt:
+    - name: "Please read the terms and conditions before installing this software: https://github.com/lacchain/pantheon-network/blob/master/TERMS_AND_COND_WRITER_NODE.md .Press ENTER  "
+
+    - name: "haveRead"
+      prompt: "Have you read the Terms and Conditions of use of LACChain Test Network? [Y/N]"
+      private: no
+
+    - name: "isAgree"
+      prompt: "Do you agree with the Terms and Conditions of use of LACChain Test Network? [Y/N]"
+      private: no
+      
+  tasks:
+    - fail:
+        msg: 'Please Accept the conditions by typing Y when prompted.'
+      when: " (haveRead != 'Y' and haveRead != 'y') or ( isAgree != 'Y' and isAgree != 'y' ) "
+
+    - debug:
+        msg: "Starting Installation"
+
+- hosts: writer
+  gather_facts: yes
+  become: yes
+  vars_prompt:
+    - name: "networkT"
+      prompt: "************************\n[0]:mainnet\n[1]:pro-testnet\n[2]:devnet\nPlease, choose in which network are you deploying"
+      private: no
+
+  vars:
+    install: true
   roles:
     - lacchain-bootnode
