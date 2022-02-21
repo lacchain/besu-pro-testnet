@@ -1,5 +1,7 @@
 - hosts: bootnodes
   gather_facts: yes
   become: yes
+  vars:
+    update: true
   roles:
     - lacchain-bootnode
