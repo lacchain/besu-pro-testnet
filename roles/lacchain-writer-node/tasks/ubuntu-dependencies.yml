@@ -17,25 +17,25 @@
       - libdb5.3-dev
       - cron  
 
-- name: install Gradle
-  get_url:
-    url: https://services.gradle.org/distributions/gradle-6.0-bin.zip
-    dest: /tmp/
-    force: yes
-    owner: root
-    group: root
-    mode: 0644
+#- name: install Gradle
+#  get_url:
+#    url: https://services.gradle.org/distributions/gradle-6.0-bin.zip
+#    dest: /tmp/
+#    force: yes
+#    owner: root
+#    group: root
+#    mode: 0644
 
-- name: unzip Gradle
-  unarchive:
-        src: "/tmp/gradle-6.0-bin.zip"
-        dest: /usr/local
-        copy: no
+#- name: unzip Gradle
+#  unarchive:
+#        src: "/tmp/gradle-6.0-bin.zip"
+#        dest: /usr/local
+#        copy: no
 
-- name: Symbolic link for gradle
-  file:
-        src: "/usr/local/gradle-6.0/bin/{{ item.src }}"
-        dest: "/usr/bin/{{ item.dest }}"
-        state: link
-  with_items:
-        - { src: "gradle", dest: "gradle" }
+#- name: Symbolic link for gradle
+#  file:
+#        src: "/usr/local/gradle-6.0/bin/{{ item.src }}"
+#        dest: "/usr/bin/{{ item.dest }}"
+#        state: link
+#  with_items:
+#        - { src: "gradle", dest: "gradle" }

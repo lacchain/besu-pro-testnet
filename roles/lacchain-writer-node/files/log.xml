@@ -80,7 +80,7 @@
 
   </Appenders>
   <Loggers>
-    <Root level="all">
+    <Root level="INFO">
       <AppenderRef ref="infoLog" />
       <AppenderRef ref="debugLog" />
       <AppenderRef ref="errorLog" />

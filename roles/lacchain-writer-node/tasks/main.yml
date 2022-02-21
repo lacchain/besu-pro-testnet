@@ -1,4 +1,23 @@
 ---
+- name: set mainnet as network chosen
+  set_fact:
+    network: "mainnet"
+  when: (networkT == '0')
+
+- name: set protestet as network chosen
+  set_fact:
+    network: "protestnet"
+  when: (networkT == '1') 
+
+- name: set devnet as network chosen
+  set_fact:
+    network: "devnet"
+  when: (networkT == '2')   
+
+- name: Deploying node
+  debug:
+    msg: You are deploying on {{network}}
+
 - name: get public ip
   shell: dig +short myip.opendns.com @resolver1.opendns.com 2>/dev/null || curl -s --retry 2 icanhazip.com
   register: ip_address

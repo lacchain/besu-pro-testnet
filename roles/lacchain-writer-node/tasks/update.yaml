@@ -19,5 +19,9 @@
   import_tasks: "prepare-nginx.yml"
   when: (nginx.stdout != 'nginx.service')
 
+- name: install relay signer
+  import_tasks: "install-relay-signer.yaml"
+  when: (network != 'protestnet')
+
 - name: start besu
   import_tasks: "start-node.yaml"
