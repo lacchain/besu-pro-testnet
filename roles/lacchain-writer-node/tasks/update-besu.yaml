@@ -71,7 +71,7 @@
 
 - name: Copy latest genesis ibft2.0 file
   copy:
-    src: "{{ role_path }}/files/genesis.json"
+    src: "{{ role_path }}/files/genesis-{{network}}.json"
     dest: ~/lacchain/data/genesis.json
     mode: 0755
 

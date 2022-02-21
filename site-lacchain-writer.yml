@@ -45,6 +45,11 @@
 - hosts: writer
   gather_facts: yes
   become: yes
+  vars_prompt:
+    - name: "networkT"
+      prompt: "************************\n[0]:mainnet\n[1]:pro-testnet\n[2]:devnet\nPlease, choose in which network are you deploying"
+      private: no
+
   vars:
     install: true
   roles:

@@ -21,9 +21,9 @@
 
 - name: Copy genesis ibft2.0 file
   copy:
-    src: "{{ role_path }}/files/genesis.json"
+    src: "{{ role_path }}/files/genesis-{{network}}.json"
     dest: ~/lacchain/data/genesis.json
-    mode: 0755
+    mode: 0644
 
 - name: Generate node key
   shell: pantheon --data-path=/root/lacchain/data public-key export-address --to=/root/lacchain/data/nodeAddress | grep -oE "0x[A-Fa-f0-9]*" | sed 's/0x//'
@@ -35,23 +35,23 @@
 
 - name: Generate shell script to execute besu service
   template:
-    src: "startpantheon.j2"
+    src: "startpantheon-{{network}}.j2"
     dest: "~/lacchain/start-pantheon.sh"
     mode: 0775
     force: yes
 
 - name: Generate Besu configuration file when Orion is Enabled
   template:
-    src: "pantheon-orion-config.j2"
+    src: "pantheon-orion-config-{{network}}.j2"
     dest: "~/lacchain/config.toml"
-    mode: 0775
+    mode: 0644
   when: orion | bool
 
 - name: Generate Besu configuration file when Orion is Disabled
   template:
-    src: "pantheon-config.j2"
+    src: "pantheon-config-{{network}}.j2"
     dest: "~/lacchain/config.toml"
-    mode: 0775
+    mode: 0644
   when: orion | bool == false
 
 - name: Copy service file to systemd
@@ -64,7 +64,7 @@
   copy:
     src: "{{ role_path }}/files/log.xml"
     dest: "~/lacchain/log.xml"
-    mode: 0775
+    mode: 0644
 
 - name: Copy Orion Public Key
   copy:

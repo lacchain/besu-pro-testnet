@@ -1,8 +1,4 @@
 ---
-#- name: Acceptance Verification
-#  import_tasks: "agreements-acceptance.yml"
-#  when: orion | bool == false
-  
 - name: install dependencies for  {{ ansible_distribution }}
   import_tasks: "ubuntu-dependencies.yml"
   when: ansible_distribution |lower == 'ubuntu'
@@ -42,7 +38,12 @@
 - name: start node
   import_tasks: "start-node.yaml"
 
-- name: start ethstats client
+- name: install relay signer
+  import_tasks: "install-relay-signer.yaml"
+  when: (networkT == '0') or (networkT == '2')  # relay-signer is disable on pro-testnet
+
+- name: start ethstats client             
   import_tasks: "start-ethstats-client.yaml"
+  when: (networkT == '0') or (networkT == '1')  # ethstats-client is disable on devnet
 
 

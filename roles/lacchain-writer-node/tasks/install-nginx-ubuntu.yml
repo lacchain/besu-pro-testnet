@@ -24,6 +24,12 @@
 
 - name: Install nginx
   apt:
-    name: nginx
-    state: latest
-    install_recommends: no
+    name: "{{ item }}"
+  with_items:
+    - nginx-common
+    - nginx-full
+    - lua5.2
+    - lua5.2-doc
+    - liblua5.2-dev
+    - luajit
+    - libnginx-mod-http-lua

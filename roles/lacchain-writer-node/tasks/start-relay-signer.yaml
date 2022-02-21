@@ -1,0 +1,9 @@
+---
+- name: Start Relay Signer
+  debug:
+      msg: Starting Relay Signer
+
+- name: Execute Relay Signer service
+  service:
+      name: relaysigner
+      state: started
