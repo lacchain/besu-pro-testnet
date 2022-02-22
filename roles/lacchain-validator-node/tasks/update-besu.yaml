@@ -27,10 +27,7 @@
 - name: Renaming extracted file
   shell: mv * besu
   args:
-        chdir: /tmp/transit
-
-- name: stop besu #stopping node before starting the update process
-  import_tasks: "stop-node.yaml"        
+        chdir: /tmp/transit     
 
 - name: Deleting old folders
   shell: rm -rf /usr/local/besu
@@ -70,10 +67,13 @@
         - { src: "besu", dest: "pantheon" }
         - { src: "besu.bat", dest: "pantheon.bat" }
         - { src: "besu", dest: "besu" }
-        - { src: "besu.bat", dest: "besu.bat" }      
+        - { src: "besu.bat", dest: "besu.bat" } 
 
-- name: start node
-  import_tasks: "start-node.yaml"
+- name: Copy latest genesis ibft2.0 file
+  copy:
+    src: "{{ role_path }}/files/genesis-{{network}}.json"
+    dest: ~/lacchain/data/genesis.json
+    mode: 0755    
 
 - name: clearing unnecessary folders
   shell: rm -rf /tmp/transit /tmp/besu

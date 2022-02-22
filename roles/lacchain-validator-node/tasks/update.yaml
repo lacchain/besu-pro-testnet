@@ -1,6 +1,12 @@
 ---
+- name: stop Besu
+  import_tasks: "stop-node.yaml" 
+
 - name: Update Besu Node
   import_tasks: "update-besu.yaml"
+
+- name: start besu
+  import_tasks: "start-node.yaml"
 
 - name: Install Rotation Validator
   import_tasks: "install-rotation-validator.yaml"
