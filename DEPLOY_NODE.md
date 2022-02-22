@@ -1,20 +1,21 @@
-# Deploy a LACChain node
+# Deploy a node
 
 * Below you will find instructions for the deployment of nodes using Ansible. This implies that it will be executed from a local machine on a remote server. The local machine and the remote server will communicate via ssh.
 
-* The installation with ansible provided is compatible with **Ubuntu** and **Centos7**. If you want to deploy your node in a different operative system, you can go to the [documentation for Generic Onboarding](https://github.com/lacchain/besu-network/blob/master/GENERIC_ONBOARDING.md).
+* The installation with ansible provided is compatible with **Ubuntu** and **Centos7**. If you want to deploy your node in a different operative system, you can go to the [documentation for Generic Onboarding](https://github.com/LACNet-Networks/besu-pro-testnet/blob/master/GENERIC_ONBOARDING.md).
 
-* **It is important to mention** that in case an organization needs Orion/Tessera, it must be deployed in a different instance (virtual machine), in this case the organization will require two virtual machines. It is worth mentioning that **Orion/Tessera is optional** and the organization can join the network only with Besu.
+* **It is important to mention** that in case an organization needs Tessera, it must be deployed in a different instance (virtual machine), in this case the organization will require two virtual machines. It is worth mentioning that **Tessera is optional** and the organization can join the network only with Besu.
 
 ## Minimum System Requirements
 
-Recommended hardware features for Besu and Orion nodes in the test-net:
+Recommended hardware features for Besu node:
 
-* **CPU**: 2 virtual CPUs
-
-* **RAM Memory**: 8 GB
-
-* **Hard Disk**: 150 GB SSD
+| Recommended Hardware | On Devnet | On Protestnet | On Mainnet |
+|:---:|:---:|:---:|:---:|
+| CPU | 2 vCPUs | 2 vCPUs | 4 vCPUs compute optimized|
+| RAM Memory | 8 GB | 8 GB | 16 GB |
+| Hard Disk | 150 GB SSD | 250 GB SSD | 375 GB SSD |
+| IOPs | ----- | ----- | 70,000 IOPS READ  50,000 IOPS WRITE |
 
 * **Operating System**: Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04, Centos7, always 64 bits
 
@@ -25,7 +26,7 @@ It is necessary to enable the following network ports in the machine in which we
 
   * **4545**: TCP - Port to establish RPC communication. (this port is used for applications that communicate with LACChain and may be leaked to the Internet)
 
-* **Orion/Tessera Node (Optional component for private transactions)**: 
+* **Tessera Node (Optional component for private transactions)**: 
   * **4040**: TCP - Port to communicate with other Orion/Tessera nodes.
   
   * **4444**: TCP - Port for communication between Besu and Orion/Tessera.
@@ -51,8 +52,8 @@ $ sudo apt-get install ansible
 To configure and install Pantheon and Orion/Tessera, you must clone this git repository in your **local machine**.
 
 ```shell
-$ git clone https://github.com/lacchain/besu-network
-$ cd besu-network/
+$ git clone https://github.com/LACNet-Networks/besu-pro-testnet
+$ cd besu-pro-testnet/
 ```
 
 ### Obtain SSH access to your remote machine ###
@@ -93,10 +94,10 @@ Make sure you have SSH access to nodes you're setting up. This step will vary de
 		```shell
 		$ sudo yum update
 		```
-	6. **[Only for Orion]** You must also follow previous steps for the instance where Orion will be installed.
+	6. **[Only for Tessera]** You must also follow previous steps for the instance where Orion will be installed.
 
 
-## Besu + Orion/Tessera Installation ##
+## Besu + Tessera Installation ##
 
 ### Preparing installation of a new node ###
 
@@ -119,21 +120,6 @@ Consider the following points:
 - The value of `node_name` is the name you want for your node in the network monitoring tool.
 - The value of `node_email` is the email address you want to register for your node in the network monitoring tool. It's a good idea to provide the e-mail of the technical contact identified or to be identified in the registration form as part of the on-boarding process.
 
-* **[Only for Orion]** 
-  * In your `inventory` file add a line below [orion] role. This new line is the IP or hostname where you can reach your remote machine from your local machine. In this Ip or hostname will be installed Orion node. 
-  * Additionally, change `orion` variable located under the [all: vars] tag in same inventory file to `true`.
-  * The inventory file looks like similar to:
-  ```lang-toml
-     [orion]
-     127.0.0.1 ---> Change for your IP Orion instance
-     
-	 [all:vars]
-     password=default_password
-     node_email=default@email
-     ...
-     orion=false ---> Set to true to install Orion
-  ```
-
 * **[Only for Tessera]** 
   * In your `inventory` file add a line below [tessera] role. This new line is the IP or hostname where you can reach your remote machine from your local machine. In this Ip or hostname will be installed Tessera node. 
   * Additionally, change `tessera` variable located under the [all: vars] tag in same inventory file to `true`.
@@ -148,60 +134,33 @@ Consider the following points:
      ...
      tessera=false ---> Set to true to install Tessera
 
-### **Network ID / ChainID**
-
-In order to establish connection with a different network than central net, you need to change 
-```
-net_id = 648529 
-```
-in the file `/roles/lacchain-writer-node/vars/main.yml`
-
-The possible values are:
-- Central: 648529
-- David19: 648530
-- Academy: 648539
-
-If you have already deployed a node, and you want to change the network, do the following steps:
-
-1. Access to the LACChain node with ssh
-2. Execute ```sudo su```
-3. Edit _chainId_ variable in ```/root/lacchain/data/genesis.json```
-3. Edit --network-id flag in ```/root/lacchain/start-pantheon.sh```
-5. Delete ```/root/lacchain/data/database``` directory
-6. Restart service ```service pantheon restart```
-
 ### Deploying the new node ###
 
-* To deploy a **boot node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
+* To deploy a **boot node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u` to SSH connection:
 
 	```shell
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-bootnode.yml
 	```
 
-* To deploy a **validator node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
+* To deploy a **validator node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u` to SSH connection:
 
 	```shell
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-validator.yml
 	```
 
-* To deploy a **writer node** with/without **orion/tessera node**  execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
+* To deploy a **writer node** with/without **orion/tessera node**  execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u` to SSH connection:
 
 	```shell
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-writer.yml
 	```
-* [**in case you have previously deployed a writer node without orion or tessera**] To deploy a **orion or tessera node** execute one of the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u`:
-
-	```shell
-	*Orion*
-	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-orion.yml
-	```
+* [**in case you have previously deployed a writer node without tessera**] To deploy a **tessera node** execute one of the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u` to SSH connection:
 
 	```shell
 	*Tessera*
 	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-tessera.yml
 	```
 
-* At the end of the installation, if everything worked a BESU service will be created in the case of a **validator node** managed by Systemctl with **stopped** status.
+* At the end of the installation, if everything worked a BESU service will be created managed by Systemctl with **started** status.
 
 Don't forget to write down your node's "enode" from the log by locating the line that looks like this:
 ```
@@ -211,16 +170,16 @@ ok: [x.x.x.x] => {
 }
 ```
 
-* If everything worked, an ORION/TESSERA service **(if it was chosen)** and a BESU service managed by Systemctl will be created with **stopped** status on each instance.
+* If everything worked, an TESSERA service **(if it was chosen)** and a BESU service managed by Systemctl will be created with **started** status on each instance.
 * After installation has finished you will have nginx installed on each instance chosen; it will be up and running and will allow secure and encrypted RPC connections (on the default 443 port). Certificates used to create the secure connections are self signed; it is up to you decide another way to secure RPC connections or continue using the provided  default service.
-* In order to be permissioned, now you need to follow the [administrative steps of the permissioning process](https://github.com/lacchain/besu-network/blob/master/PERMISSIONING_PROCESS.md).
+* In order to be permissioned, now you need to follow the [administrative steps of the permissioning process](https://github.com/LACNet-Networks/besu-pro-testnet/blob/master/PERMISSIONING_PROCESS.md).
 * Once you are permissioned, you can verify that you are connected to other nodes in the network by following the steps detailed in [#issue33](https://github.com/lacchain/besu-network/issues/33).
 
 ## Node Configuration
 
 ### Configuring the Besu node file ###
 
-The default configuration should work for everyone. However, depending on your needs and technical knowledge you can modify your local node's settings in `/root/lacchain/config.toml`, e.g. for RPC access or authentication. Please refer to the [reference documentation](https://besu.hyperledger.org/en/1.5.3/Reference/CLI/CLI-Syntax/).
+The default configuration should work for everyone. However, depending on your needs and technical knowledge you can modify your local node's settings in `/root/lacchain/config.toml`, e.g. for RPC access or authentication. Please refer to the [reference documentation](https://besu.hyperledger.org/en/21.1.6/Reference/CLI/CLI-Syntax/).
 
 ### Start up your node ###
 
@@ -229,11 +188,6 @@ Once your node is ready, you can start it up with this command in **remote machi
 * For Besu instance:
 ```shell
 <remote_machine>$ service pantheon start
-```
-
-* For Orion instance:
-```shell
-<remote_machine>$ service orion start
 ```
 
 * For Tessera instance:
@@ -247,7 +201,6 @@ Once your node is ready, you can start it up with this command in **remote machi
 
 ```shell
 <remote_machine>$ service tessera restart
-<remote_machine>$ service orion restart
 <remote_machine>$ service pantheon restart
 ```
 
@@ -258,25 +211,24 @@ Once your node is ready, you can start it up with this command in **remote machi
 	[writer] #here put the role you are going to update
 	35.193.123.227 
 	```
-    * For Orion
-    ```shell
-	[orion] #here put the role you are going to update
-	35.193.123.227 
-	```
 
-	Optionally you can choose the sha_commit of the version you want to update refered to Orion; with Besu is is only neede to specify the version:
+	Optionally you can choose the sha_commit of the version you want to update; with Besu is is only neede to specify the version:
 	```shell
 	[writer] #here put the role you are gong to update
-	35.193.123.227 besu_release_version='1.4.4' orion_release_version='1.5.2'
+	35.193.123.227 besu_release_version='22.1.0'
 	```
 	Current Besu versions obtained from: https://pegasys.tech/solutions/hyperledger-besu/
 	Tested BESU versions: 
+	21.1.6
+	20.10.4
+	1.5.3
 	1.5.2
 	1.4.4
 	1.3.6
 
 	Current orion commit sha versions obtained from: https://github.com/PegaSysEng/orion/releases
 	Tested orion versions: 
+	1.6.0
 	1.5.2
 	1.3.2
 	1.4.0
@@ -285,19 +237,15 @@ Once your node is ready, you can start it up with this command in **remote machi
 
 	Now according to the role your node has, type one of the following commands on your terminal:
 	```shell
-	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-writer.yml 
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-update-writer.yml 
 	```
 
 	```shell
-	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-orion.yml 
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-update-bootnode.yml 
 	```
 
 	```shell
-	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-bootnode.yml 
-	```
-
-	```shell
-	$ ansible-playbook -i inventory --private-key=~/.ssh/id_ecdsa -u remote_user site-lacchain-update-validator.yml 
+	$ ansible-playbook -i inventory --private-key=~/.ssh/id_rsa -u remote_user site-lacchain-update-validator.yml 
 	```
 	
 ## Checking your connection
@@ -335,11 +283,11 @@ If that doesn't solve the problem, contact us at info@lacchain.net.
 	
 ## Deploying Dapps on LACCHAIN
 
-For a quick overview of some mainstream tools that you can use to deploy Smart Contracts, connect external applications and broadcast transactions to the LACChain Besu Network, you can check our [Guide](https://github.com/lacchain/besu-network/blob/master/DEPLOY_APPLICATIONS.md).
+For a quick overview of some mainstream tools that you can use to deploy Smart Contracts, connect external applications and broadcast transactions to the LACChain Besu Network, you can check our [Guide](https://github.com/LACNet-Networks/besu-pro-testnet/blob/master/DEPLOY_APPLICATIONS.md).
 
 ## Contact
 
-For any issues, you can either go to [issues](https://github.com/lacchain/besu-network/issues) or e-mail us at info@lacchain.net. Any feedback is more than welcome!
+For any issues, you can either go to [issues](https://github.com/LACNet-Networks/besu-pro-testnet/issues) or e-mail us at info@lacchain.net. Any feedback is more than welcome!
 
 &nbsp;
 &nbsp;
