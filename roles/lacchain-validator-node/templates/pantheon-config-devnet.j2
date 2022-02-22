@@ -1,0 +1,34 @@
+# RPC
+rpc-http-enabled=true
+graphql-http-enabled=true
+rpc-ws-enabled=true
+rpc-http-port=4545
+graphql-http-port=4547
+rpc-ws-port=4546
+rpc-http-api=["ETH","NET","IBFT","EEA","PRIV"]
+## Uncomment the following lines to allow RPC from remote locations (risky)
+host-whitelist=["*"]
+rpc-http-host="127.0.0.1"
+rpc-http-cors-origins=["*"]
+# graphql-http-host="0.0.0.0"
+
+
+# Orion
+#privacy-enabled=true
+#privacy-url="http://127.0.0.1:4444"
+#privacy-public-key-file="/root/lacchain/orion/keystore/nodeKey.pub"
+
+# Networking
+p2p-host="{{node_ip}}"
+p2p-port=60606
+bootnodes=["enode://aef21d8ba679f55a7c28bbafb826b84cf1db929916b4d322b590037a584a0d08aef9d836289b15c2c4ce7fdb9f2f4abf705314b85fba62a8f01539e92491da80@34.73.74.151:60606","enode://a677d655440fc338eefb5e31c3db1e07b56afbc28dee74822f600b1fb81f3657343f04cb2f68e5dd44ea606e041642bacc9151d91ab0527c878db0005ea30ca0@34.73.175.75:60606"]
+
+# Gas
+min-gas-price=0
+
+#Metrics
+#metrics-push-enabled=true
+#metrics-push-port=9091
+#metrics-push-host="34.69.246.25"
+#metrics-push-interval=5
+#metrics-push-prometheus-job="{{node_name}}"
