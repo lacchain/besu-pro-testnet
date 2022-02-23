@@ -4,7 +4,7 @@
 
 * The installation with ansible provided is compatible with **Ubuntu** and **Centos7**. If you want to deploy your node in a different operative system, you can go to the [documentation for Generic Onboarding](https://github.com/LACNet-Networks/besu-pro-testnet/blob/master/GENERIC_ONBOARDING.md).
 
-* **It is important to mention** that in case an organization needs Tessera, it must be deployed in a different instance (virtual machine), in this case the organization will require two virtual machines. It is worth mentioning that **Tessera is optional** and the organization can join the network only with Besu.
+* **It is important to mention** that in case an organization needs [Tessera](https://docs.tessera.consensys.net/en/stable/), it must be deployed in a different instance (virtual machine), in this case the organization will require two virtual machines. It is worth mentioning that **Tessera is optional** and the organization can join the network only with Besu.
 
 ## Minimum System Requirements
 
@@ -49,7 +49,7 @@ $ sudo apt-get install ansible
 
 ### Clone Repository ####
 
-To configure and install Pantheon and Orion/Tessera, you must clone this git repository in your **local machine**.
+To configure and install Besu and Tessera, you must clone this git repository in your **local machine**.
 
 ```shell
 $ git clone https://github.com/LACNet-Networks/besu-pro-testnet
@@ -101,7 +101,7 @@ Make sure you have SSH access to nodes you're setting up. This step will vary de
 
 ### Preparing installation of a new node ###
 
-* There are three types of nodes (Bootnode / Validator / Writer / Orion / Tessera) that can be created in the LACChain network at this moment.
+* There are four types of nodes (Bootnode / Validator / Writer / Tessera) that can be created in the LACChain network at this moment.
 
 * After cloning the repository on the **local machine**, enter it and create a copy of the `inventory.example` file as `inventory`. Edit that file to add a line for the remote server where you are creating the new node. You can do it with a graphical tool or inside the shell:
 
@@ -116,7 +116,7 @@ Make sure you have SSH access to nodes you're setting up. This step will vary de
 Consider the following points:
 - Place the new line in the section corresponding to your node's role: `[writer]`, `[validators]` or `[bootnodes]`.
 - The first element on the new line is the IP or hostname where you can reach your remote machine from your local machine.
-- The value of `password` is the password that will be used to set up Orion, for private transactions.
+- The value of `password` is the password that will be used to set up Tessera, for private transactions.
 - The value of `node_name` is the name you want for your node in the network monitoring tool.
 - The value of `node_email` is the email address you want to register for your node in the network monitoring tool. It's a good idea to provide the e-mail of the technical contact identified or to be identified in the registration form as part of the on-boarding process.
 
@@ -135,6 +135,15 @@ Consider the following points:
      tessera=false ---> Set to true to install Tessera
 
 ### Deploying the new node ###
+
+* When starting the script, make sure to type the network where the node will be deployed:
+```
+[0]:mainnet
+[1]:pro-testnet
+[2]:devnet
+Please, choose in which network are you deploying:
+```
+So, if you want to deploy on mainnet it will be 0, for protestnet 1 and 2 for devnet.
 
 * To deploy a **boot node** execute the following command in your **local machine**. If needed, don't forget to set the private key with option `--private-key` and the remote user with option `-u` to SSH connection:
 

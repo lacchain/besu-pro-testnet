@@ -22,7 +22,7 @@
     - debug:
         msg: "Starting Installation"
 
-- hosts: writer
+- hosts: bootnodes
   gather_facts: yes
   become: yes
   vars_prompt:
