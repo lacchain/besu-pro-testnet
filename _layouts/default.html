@@ -5,8 +5,12 @@
         <h1><a href="{{ "/"}}">{{ site.title }}</a></h1>
 
         {% if site.logo %}
-          <img src="{{ "https://github.com/lacchain/besu-pro-testnet/blob/master/_layouts/LACNet.png" }}" alt="LACNet" />
+          <img src="{{ site.logo }}" alt="LACNet" />
         {% endif %}
+
+        {% for repository in site.github.public_repositories %}
+          * [{{ repository.name }}]({{ repository.html_url }})
+        {% endfor %}
 
         <!-- <p>{{ site.description | default: site.github.project_tagline }}</p> -->
 
@@ -20,6 +24,7 @@
         {% endif %}
 
       </header>
+      {% }
       <p>Text to view</p>
       <section>
 
