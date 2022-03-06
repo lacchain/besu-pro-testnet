@@ -3,9 +3,10 @@
   description: LACChain Networks
   baseurl:
   url: 
- theme: bulma-clean-theme
+ # theme: bulma-clean-theme
 
 # Build settings
-  markdown: kram down
+theme: minima
+# markdown: kram down
 # theme: minima
 
