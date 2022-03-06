@@ -1,12 +1,15 @@
   <body>
     <div class="wrapper">
-      title
       <header>
         <h1>{{ site.title }}</h1>
 
+        <!-- 
+
         {% if site.logo %}
           <img src="{{ "https://github.com/lacchain/besu-pro-testnet/blob/master/_layouts/LACNet.png" }}" alt="LACNet" />
-        {% endif %}
+        {% endif %} -->
+
+        <p><img src="https://github.com/lacchain/besu-pro-testnet/blob/master/_layouts/LACNet.png" alt="LACNet" /></p>
 
         <!-- 
 
@@ -26,7 +29,7 @@
         {% endif %} -->
 
       </header>
-      <p>Text to view</p>
+      
       <section>
 
       {{ content }}
@@ -42,3 +45,4 @@
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>
 </html>
+
