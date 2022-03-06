@@ -10,6 +10,12 @@ url:
 # markdown: kram down
 # theme: minima
 
+github:
+  # site.logo | 
+  # site.logo: 
+  # zip_url: http://example.com/download.zip
+  # another_url: another value
+
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
 - jekyll-remote-theme
