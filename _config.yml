@@ -2,7 +2,8 @@
 title: LACNet Networks
 description: LACChain Networks
 baseurl:
-url: 
+url:
+logo: https://github.com/lacchain/besu-pro-testnet/blob/master/_layouts/LACNet.png
 
 
 # Build settings
@@ -12,8 +13,6 @@ url:
 # theme: minima
 
 github:
-  # site.logo | 
-  site.logo: https://github.com/lacchain/besu-pro-testnet/blob/master/_layouts/LACNet.png
   # zip_url: http://example.com/download.zip
   # another_url: another value
 
