@@ -4,6 +4,7 @@ description: LACChain Networks
 baseurl:
 url: 
 
+
 # Build settings
 # theme: minima
 # theme: bulma-clean-theme
@@ -12,7 +13,7 @@ url:
 
 github:
   # site.logo | 
-  # site.logo: 
+  site.logo: 
   # zip_url: http://example.com/download.zip
   # another_url: another value
 
