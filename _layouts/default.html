@@ -2,26 +2,28 @@
     <div class="wrapper">
       title
       <header>
-        <h1><a href="{{ "/"}}">{{ site.title }}</a></h1>
+        <h1>{{ site.title }}</h1>
 
         {% if site.logo %}
-          <img src="{{ site.logo }}" alt="LACNet" />
+          <img src="{{ "https://github.com/lacchain/besu-pro-testnet/blob/master/_layouts/LACNet.png" }}" alt="LACNet" />
         {% endif %}
+
+        <!-- 
 
         {% for repository in site.github.public_repositories %}
           * [{{ repository.name }}]({{ repository.html_url }})
         {% endfor %}
 
-        <p>{{ site.title }}</p> 
+        <p>{{ site.title }}</p>
 
         <!-- 
         {% if site.github.is_project_page %}
         <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
-        {% endif %} -->
+        {% endif %} 
 
         {% if site.github.is_user_page %}
         <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
-        {% endif %}
+        {% endif %} -->
 
       </header>
       {% }
