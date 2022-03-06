@@ -1,6 +1,11 @@
-title: LACChain Networks
-description: LACChain Networks
-baseurl: 
-url:
-theme: bulma-clean-theme
+# Basic 
+  title: LACNet Networks
+  description: LACChain Networks
+  baseurl:
+  url: 
+ theme: bulma-clean-theme
+
+# Build settings
+  markdown: kram down
+# theme: minima
 
