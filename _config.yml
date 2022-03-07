@@ -1,18 +1,14 @@
-# Basic 
+# basic 
 title: LACNet Networks
 description: LACChain Networks
 baseurl:
 url:
 
-# Build settings
-# theme: minima
-# theme: bulma-clean-theme
+# build settings
 markdown: kramdown
-# theme: minima
 
 github:
-  # zip_url: http://example.com/download.zip
-  # another_url: another value
+  # another_url: value
 
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
