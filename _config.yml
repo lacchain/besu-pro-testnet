@@ -9,7 +9,7 @@ url:
 # Build settings
 # theme: minima
 # theme: bulma-clean-theme
-# markdown: kram down
+markdown: kramdown
 # theme: minima
 
 github:
