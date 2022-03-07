@@ -1,10 +1,9 @@
 # Basic 
 title: LACNet Networks
-description: 
+description: LACChain Networks
 baseurl:
 url:
-# logo: true
-
+logo: true
 
 # Build settings
 # theme: minima
