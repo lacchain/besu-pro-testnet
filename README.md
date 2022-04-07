@@ -1,4 +1,4 @@
-# *** This repository has been deprecated and is no longer supported, please consider using [LACNet's branch](https://github.com/LACNetNetworks/besu-networks) instead ***
+# *** This repository has been deprecated and is no longer supported. We are now supporting [LACNet's branch](https://github.com/LACNetNetworks/besu-networks) ***
 
 # LACChain #
 
